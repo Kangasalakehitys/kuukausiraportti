@@ -1081,105 +1081,128 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">//TÄSTÄ ALKAA PIIRROS</span></span>
 <span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="op">-</span>width <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="op">-</span>height <span class="op">/</span> <span class="fl">2.5</span><span class="op">,</span> width<span class="op">,</span> height])<span class="op">;</span></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> chords <span class="op">=</span> <span class="fu">chord</span>(matrix)<span class="op">;</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> group <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="dv">3</span>)</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-family"</span><span class="op">,</span> <span class="st">"Century Gothic"</span>)</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"g"</span>)</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">data</span>(chords<span class="op">.</span><span class="at">groups</span>)</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">join</span>(<span class="st">"g"</span>)<span class="op">;</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>  group<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> {</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>           sum_target <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>           sum_source <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>           sum_yht <span class="op">=</span> sum_target<span class="op">-</span>sum_source<span class="op">;</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (sum_yht <span class="op">&gt;</span> <span class="dv">0</span>) { </span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#009651"</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> <span class="cf">if</span> (sum_yht <span class="op">==</span> <span class="dv">0</span>) { </span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#28336C"</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> zoom <span class="op">=</span> d3<span class="op">.</span><span class="fu">zoom</span>()</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">scaleExtent</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">8</span>])</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">on</span>(<span class="st">"zoom"</span><span class="op">,</span> zoomed)<span class="op">;</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="op">-</span>width <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="op">-</span>height <span class="op">/</span> <span class="fl">2.5</span><span class="op">,</span> width<span class="op">,</span> height])<span class="op">;</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> chords <span class="op">=</span> <span class="fu">chord</span>(matrix)<span class="op">;</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> group <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="dv">3</span>)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-family"</span><span class="op">,</span> <span class="st">"Century Gothic"</span>)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"g"</span>)</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">data</span>(chords<span class="op">.</span><span class="at">groups</span>)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">join</span>(<span class="st">"g"</span>)<span class="op">;</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>  group<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> {</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>           sum_target <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>           sum_source <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>           sum_yht <span class="op">=</span> sum_target<span class="op">-</span>sum_source<span class="op">;</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (sum_yht <span class="op">&gt;</span> <span class="dv">0</span>) { </span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#009651"</span></span>
 <span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
 <span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>    { </span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#DE232F"</span> </span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> <span class="cf">if</span> (sum_yht <span class="op">==</span> <span class="dv">0</span>) { </span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#28336C"</span></span>
 <span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
 <span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>        })</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> arc)<span class="op">;</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>  group<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">each</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">angle</span> <span class="op">=</span> (d<span class="op">.</span><span class="at">startAngle</span> <span class="op">+</span> d<span class="op">.</span><span class="at">endAngle</span>) <span class="op">/</span> <span class="dv">2</span>))</span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"dy"</span><span class="op">,</span> <span class="st">"0.35em"</span>)</span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> d <span class="kw">=&gt;</span> <span class="vs">`</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="vs">        rotate(</span><span class="sc">${</span>(d<span class="op">.</span><span class="at">angle</span> <span class="op">*</span> <span class="dv">180</span> <span class="op">/</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">-</span> <span class="dv">90</span>)<span class="sc">}</span><span class="vs">)</span></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="vs">        translate(</span><span class="sc">${</span>outerRadius <span class="op">+</span> <span class="dv">6</span><span class="sc">}</span><span class="vs">)</span></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="vs">        </span><span class="sc">${</span>d<span class="op">.</span><span class="at">angle</span> <span class="op">&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">?</span> <span class="st">"rotate(180)"</span> <span class="op">:</span> <span class="st">""</span><span class="sc">}</span></span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="vs">      `</span>)</span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">angle</span> <span class="op">&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">?</span> <span class="st">"end"</span> <span class="op">:</span> <span class="kw">null</span>)</span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>      <span class="co">//.text(d =&gt; names[d.index])</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">index</span> <span class="op">&gt;=</span> <span class="dv">3</span>) <span class="op">?</span> names[d<span class="op">.</span><span class="at">index</span>] <span class="op">:</span> <span class="st">""</span>)</span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> {</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>           sum_target <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>           sum_source <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>           sum_yht <span class="op">=</span> sum_target<span class="op">-</span>sum_source<span class="op">;</span></span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (sum_yht <span class="op">&gt;</span> <span class="dv">0</span>) { </span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#009651"</span></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari</span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> <span class="cf">if</span> (sum_yht <span class="op">==</span> <span class="dv">0</span>) { </span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#28336C"</span></span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>    { </span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#DE232F"</span> </span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> arc)<span class="op">;</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>  group<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">each</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">angle</span> <span class="op">=</span> (d<span class="op">.</span><span class="at">startAngle</span> <span class="op">+</span> d<span class="op">.</span><span class="at">endAngle</span>) <span class="op">/</span> <span class="dv">2</span>))</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"dy"</span><span class="op">,</span> <span class="st">"0.35em"</span>)</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> d <span class="kw">=&gt;</span> <span class="vs">`</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a><span class="vs">        rotate(</span><span class="sc">${</span>(d<span class="op">.</span><span class="at">angle</span> <span class="op">*</span> <span class="dv">180</span> <span class="op">/</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">-</span> <span class="dv">90</span>)<span class="sc">}</span><span class="vs">)</span></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="vs">        translate(</span><span class="sc">${</span>outerRadius <span class="op">+</span> <span class="dv">6</span><span class="sc">}</span><span class="vs">)</span></span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="vs">        </span><span class="sc">${</span>d<span class="op">.</span><span class="at">angle</span> <span class="op">&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">?</span> <span class="st">"rotate(180)"</span> <span class="op">:</span> <span class="st">""</span><span class="sc">}</span></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="vs">      `</span>)</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">angle</span> <span class="op">&gt;</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">?</span> <span class="st">"end"</span> <span class="op">:</span> <span class="kw">null</span>)</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>      <span class="co">//.text(d =&gt; names[d.index])</span></span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">index</span> <span class="op">&gt;=</span> <span class="dv">3</span>) <span class="op">?</span> names[d<span class="op">.</span><span class="at">index</span>] <span class="op">:</span> <span class="st">""</span>)</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> {</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>           sum_target <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>           sum_source <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>           sum_yht <span class="op">=</span> sum_target<span class="op">-</span>sum_source<span class="op">;</span></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (sum_yht <span class="op">&gt;</span> <span class="dv">0</span>) { </span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#009651"</span></span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari</span>
 <span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>    { </span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#DE232F"</span> </span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> <span class="cf">if</span> (sum_yht <span class="op">==</span> <span class="dv">0</span>) { </span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#28336C"</span></span>
 <span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
 <span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
-<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>  group<span class="op">.</span><span class="fu">append</span>(<span class="st">"title"</span>)</span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>names[d<span class="op">.</span><span class="at">index</span>]<span class="sc">}</span><span class="vs"> </span></span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="sc">${</span>d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="sc">}</span><span class="vs"> lähtee →</span></span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="sc">${</span>d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="sc">}</span><span class="vs"> tulee ←</span></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="sc">${</span>d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">-</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="sc">}</span><span class="vs"> netto =`</span>)<span class="op">;</span>  </span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>    { </span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#DE232F"</span> </span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>        })<span class="op">;</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>  group<span class="op">.</span><span class="fu">append</span>(<span class="st">"title"</span>)</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>names[d<span class="op">.</span><span class="at">index</span>]<span class="sc">}</span><span class="vs"> </span></span>
 <span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill-opacity"</span><span class="op">,</span> <span class="fl">0.75</span>)</span>
-<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"path"</span>)</span>
-<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">data</span>(chords)</span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">join</span>(<span class="st">"path"</span>)</span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">style</span>(<span class="st">"mix-blend-mode"</span><span class="op">,</span> <span class="st">"multiply"</span>)</span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>          <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> {</span>
-<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>           sum_target <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
-<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>           sum_source <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
-<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>           sum_yht <span class="op">=</span> sum_target<span class="op">-</span>sum_source<span class="op">;</span></span>
-<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (sum_yht <span class="op">&gt;</span> <span class="dv">0</span>) { </span>
-<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#009651"</span></span>
-<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
-<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> <span class="cf">if</span> (sum_yht <span class="op">==</span> <span class="dv">0</span>) { </span>
-<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#28336C"</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="sc">${</span>d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="sc">}</span><span class="vs"> lähtee →</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="sc">${</span>d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="sc">}</span><span class="vs"> tulee ←</span></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="sc">${</span>d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">-</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="sc">}</span><span class="vs"> netto =`</span>)<span class="op">;</span>  </span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill-opacity"</span><span class="op">,</span> <span class="fl">0.75</span>)</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"path"</span>)</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">data</span>(chords)</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">join</span>(<span class="st">"path"</span>)</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">style</span>(<span class="st">"mix-blend-mode"</span><span class="op">,</span> <span class="st">"multiply"</span>)</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>          <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> {</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>           sum_target <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>           sum_source <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(chords<span class="op">,</span> c <span class="kw">=&gt;</span> (c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span> <span class="op">===</span> d<span class="op">.</span><span class="at">index</span>) <span class="op">*</span> c<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span>)<span class="op">;</span></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>           sum_yht <span class="op">=</span> sum_target<span class="op">-</span>sum_source<span class="op">;</span></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (sum_yht <span class="op">&gt;</span> <span class="dv">0</span>) { </span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#009651"</span></span>
 <span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
 <span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>    { </span>
-<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#DE232F"</span> </span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> <span class="cf">if</span> (sum_yht <span class="op">==</span> <span class="dv">0</span>) { </span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#28336C"</span></span>
 <span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
 <span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>        })</span>
-<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> ribbon)</span>
-<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">append</span>(<span class="st">"title"</span>)</span>
-<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>names[d<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span>]<span class="sc">}</span><span class="vs"> --&gt; </span><span class="sc">${</span>names[d<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span>]<span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>d<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopioi leikepöydälle" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>    { </span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>              vari <span class="op">=</span> <span class="st">"#DE232F"</span> </span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>              <span class="cf">return</span> vari </span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> ribbon)</span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">append</span>(<span class="st">"title"</span>)</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">text</span>(d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>names[d<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">index</span>]<span class="sc">}</span><span class="vs"> --&gt; </span><span class="sc">${</span>names[d<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">index</span>]<span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>d<span class="op">.</span><span class="at">source</span><span class="op">.</span><span class="at">value</span><span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>  svg<span class="op">.</span><span class="fu">call</span>(zoom)<span class="op">;</span></span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">reset</span>() {</span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>    <span class="co">// states.transition().style("fill", null);</span></span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">transition</span>()<span class="op">.</span><span class="fu">duration</span>(<span class="dv">750</span>)<span class="op">.</span><span class="fu">call</span>(</span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>      zoom<span class="op">.</span><span class="at">transform</span><span class="op">,</span></span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="at">zoomIdentity</span><span class="op">,</span></span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>      d3<span class="op">.</span><span class="fu">zoomTransform</span>(svg<span class="op">.</span><span class="fu">node</span>())<span class="op">.</span><span class="fu">invert</span>([chart_width <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> chart_height <span class="op">/</span> <span class="dv">2</span>])</span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">zoomed</span>(<span class="bu">event</span>) {</span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {transform} <span class="op">=</span> <span class="bu">event</span><span class="op">;</span></span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> transform)<span class="op">;</span></span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">1</span> <span class="op">/</span> transform<span class="op">.</span><span class="at">k</span>)<span class="op">;</span></span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>  }    </span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopioi leikepöydälle" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
 
@@ -1190,35 +1213,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-background-image="./images/5.png">Asuminen</h1>
 <section id="asuminen---asuntokunnat-talotyypeittäin" class="level2" data-background-image="./images/5.png">
 <h2 data-background-image="./images/5.png" class="anchored" data-anchor-id="asuminen---asuntokunnat-talotyypeittäin">Asuminen - Asuntokunnat talotyypeittäin</h2>
-<section id="analyysi" class="level3">
-<h3 class="anchored" data-anchor-id="analyysi">ANALYYSI</h3>
-<p>Tähän kirjoitetaan lyhyt analyysi kuvaajasta ja taulukosta….</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-8d985da8594657135233" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-8d985da8594657135233">{"x":{"visdat":{"8d2825518bf":["function () ","plotlyVisDat"]},"cur_data":"8d2825518bf","attrs":{"8d2825518bf":{"x":{},"y":{},"textposition":"auto","marker":{"color":"rgb(0,150,81)","line":{"color":"rgb(0,150,81)","width":6}},"name":"<b>Omakoti- ja paritalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"8d2825518bf.1":{"x":{},"y":{},"textposition":"auto","marker":{"color":"rgb(252,179,22,0.6)","line":{"color":"rgb(252,179,22)","width":6}},"name":"<b>Rivitalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"8d2825518bf.2":{"x":{},"y":{},"textposition":"auto","marker":{"color":"rgb(40,51,108)","line":{"color":"rgb(40,51,108)","width":6}},"name":"<b>Kerrostalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"8d2825518bf.3":{"x":{},"y":{},"textposition":"auto","marker":{"color":"rgb(230,73,37)","line":{"color":"rgb(230,73,37)","width":6}},"name":"<b>Muut rakennukset<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":50,"l":50,"t":50,"r":50,"pad":5},"barmode":"stack","autosize":true,"automargin":false,"legend":{"orientation":"v","x":100,"y":0.5,"font":{"size":22}},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","showlegend":true,"xaxis":{"domain":[0,1],"automargin":true,"title":{"text":"<b><\/b>","font":{"size":22},"standoff":25},"tickangle":-90,"tickprefix":"<b>","ticksuffix":"<\/b><br>","showgrid":false,"color":"#575757","tickfont":{"size":22},"type":"category","categoryorder":"array","categoryarray":["2024Q2*"]},"yaxis":{"domain":[0,1],"automargin":true,"griddash":"dot","gridwidth":1,"tickformat":"d","title":{"text":"<b>Lkm<\/b>","font":{"size":22},"standoff":25},"tickprefix":"<b>","ticksuffix":"<\/b><br>","color":"#575757","tickfont":{"size":22}},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"toImageButtonOptions":{"format":"png","filename":"Asuntokunnat","height":700,"width":800,"scale":1}},"data":[{"x":["2024Q2*"],"y":[7532],"textposition":"auto","marker":{"color":"rgb(0,150,81)","line":{"color":"rgb(0,150,81)","width":6}},"name":"<b>Omakoti- ja paritalot<\/b>","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2024Q2*"],"y":[2424],"textposition":"auto","marker":{"color":"rgb(252,179,22,0.6)","line":{"color":"rgb(252,179,22)","width":6}},"name":"<b>Rivitalot<\/b>","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2024Q2*"],"y":[5459],"textposition":"auto","marker":{"color":"rgb(40,51,108)","line":{"color":"rgb(40,51,108)","width":6}},"name":"<b>Kerrostalot<\/b>","type":"bar","error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2024Q2*"],"y":[142],"textposition":"auto","marker":{"color":"rgb(230,73,37)","line":{"color":"rgb(230,73,37)","width":6}},"name":"<b>Muut rakennukset<\/b>","type":"bar","error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-6172128b489d7318ab8b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-6172128b489d7318ab8b">{"x":{"visdat":{"5ba06a4c4743":["function () ","plotlyVisDat"]},"cur_data":"5ba06a4c4743","attrs":{"5ba06a4c4743":{"x":{},"y":{},"textposition":"auto","marker":{"color":"rgb(0,150,81)","line":{"color":"rgb(0,150,81)","width":6}},"name":"<b>Omakoti- ja paritalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"5ba06a4c4743.1":{"x":{},"y":{},"textposition":"auto","marker":{"color":"rgb(252,179,22,0.6)","line":{"color":"rgb(252,179,22)","width":6}},"name":"<b>Rivitalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"5ba06a4c4743.2":{"x":{},"y":{},"textposition":"auto","marker":{"color":"rgb(40,51,108)","line":{"color":"rgb(40,51,108)","width":6}},"name":"<b>Kerrostalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"5ba06a4c4743.3":{"x":{},"y":{},"textposition":"auto","marker":{"color":"rgb(230,73,37)","line":{"color":"rgb(230,73,37)","width":6}},"name":"<b>Muut rakennukset<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":50,"l":50,"t":50,"r":50,"pad":5},"barmode":"stack","autosize":true,"automargin":false,"legend":{"orientation":"v","x":100,"y":0.5,"font":{"size":22}},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","showlegend":true,"xaxis":{"domain":[0,1],"automargin":true,"title":{"text":"<b><\/b>","font":{"size":22},"standoff":25},"tickangle":-90,"tickprefix":"<b>","ticksuffix":"<\/b><br>","showgrid":false,"color":"#575757","tickfont":{"size":22},"type":"category","categoryorder":"array","categoryarray":["2024Q2*"]},"yaxis":{"domain":[0,1],"automargin":true,"griddash":"dot","gridwidth":1,"tickformat":"d","title":{"text":"<b>Lkm<\/b>","font":{"size":22},"standoff":25},"tickprefix":"<b>","ticksuffix":"<\/b><br>","color":"#575757","tickfont":{"size":22}},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"toImageButtonOptions":{"format":"png","filename":"Asuntokunnat","height":700,"width":800,"scale":1}},"data":[{"x":["2024Q2*"],"y":[7532],"textposition":"auto","marker":{"color":"rgb(0,150,81)","line":{"color":"rgb(0,150,81)","width":6}},"name":"<b>Omakoti- ja paritalot<\/b>","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2024Q2*"],"y":[2424],"textposition":"auto","marker":{"color":"rgb(252,179,22,0.6)","line":{"color":"rgb(252,179,22)","width":6}},"name":"<b>Rivitalot<\/b>","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2024Q2*"],"y":[5459],"textposition":"auto","marker":{"color":"rgb(40,51,108)","line":{"color":"rgb(40,51,108)","width":6}},"name":"<b>Kerrostalot<\/b>","type":"bar","error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2024Q2*"],"y":[142],"textposition":"auto","marker":{"color":"rgb(230,73,37)","line":{"color":"rgb(230,73,37)","width":6}},"name":"<b>Muut rakennukset<\/b>","type":"bar","error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Tähän tekstiä…</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="nyizgxtstq" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nyizgxtstq table {
+<div id="bsslityllm" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bsslityllm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nyizgxtstq thead, #nyizgxtstq tbody, #nyizgxtstq tfoot, #nyizgxtstq tr, #nyizgxtstq td, #nyizgxtstq th {
+#bsslityllm thead, #bsslityllm tbody, #bsslityllm tfoot, #bsslityllm tr, #bsslityllm td, #bsslityllm th {
   border-style: none;
 }
 
-#nyizgxtstq p {
+#bsslityllm p {
   margin: 0;
   padding: 0;
 }
 
-#nyizgxtstq .gt_table {
+#bsslityllm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1244,12 +1264,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_caption {
+#bsslityllm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nyizgxtstq .gt_title {
+#bsslityllm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1261,7 +1281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#nyizgxtstq .gt_subtitle {
+#bsslityllm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1273,7 +1293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#nyizgxtstq .gt_heading {
+#bsslityllm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1285,13 +1305,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_bottom_border {
+#bsslityllm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_col_headings {
+#bsslityllm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1306,7 +1326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_col_heading {
+#bsslityllm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1326,7 +1346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#nyizgxtstq .gt_column_spanner_outer {
+#bsslityllm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1338,15 +1358,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#nyizgxtstq .gt_column_spanner_outer:first-child {
+#bsslityllm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nyizgxtstq .gt_column_spanner_outer:last-child {
+#bsslityllm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nyizgxtstq .gt_column_spanner {
+#bsslityllm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1358,11 +1378,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#nyizgxtstq .gt_spanner_row {
+#bsslityllm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nyizgxtstq .gt_group_heading {
+#bsslityllm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1388,7 +1408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#nyizgxtstq .gt_empty_group_heading {
+#bsslityllm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1403,15 +1423,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#nyizgxtstq .gt_from_md > :first-child {
+#bsslityllm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nyizgxtstq .gt_from_md > :last-child {
+#bsslityllm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nyizgxtstq .gt_row {
+#bsslityllm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1430,7 +1450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#nyizgxtstq .gt_stub {
+#bsslityllm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1443,7 +1463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nyizgxtstq .gt_stub_row_group {
+#bsslityllm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1457,15 +1477,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#nyizgxtstq .gt_row_group_first td {
+#bsslityllm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nyizgxtstq .gt_row_group_first th {
+#bsslityllm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nyizgxtstq .gt_summary_row {
+#bsslityllm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1475,16 +1495,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nyizgxtstq .gt_first_summary_row {
+#bsslityllm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_first_summary_row.thick {
+#bsslityllm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nyizgxtstq .gt_last_summary_row {
+#bsslityllm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1494,7 +1514,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_grand_summary_row {
+#bsslityllm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1504,7 +1524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nyizgxtstq .gt_first_grand_summary_row {
+#bsslityllm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1514,7 +1534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_last_grand_summary_row_top {
+#bsslityllm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1524,11 +1544,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_striped {
+#bsslityllm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nyizgxtstq .gt_table_body {
+#bsslityllm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1537,7 +1557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_footnotes {
+#bsslityllm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1551,7 +1571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_footnote {
+#bsslityllm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1560,7 +1580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nyizgxtstq .gt_sourcenotes {
+#bsslityllm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1574,7 +1594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nyizgxtstq .gt_sourcenote {
+#bsslityllm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1582,113 +1602,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nyizgxtstq .gt_left {
+#bsslityllm .gt_left {
   text-align: left;
 }
 
-#nyizgxtstq .gt_center {
+#bsslityllm .gt_center {
   text-align: center;
 }
 
-#nyizgxtstq .gt_right {
+#bsslityllm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nyizgxtstq .gt_font_normal {
+#bsslityllm .gt_font_normal {
   font-weight: normal;
 }
 
-#nyizgxtstq .gt_font_bold {
+#bsslityllm .gt_font_bold {
   font-weight: bold;
 }
 
-#nyizgxtstq .gt_font_italic {
+#bsslityllm .gt_font_italic {
   font-style: italic;
 }
 
-#nyizgxtstq .gt_super {
+#bsslityllm .gt_super {
   font-size: 65%;
 }
 
-#nyizgxtstq .gt_footnote_marks {
+#bsslityllm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nyizgxtstq .gt_asterisk {
+#bsslityllm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nyizgxtstq .gt_indent_1 {
+#bsslityllm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nyizgxtstq .gt_indent_2 {
+#bsslityllm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nyizgxtstq .gt_indent_3 {
+#bsslityllm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nyizgxtstq .gt_indent_4 {
+#bsslityllm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nyizgxtstq .gt_indent_5 {
+#bsslityllm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nyizgxtstq .katex-display {
+#bsslityllm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nyizgxtstq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bsslityllm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<div id="nyizgxtstq" class="reactable html-widget" style="width:90%;height:auto;"></div>
-<script type="application/json" data-for="nyizgxtstq">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Vuosineljännes":["2023Q4","2024Q1*","2024Q2*"],"Yhteensä":[15427,15506,15557],"Omakoti- ja paritalot":[7508,7518,7532],"Rivitalot":[2418,2419,2424],"Kerrostalot":[5339,5425,5459],"Muut rakennukset":[162,144,142]},"columns":[{"id":"Vuosineljännes","name":"Vuosineljännes","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"Yhteensä","name":"Yhteensä","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Omakoti- ja paritalot","name":"Omakoti- ja paritalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Rivitalot","name":"Rivitalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Kerrostalot","name":"Kerrostalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Muut rakennukset","name":"Muut rakennukset","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"width":"90%","height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"nyizgxtstq","dataKey":"a9560714b3fcd8bc46d165a5326f77fe"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style"],"jsHooks":[]}</script>
+<div id="bsslityllm" class="reactable html-widget" style="width:90%;height:auto;"></div>
+<script type="application/json" data-for="bsslityllm">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Vuosineljännes":["2023Q4","2024Q1*","2024Q2*"],"Yhteensä":[15427,15506,15557],"Omakoti- ja paritalot":[7508,7518,7532],"Rivitalot":[2418,2419,2424],"Kerrostalot":[5339,5425,5459],"Muut rakennukset":[162,144,142]},"columns":[{"id":"Vuosineljännes","name":"Vuosineljännes","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"Yhteensä","name":"Yhteensä","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Omakoti- ja paritalot","name":"Omakoti- ja paritalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Rivitalot","name":"Rivitalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Kerrostalot","name":"Kerrostalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Muut rakennukset","name":"Muut rakennukset","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"width":"90%","height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"bsslityllm","dataKey":"a9560714b3fcd8bc46d165a5326f77fe"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="asuminen---asuntokunnat-talotyypin-ja-koon-mukaan" class="level2">
 <h2 class="anchored" data-anchor-id="asuminen---asuntokunnat-talotyypin-ja-koon-mukaan">Asuminen - Asuntokunnat talotyypin ja koon mukaan</h2>
-<section id="analyysi-1" class="level3">
-<h3 class="anchored" data-anchor-id="analyysi-1">ANALYYSI</h3>
-<p>Tähän kirjoitetaan lyhyt analyysi kuvaajasta ja taulukosta….</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-f0e51a44227682995254" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-f0e51a44227682995254">{"x":{"visdat":{"8d285a103593":["function () ","plotlyVisDat"]},"cur_data":"8d285a103593","attrs":{"8d285a103593":{"y":{},"x":{},"orientation":"h","textposition":"auto","marker":{"color":"rgb(0,150,81)","line":{"color":"rgb(0,150,81)","width":6}},"name":"<b>Omakoti- ja paritalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"8d285a103593.1":{"y":{},"x":{},"orientation":"h","textposition":"auto","marker":{"color":"rgb(252,179,22,0.6)","line":{"color":"rgb(252,179,22)","width":6}},"name":"<b>Rivitalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"8d285a103593.2":{"y":{},"x":{},"orientation":"h","textposition":"auto","marker":{"color":"rgb(40,51,108)","line":{"color":"rgb(40,51,108)","width":6}},"name":"<b>Kerrostalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"8d285a103593.3":{"y":{},"x":{},"orientation":"h","textposition":"auto","marker":{"color":"rgb(230,73,37)","line":{"color":"rgb(230,73,37)","width":6}},"name":"<b>Muut rakennukset<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":50,"l":50,"t":50,"r":50,"pad":5},"barmode":"stack","autosize":true,"automargin":false,"legend":{"orientation":"v","x":-3,"y":-0.5,"font":{"size":22}},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","showlegend":true,"xaxis":{"domain":[0,1],"automargin":true,"title":{"text":"<b><\/b>","font":{"size":22},"standoff":25},"tickangle":-90,"tickprefix":"<b>","ticksuffix":"<\/b><br>","showgrid":false,"color":"#575757","tickfont":{"size":22}},"yaxis":{"domain":[0,1],"automargin":true,"tickformat":"d","title":{"text":"<b>Lkm<\/b>","font":{"size":22},"standoff":25},"tickprefix":"<b>","ticksuffix":"<\/b><br>","color":"#575757","tickfont":{"size":22},"type":"category","categoryorder":"array","categoryarray":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"]},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"toImageButtonOptions":{"format":"png","filename":"Asuntokunnat_talotyypin_ja_koon_mukaan","height":700,"width":800,"scale":1}},"data":[{"y":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"x":[1436,2937,1176,1983],"orientation":"h","textposition":["auto","auto","auto","auto"],"marker":{"color":"rgb(0,150,81)","line":{"color":"rgb(0,150,81)","width":6}},"name":"<b>Omakoti- ja paritalot<\/b>","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"x":[853,857,323,391],"orientation":"h","textposition":["auto","auto","auto","auto"],"marker":{"color":"rgb(252,179,22,0.6)","line":{"color":"rgb(252,179,22)","width":6}},"name":"<b>Rivitalot<\/b>","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"x":[3624,1339,305,191],"orientation":"h","textposition":["auto","auto","auto","auto"],"marker":{"color":"rgb(40,51,108)","line":{"color":"rgb(40,51,108)","width":6}},"name":"<b>Kerrostalot<\/b>","type":"bar","error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"x":[74,31,15,22],"orientation":"h","textposition":["auto","auto","auto","auto"],"marker":{"color":"rgb(230,73,37)","line":{"color":"rgb(230,73,37)","width":6}},"name":"<b>Muut rakennukset<\/b>","type":"bar","error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-ec8d3bb5f79637db767a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ec8d3bb5f79637db767a">{"x":{"visdat":{"5ba03c77595":["function () ","plotlyVisDat"]},"cur_data":"5ba03c77595","attrs":{"5ba03c77595":{"y":{},"x":{},"orientation":"h","textposition":"auto","marker":{"color":"rgb(0,150,81)","line":{"color":"rgb(0,150,81)","width":6}},"name":"<b>Omakoti- ja paritalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"5ba03c77595.1":{"y":{},"x":{},"orientation":"h","textposition":"auto","marker":{"color":"rgb(252,179,22,0.6)","line":{"color":"rgb(252,179,22)","width":6}},"name":"<b>Rivitalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"5ba03c77595.2":{"y":{},"x":{},"orientation":"h","textposition":"auto","marker":{"color":"rgb(40,51,108)","line":{"color":"rgb(40,51,108)","width":6}},"name":"<b>Kerrostalot<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true},"5ba03c77595.3":{"y":{},"x":{},"orientation":"h","textposition":"auto","marker":{"color":"rgb(230,73,37)","line":{"color":"rgb(230,73,37)","width":6}},"name":"<b>Muut rakennukset<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":50,"l":50,"t":50,"r":50,"pad":5},"barmode":"stack","autosize":true,"automargin":false,"legend":{"orientation":"v","x":-3,"y":-0.5,"font":{"size":22}},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","showlegend":true,"xaxis":{"domain":[0,1],"automargin":true,"title":{"text":"<b><\/b>","font":{"size":22},"standoff":25},"tickangle":-90,"tickprefix":"<b>","ticksuffix":"<\/b><br>","showgrid":false,"color":"#575757","tickfont":{"size":22}},"yaxis":{"domain":[0,1],"automargin":true,"tickformat":"d","title":{"text":"<b>Lkm<\/b>","font":{"size":22},"standoff":25},"tickprefix":"<b>","ticksuffix":"<\/b><br>","color":"#575757","tickfont":{"size":22},"type":"category","categoryorder":"array","categoryarray":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"]},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"toImageButtonOptions":{"format":"png","filename":"Asuntokunnat_talotyypin_ja_koon_mukaan","height":700,"width":800,"scale":1}},"data":[{"y":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"x":[1436,2937,1176,1983],"orientation":"h","textposition":["auto","auto","auto","auto"],"marker":{"color":"rgb(0,150,81)","line":{"color":"rgb(0,150,81)","width":6}},"name":"<b>Omakoti- ja paritalot<\/b>","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"x":[853,857,323,391],"orientation":"h","textposition":["auto","auto","auto","auto"],"marker":{"color":"rgb(252,179,22,0.6)","line":{"color":"rgb(252,179,22)","width":6}},"name":"<b>Rivitalot<\/b>","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"x":[3624,1339,305,191],"orientation":"h","textposition":["auto","auto","auto","auto"],"marker":{"color":"rgb(40,51,108)","line":{"color":"rgb(40,51,108)","width":6}},"name":"<b>Kerrostalot<\/b>","type":"bar","error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"x":[74,31,15,22],"orientation":"h","textposition":["auto","auto","auto","auto"],"marker":{"color":"rgb(230,73,37)","line":{"color":"rgb(230,73,37)","width":6}},"name":"<b>Muut rakennukset<\/b>","type":"bar","error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>Tähän tekstiä</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fecwczsulg" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fecwczsulg table {
+<div id="nvxwxwbllz" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nvxwxwbllz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fecwczsulg thead, #fecwczsulg tbody, #fecwczsulg tfoot, #fecwczsulg tr, #fecwczsulg td, #fecwczsulg th {
+#nvxwxwbllz thead, #nvxwxwbllz tbody, #nvxwxwbllz tfoot, #nvxwxwbllz tr, #nvxwxwbllz td, #nvxwxwbllz th {
   border-style: none;
 }
 
-#fecwczsulg p {
+#nvxwxwbllz p {
   margin: 0;
   padding: 0;
 }
 
-#fecwczsulg .gt_table {
+#nvxwxwbllz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1714,12 +1729,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_caption {
+#nvxwxwbllz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fecwczsulg .gt_title {
+#nvxwxwbllz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1731,7 +1746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#fecwczsulg .gt_subtitle {
+#nvxwxwbllz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1743,7 +1758,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#fecwczsulg .gt_heading {
+#nvxwxwbllz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1755,13 +1770,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_bottom_border {
+#nvxwxwbllz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_col_headings {
+#nvxwxwbllz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1776,7 +1791,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_col_heading {
+#nvxwxwbllz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1796,7 +1811,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fecwczsulg .gt_column_spanner_outer {
+#nvxwxwbllz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1808,15 +1823,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#fecwczsulg .gt_column_spanner_outer:first-child {
+#nvxwxwbllz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fecwczsulg .gt_column_spanner_outer:last-child {
+#nvxwxwbllz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fecwczsulg .gt_column_spanner {
+#nvxwxwbllz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1828,11 +1843,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#fecwczsulg .gt_spanner_row {
+#nvxwxwbllz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fecwczsulg .gt_group_heading {
+#nvxwxwbllz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1858,7 +1873,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#fecwczsulg .gt_empty_group_heading {
+#nvxwxwbllz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1873,15 +1888,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#fecwczsulg .gt_from_md > :first-child {
+#nvxwxwbllz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fecwczsulg .gt_from_md > :last-child {
+#nvxwxwbllz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fecwczsulg .gt_row {
+#nvxwxwbllz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1900,7 +1915,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fecwczsulg .gt_stub {
+#nvxwxwbllz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1913,7 +1928,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fecwczsulg .gt_stub_row_group {
+#nvxwxwbllz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1927,15 +1942,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#fecwczsulg .gt_row_group_first td {
+#nvxwxwbllz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fecwczsulg .gt_row_group_first th {
+#nvxwxwbllz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fecwczsulg .gt_summary_row {
+#nvxwxwbllz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1945,16 +1960,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fecwczsulg .gt_first_summary_row {
+#nvxwxwbllz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_first_summary_row.thick {
+#nvxwxwbllz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fecwczsulg .gt_last_summary_row {
+#nvxwxwbllz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1964,7 +1979,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_grand_summary_row {
+#nvxwxwbllz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1974,7 +1989,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fecwczsulg .gt_first_grand_summary_row {
+#nvxwxwbllz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1984,7 +1999,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_last_grand_summary_row_top {
+#nvxwxwbllz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1994,11 +2009,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_striped {
+#nvxwxwbllz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fecwczsulg .gt_table_body {
+#nvxwxwbllz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2007,7 +2022,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_footnotes {
+#nvxwxwbllz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2021,7 +2036,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_footnote {
+#nvxwxwbllz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2030,7 +2045,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fecwczsulg .gt_sourcenotes {
+#nvxwxwbllz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2044,7 +2059,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fecwczsulg .gt_sourcenote {
+#nvxwxwbllz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2052,89 +2067,88 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fecwczsulg .gt_left {
+#nvxwxwbllz .gt_left {
   text-align: left;
 }
 
-#fecwczsulg .gt_center {
+#nvxwxwbllz .gt_center {
   text-align: center;
 }
 
-#fecwczsulg .gt_right {
+#nvxwxwbllz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fecwczsulg .gt_font_normal {
+#nvxwxwbllz .gt_font_normal {
   font-weight: normal;
 }
 
-#fecwczsulg .gt_font_bold {
+#nvxwxwbllz .gt_font_bold {
   font-weight: bold;
 }
 
-#fecwczsulg .gt_font_italic {
+#nvxwxwbllz .gt_font_italic {
   font-style: italic;
 }
 
-#fecwczsulg .gt_super {
+#nvxwxwbllz .gt_super {
   font-size: 65%;
 }
 
-#fecwczsulg .gt_footnote_marks {
+#nvxwxwbllz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fecwczsulg .gt_asterisk {
+#nvxwxwbllz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fecwczsulg .gt_indent_1 {
+#nvxwxwbllz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fecwczsulg .gt_indent_2 {
+#nvxwxwbllz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fecwczsulg .gt_indent_3 {
+#nvxwxwbllz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fecwczsulg .gt_indent_4 {
+#nvxwxwbllz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fecwczsulg .gt_indent_5 {
+#nvxwxwbllz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fecwczsulg .katex-display {
+#nvxwxwbllz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fecwczsulg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nvxwxwbllz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
-<div id="fecwczsulg" class="reactable html-widget" style="width:90%;height:auto;"></div>
-<script type="application/json" data-for="fecwczsulg">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Vuosineljännes":["2023Q4","2023Q4","2023Q4","2023Q4","2024Q1*","2024Q1*","2024Q1*","2024Q1*","2024Q2*","2024Q2*","2024Q2*","2024Q2*"],"Asuntokunnan koko":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän","1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän","1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"Yhteensä":[5897,5138,1849,2543,5954,5148,1836,2568,5987,5164,1819,2587],"Omakoti- ja paritalot":[1421,2942,1198,1947,1423,2939,1189,1967,1436,2937,1176,1983],"Rivitalot":[845,844,345,384,858,840,331,390,853,857,323,391],"Kerrostalot":[3540,1317,293,189,3595,1337,302,191,3624,1339,305,191],"Muut rakennukset":[91,35,13,23,78,32,14,20,74,31,15,22]},"columns":[{"id":"Vuosineljännes","name":"Vuosineljännes","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"Asuntokunnan koko","name":"Asuntokunnan koko","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"Yhteensä","name":"Yhteensä","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Omakoti- ja paritalot","name":"Omakoti- ja paritalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Rivitalot","name":"Rivitalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Kerrostalot","name":"Kerrostalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Muut rakennukset","name":"Muut rakennukset","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"width":"90%","height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"fecwczsulg","dataKey":"b61fbcf93de6d89db1e103cda3c0039c"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style"],"jsHooks":[]}</script>
+<div id="nvxwxwbllz" class="reactable html-widget" style="width:90%;height:auto;"></div>
+<script type="application/json" data-for="nvxwxwbllz">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Vuosineljännes":["2023Q4","2023Q4","2023Q4","2023Q4","2024Q1*","2024Q1*","2024Q1*","2024Q1*","2024Q2*","2024Q2*","2024Q2*","2024Q2*"],"Asuntokunnan koko":["1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän","1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän","1 henkilö","2 henkilöä","3 henkilöä","4 henkilöä tai enemmän"],"Yhteensä":[5897,5138,1849,2543,5954,5148,1836,2568,5987,5164,1819,2587],"Omakoti- ja paritalot":[1421,2942,1198,1947,1423,2939,1189,1967,1436,2937,1176,1983],"Rivitalot":[845,844,345,384,858,840,331,390,853,857,323,391],"Kerrostalot":[3540,1317,293,189,3595,1337,302,191,3624,1339,305,191],"Muut rakennukset":[91,35,13,23,78,32,14,20,74,31,15,22]},"columns":[{"id":"Vuosineljännes","name":"Vuosineljännes","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"Asuntokunnan koko","name":"Asuntokunnan koko","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"Yhteensä","name":"Yhteensä","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Omakoti- ja paritalot","name":"Omakoti- ja paritalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Rivitalot","name":"Rivitalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Kerrostalot","name":"Kerrostalot","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Muut rakennukset","name":"Muut rakennukset","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"width":"90%","height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"nvxwxwbllz","dataKey":"b61fbcf93de6d89db1e103cda3c0039c"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style","tag.attribs.columns.6.style"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 
 
-</section>
 </section>
 </section>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuXG5kMyA9IHJlcXVpcmUoXCJkM0A3XCIpXG4vL2ltcG9ydCB7TGVnZW5kfSBmcm9tIFwiQGQzL2NvbG9yLWxlZ2VuZFwiXG5cbmZvbGRlckt1bm5hdDI0VG9wb0pTT04gPSBcIi4vbWFwcy9LdW5uYXQyMDI0VG9wby5qc29uXCJcbmt1bm5hdDIwMjR0b3BvID0gRmlsZUF0dGFjaG1lbnREeW5hbWljKGZvbGRlckt1bm5hdDI0VG9wb0pTT04pLmpzb24oKVxubWFwVG9wb0pTT04gPSB0b3BvanNvbi5mZWF0dXJlKGt1bm5hdDIwMjR0b3BvLCBrdW5uYXQyMDI0dG9wby5vYmplY3RzLkt1bm5hdDIwMjRfZ2VvKS5mZWF0dXJlc1xuXG5cbmZvbGRlck1hYWt1bm5hdDI0VG9wb0pTT04gPSBcIi4vbWFwcy9NYWFrdW5uYXQyMDI0VG9wby5qc29uXCJcbm1hYWt1bm5hdF8yMDI0X3RvcG8gPSAgRmlsZUF0dGFjaG1lbnREeW5hbWljKGZvbGRlck1hYWt1bm5hdDI0VG9wb0pTT04pLmpzb24oKVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblxuLy8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBGVU5LVElPVCBBTEtBQVxuXG4vL1RlaGTDpMOkbiB1dXNpIGZ1bmt0aW8sIGpvc3NhIHZvaWRhYW4gc3nDtnR0w6TDpCBtdXV0dHVqYVxuRmlsZUF0dGFjaG1lbnREeW5hbWljID0gZnVuY3Rpb24oZmlsZW5hbWUpIHtcbiAgcmV0dXJuIG5ldyBGdW5jdGlvbihcIkZpbGVBdHRhY2htZW50XCIsIGByZXR1cm4gRmlsZUF0dGFjaG1lbnQoXCIke2ZpbGVuYW1lfVwiKWApKEZpbGVBdHRhY2htZW50KVxufVxuXG4vLyBWYWloZGV0YWFuIHRla3N0aW4gdsOkcmlcbmNvbG9yID0gZnVuY3Rpb24odmFyaSkge1xuICBpZih2YXJpID4gMCl7XG4gICAgICByZXR1cm4gXCJncmVlblwiXG4gICAgfWVsc2V7XG4gICAgICByZXR1cm4gXCJyZWRcIlxuICAgIH1cbn1cbi8vIFB5w7ZyaXN0eXNcbnB5b3Jpc3R5cyA9IGZ1bmN0aW9uKG4sIHBsYWNlcykge1xuICBpZiAoIXBsYWNlcykgcmV0dXJuIE1hdGgucm91bmQobik7XG4gIGNvbnN0IGQgPSAxMCAqKiBwbGFjZXM7XG4gIHJldHVybiBNYXRoLnJvdW5kKG4gKiBkKSAvIGQ7XG59XG4vL0V1cm9tZXJraW50w6RcbmV1cm90ID0gZnVuY3Rpb24obnVtYmVyKSB7XG4gIHJldHVybiBudW1iZXIudG9Mb2NhbGVTdHJpbmcoJ2ZpLUZJJywgeyBzdHlsZTogJ2N1cnJlbmN5JywgY3VycmVuY3k6ICdFVVInLG1pbmltdW1GcmFjdGlvbkRpZ2l0czogMCB9KTtcbn1cbi8vIEV1cm9tdXV0b2tzZW4gbGFza2VtaW5lbiBrZXJ0b2ltZWxsYVxubXV1dG9za2Vycm9pbiA9IGZ1bmN0aW9uKHgsIHkpIHtcbiAgcmV0dXJuICgxK3gvMTAwKSp5O1xufVxuLy8gTXV1dG9zcHJvc2VudHRpXG5tdXV0b3Nwcm9zZW50dGkgPSBmdW5jdGlvbih4LCB5KSB7XG4gIHJldHVybiBweW9yaXN0eXMoKCh4LXkpL3kpKjEwMCwxKTtcbn1cbi8vIFR1aGF0amFrYWphXG50dWhhdGpha2FqYSA9IGZ1bmN0aW9uKHgpIHtcbiAgcmV0dXJuIHgvMTAwMDtcbn1cbi8vIEV1cm9tdXV0b2tzZW4gbGFza2VtaW5lbiBrZXJ0b2ltZWxsYVxucGFsa2tha2Vycm9pbiA9IGZ1bmN0aW9uKHgsIHkpIHtcbiAgcmV0dXJuIDEwMCooKDEreC8xMDApKigxK3kvMTAwKS0xKTtcbn1cbi8vIEpha28tb3N1dWRlbiBhc3VrYXNrZXJyb2luXG5hc3VrYXNrZXJyb2luID0gZnVuY3Rpb24oeCwgeSkge1xuICByZXR1cm4gKHgveSk7XG59XG4vLyBKYWtvLW9zdXVkZW4gdmVyb3Byb3NlbnR0aWtlcnJvaW4gbWlpbnVzMS9taWludXMzIHZ1b3R0YSBtaWludXMgMSB2dW9kZW4ga2Vycm9pblxudmVyb3Byb3NlbnR0aWtlcnJvaW4gPSBmdW5jdGlvbih4LCB5KSB7XG4gIHJldHVybiAoeC95KTtcbn1cbi8vIEt1bm5hbiBtdW9rLiBrdW5uYWxsaXN2ZXJvLCBhbGt1dnVvc2kgamEgbG9wcHV2dW9zaSBcbmt1bm5hbGxpc3Zlcm9fbXVva2thdXMgPSBmdW5jdGlvbihrdW5uYWxsaXN2ZXJvLGFzdWthc2tlcnJvaW4sdmVyb3Byb3NlbnR0aSkge1xuICByZXR1cm4ga3VubmFsbGlzdmVybyphc3VrYXNrZXJyb2luKnZlcm9wcm9zZW50dGk7XG59XG5cbi8vVGVrc3RpbXV1dG9rc2V0XG5mbl9ub3VzdV9sYXNrdV90eHQgPSBmdW5jdGlvbihhcnZvKXtcbiAgaWYoYXJ2byA+IDApIHtcbiAgcmV0dXJuIFwia2FzdmFudXRcIiBcbiAgfVxuICBlbHNlIHsgXG4gIHJldHVybiBcImxhc2tlbnV0XCI7XG4gIH1cbn1cblxuLy9UQVJWSVRBQU4gS0FSVE9JU1NBXG5zZXJpYWxpemUgPSB7XG4gIGNvbnN0IHhtbG5zID0gXCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3htbG5zL1wiO1xuICBjb25zdCB4bGlua25zID0gXCJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rXCI7XG4gIGNvbnN0IHN2Z25zID0gXCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiO1xuICByZXR1cm4gZnVuY3Rpb24gc2VyaWFsaXplKHN2Zykge1xuICAgIHN2ZyA9IHN2Zy5jbG9uZU5vZGUodHJ1ZSk7XG4gICAgY29uc3QgZnJhZ21lbnQgPSB3aW5kb3cubG9jYXRpb24uaHJlZiArIFwiI1wiO1xuICAgIGNvbnN0IHdhbGtlciA9IGRvY3VtZW50LmNyZWF0ZVRyZWVXYWxrZXIoc3ZnLCBOb2RlRmlsdGVyLlNIT1dfRUxFTUVOVCk7XG4gICAgd2hpbGUgKHdhbGtlci5uZXh0Tm9kZSgpKSB7XG4gICAgICBmb3IgKGNvbnN0IGF0dHIgb2Ygd2Fsa2VyLmN1cnJlbnROb2RlLmF0dHJpYnV0ZXMpIHtcbiAgICAgICAgaWYgKGF0dHIudmFsdWUuaW5jbHVkZXMoZnJhZ21lbnQpKSB7XG4gICAgICAgICAgYXR0ci52YWx1ZSA9IGF0dHIudmFsdWUucmVwbGFjZShmcmFnbWVudCwgXCIjXCIpO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICAgIHN2Zy5zZXRBdHRyaWJ1dGVOUyh4bWxucywgXCJ4bWxuc1wiLCBzdmducyk7XG4gICAgc3ZnLnNldEF0dHJpYnV0ZU5TKHhtbG5zLCBcInhtbG5zOnhsaW5rXCIsIHhsaW5rbnMpO1xuICAgIGNvbnN0IHNlcmlhbGl6ZXIgPSBuZXcgd2luZG93LlhNTFNlcmlhbGl6ZXI7XG4gICAgY29uc3Qgc3RyaW5nID0gc2VyaWFsaXplci5zZXJpYWxpemVUb1N0cmluZyhzdmcpO1xuICAgIHJldHVybiBuZXcgQmxvYihbc3RyaW5nXSwge3R5cGU6IFwiaW1hZ2Uvc3ZnK3htbFwifSk7XG4gIH07XG59XG5cblxuZnVuY3Rpb24gdG9TVkcoY2hhcnQpIHtcbiAgaWYgKGNoYXJ0Lm5vZGVOYW1lICE9PSBcIkZJR1VSRVwiKSB7XG4gICAgcmV0dXJuIGNoYXJ0O1xuICB9XG5cbiAgLy8gdGhlIGNoYXJ0IG5lZWRzIHRvIGJlIGluIHRoZSBib2R5IGlmIHdlIHdhbnQgdG8gcmVhZCB2YWx1ZXMsIHBvc2l0aW9ucywgc2l6ZXPigKZcbiAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChjaGFydCk7XG4gIGNvbnN0IFt4MCwgeTAsIHdpZHRoLCBoZWlnaHRdID0gZ2V0Qm91bmRzKFtjaGFydF0pO1xuXG4gIGNvbnN0IG5vZGVzID0gW107XG5cbiAgZm9yIChjb25zdCBub2RlIG9mIGQzXG4gICAgLnNlbGVjdChjaGFydClcbiAgICAuc2VsZWN0Q2hpbGRyZW4oXCJoMSxoMixoMyxkaXYsZmlnY2FwdGlvbixzdmdcIikpIHtcbiAgICBzd2l0Y2ggKG5vZGUubm9kZU5hbWUudG9Mb3dlckNhc2UoKSkge1xuICAgICAgY2FzZSBcImRpdlwiOlxuICAgICAgICB7XG4gICAgICAgICAgY29uc3QgY2hpbGRyZW4gPSBkMy5zZWxlY3Qobm9kZSkuc2VsZWN0Q2hpbGRyZW4oXCJkaXYsc3BhblwiKTtcbiAgICAgICAgICBjb25zdCBoZWlnaHQgPSBnZXRCb3VuZHMoW25vZGUsIC4uLmNoaWxkcmVuXSlbM10gKyAyO1xuICAgICAgICAgIGNvbnN0IHN2ZyA9IGQzXG4gICAgICAgICAgICAuc2VsZWN0KGNoYXJ0KVxuICAgICAgICAgICAgLmFwcGVuZChcInN2Z1wiKVxuICAgICAgICAgICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aClcbiAgICAgICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodCk7XG4gICAgICAgICAgbm9kZXMucHVzaChzdmcubm9kZSgpKTtcblxuICAgICAgICAgIGNvbnN0IHN3YXRjaGVzID0gc3ZnXG4gICAgICAgICAgICAuc2VsZWN0QWxsKClcbiAgICAgICAgICAgIC5kYXRhKFxuICAgICAgICAgICAgICBBcnJheS5mcm9tKGNoaWxkcmVuLCAoZCkgPT4ge1xuICAgICAgICAgICAgICAgIGNvbnN0IHN2ZyA9IGQzLnNlbGVjdChkKS5zZWxlY3QoXCJzdmdcIikubm9kZSgpO1xuICAgICAgICAgICAgICAgIGNvbnN0IGJib3ggPSBzdmcuZ2V0QkJveCgpO1xuICAgICAgICAgICAgICAgIHJldHVybiB7XG4gICAgICAgICAgICAgICAgICBzdHlsZTogd2luZG93LmdldENvbXB1dGVkU3R5bGUoZCksXG4gICAgICAgICAgICAgICAgICBzdmcsXG4gICAgICAgICAgICAgICAgICB3aWR0aDogYmJveC53aWR0aCxcbiAgICAgICAgICAgICAgICAgIGhlaWdodDogYmJveC5oZWlnaHQsXG4gICAgICAgICAgICAgICAgICB0ZXh0OiBkLnRleHRDb250ZW50LFxuICAgICAgICAgICAgICAgICAgYm91bmRzOiBnZXRCb3VuZHMoW2RdKVxuICAgICAgICAgICAgICAgIH07XG4gICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICApXG4gICAgICAgICAgICAuam9pbihcImdcIilcbiAgICAgICAgICAgIC5hdHRyKFxuICAgICAgICAgICAgICBcInRyYW5zZm9ybVwiLFxuICAgICAgICAgICAgICAoZCkgPT4gYHRyYW5zbGF0ZSgke2QuYm91bmRzWzBdIC0geDB9LCR7MTAgKyBkLmJvdW5kc1sxXSAtIHkwfSlgXG4gICAgICAgICAgICApO1xuXG4gICAgICAgICAgc3dhdGNoZXNcbiAgICAgICAgICAgIC5hcHBlbmQoKGQpID0+IGQuc3ZnKSAvLyBcInJlY3RcIilcbiAgICAgICAgICAgIC5hdHRyKFwid2lkdGhcIiwgKGQpID0+IGQud2lkdGgpXG4gICAgICAgICAgICAuYXR0cihcImhlaWdodFwiLCAoZCkgPT4gZC5oZWlnaHQpXG4gICAgICAgICAgICAuYXR0cihcInlcIiwgKGQpID0+IGAkey1wYXJzZUZsb2F0KGQuaGVpZ2h0KSAvIDJ9cHhgKTtcbiAgICAgICAgICBzd2F0Y2hlc1xuICAgICAgICAgICAgLmFwcGVuZChcInRleHRcIilcbiAgICAgICAgICAgIC50ZXh0KChkKSA9PiBkLnRleHQpXG4gICAgICAgICAgICAuYXR0cihcInhcIiwgKGQpID0+IGQud2lkdGgpXG4gICAgICAgICAgICAuYXR0cihcImR4XCIsIDUpXG4gICAgICAgICAgICAuYXR0cihcImR5XCIsIFwiMC4zOGVtXCIpXG4gICAgICAgICAgICAuYXR0cihcImZvbnQtZmFtaWx5XCIsIChkKSA9PiBkLnN0eWxlLmZvbnRGYW1pbHkpXG4gICAgICAgICAgICAuYXR0cihcImZvbnQtc2l6ZVwiLCAoZCkgPT4gZC5zdHlsZS5mb250U2l6ZSlcbiAgICAgICAgICAgIC5hdHRyKFwiZmlsbFwiLCAoZCkgPT4gZC5zdHlsZS5jb2xvcik7XG4gICAgICAgIH1cbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIFwiZmlnY2FwdGlvblwiOlxuICAgICAgY2FzZSBcImgxXCI6XG4gICAgICBjYXNlIFwiaDJcIjpcbiAgICAgIGNhc2UgXCJoM1wiOlxuICAgICAgICB7XG4gICAgICAgICAgY29uc3Qgc3ZnID0gZDNcbiAgICAgICAgICAgIC5zZWxlY3QoY2hhcnQpXG4gICAgICAgICAgICAuYXBwZW5kKFwic3ZnXCIpXG4gICAgICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoKVxuICAgICAgICAgICAgLmF0dHIoXCJvdmVyZmxvd1wiLCBcInZpc2libGVcIik7XG4gICAgICAgICAgbm9kZXMucHVzaChzdmcubm9kZSgpKTtcblxuICAgICAgICAgIGNvbnN0IGNoaWxkcmVuID0gZDMuc2VsZWN0KG5vZGUpLnNlbGVjdENoaWxkcmVuKCk7XG5cbiAgICAgICAgICBsZXQgaCA9IDA7XG4gICAgICAgICAgZm9yIChjb25zdCBkIG9mIGNoaWxkcmVuLnNpemUoKSA+IDBcbiAgICAgICAgICAgID8gY2hpbGRyZW4uc2VsZWN0Q2hpbGRyZW4oKVxuICAgICAgICAgICAgOiBbbm9kZV0pIHtcbiAgICAgICAgICAgIGNvbnN0IHN0eWxlID0gd2luZG93LmdldENvbXB1dGVkU3R5bGUoZCk7XG4gICAgICAgICAgICBjb25zdCB0ID0gc3ZnXG4gICAgICAgICAgICAgIC5hcHBlbmQoXCJnXCIpXG4gICAgICAgICAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2h9KWApXG4gICAgICAgICAgICAgIC5hcHBlbmQoKCkgPT5cbiAgICAgICAgICAgICAgICBkM1xuICAgICAgICAgICAgICAgICAgLnNlbGVjdChcbiAgICAgICAgICAgICAgICAgICAgUGxvdC50ZXh0KFtkLnRleHRDb250ZW50XSwge1xuICAgICAgICAgICAgICAgICAgICAgIHRleHQ6IChkKSA9PiBkLFxuICAgICAgICAgICAgICAgICAgICAgIGxpbmVXaWR0aDpcbiAgICAgICAgICAgICAgICAgICAgICAgICgxLjA2ICogcGFyc2VGbG9hdChzdHlsZS53aWR0aCkpIC9cbiAgICAgICAgICAgICAgICAgICAgICAgIHBhcnNlRmxvYXQoc3R5bGUuZm9udFNpemUpLFxuICAgICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEuMixcbiAgICAgICAgICAgICAgICAgICAgICBmcmFtZUFuY2hvcjogXCJ0b3AtbGVmdFwiXG4gICAgICAgICAgICAgICAgICAgIH0pLnBsb3QoKVxuICAgICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgICAgICAgLnNlbGVjdChcInRleHRcIilcbiAgICAgICAgICAgICAgICAgIC5hdHRyKFwiZm9udC1mYW1pbHlcIiwgc3R5bGUuZm9udEZhbWlseSlcbiAgICAgICAgICAgICAgICAgIC5hdHRyKFwiZm9udC1zaXplXCIsIDEuMDggKiBwYXJzZUZsb2F0KHN0eWxlLmZvbnRTaXplKSlcbiAgICAgICAgICAgICAgICAgIC5hdHRyKFwiZm9udC13ZWlnaHRcIiwgc3R5bGUuZm9udFdlaWdodClcbiAgICAgICAgICAgICAgICAgIC5hdHRyKFwiZmlsbFwiLCBzdHlsZS5jb2xvcilcbiAgICAgICAgICAgICAgICAgIC5ub2RlKClcbiAgICAgICAgICAgICAgKTtcbiAgICAgICAgICAgIGggKz0gZ2V0Qm91bmRzKFt0Lm5vZGUoKV0pWzNdICsgNDtcbiAgICAgICAgICB9XG4gICAgICAgICAgc3ZnLmF0dHIoXCJoZWlnaHRcIiwgaCk7XG4gICAgICAgIH1cbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIFwic3ZnXCI6XG4gICAgICAgIGQzLnNlbGVjdChjaGFydCkuYXBwZW5kKCgpID0+IG5vZGUpO1xuICAgICAgICBub2Rlcy5wdXNoKG5vZGUpO1xuICAgICAgICBicmVhaztcbiAgICB9XG4gIH1cblxuICByZXR1cm4gc2VyaWFsaXplQWxsKG5vZGVzKVxuICAgIC50aGVuKChibG9iKSA9PiBibG9iLnRleHQoKSlcbiAgICAudGhlbigoYykgPT4ge1xuICAgICAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChjaGFydCk7XG4gICAgICByZXR1cm4gT2JqZWN0LmFzc2lnbihzdmdgJHtjfWAsIGNoYXJ0KTtcbiAgICB9KTtcbn1cblxuXG4vLyBHaXZlbiBhbiBhcnJheSBvZiBTVkcgZWxlbWVudHMsIGNvbXBvc2l0ZXMgdGhlbSBpbnRvIGEgc2luZ2xlIFNWRyBlbGVtZW50LFxuLy8gYW5kIHRoZW4gc2VyaWFsaXplcyB0aGUgcmVzdWx0IHRvIGEgYmxvYi5cbmFzeW5jIGZ1bmN0aW9uIHNlcmlhbGl6ZUFsbChlbGVtZW50cywge3BhZGRpbmcgPSAxMH0gPSB7fSkge1xuICBjb25zdCBmcmFnbWVudCA9IGxvY2F0aW9uLmhyZWYgKyBcIiNcIjtcbiAgbGV0IHJvb3Q7XG4gIGlmIChlbGVtZW50cy5sZW5ndGggPT09IDEpIHtcbiAgICByb290ID0gZWxlbWVudHNbMF0uY2xvbmVOb2RlKHRydWUpOyAvLyBvcHRpbWl6ZSBjb21tb24gY2FzZVxuICB9IGVsc2Uge1xuICAgIGNvbnN0IFtveCwgb3ksIGR4LCBkeV0gPSBnZXRCb3VuZHMoZWxlbWVudHMpO1xuICAgIHJvb3QgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoc3ZnbnMsIFwic3ZnXCIpO1xuICAgIHJvb3Quc2V0QXR0cmlidXRlKFwid2lkdGhcIiwgZHggKyAyICogcGFkZGluZyk7XG4gICAgcm9vdC5zZXRBdHRyaWJ1dGUoXCJoZWlnaHRcIiwgZHkgKyAyICogcGFkZGluZyk7XG4gICAgcm9vdC5zZXRBdHRyaWJ1dGUoXCJ2aWV3Qm94XCIsIFstcGFkZGluZywgLXBhZGRpbmcsIGR4ICsgMiAqIHBhZGRpbmcsIGR5ICsgMiAqIHBhZGRpbmddKTtcbiAgICBmb3IgKGNvbnN0IGVsZW1lbnQgb2YgZWxlbWVudHMpIHtcbiAgICAgIGNvbnN0IHN2ZyA9IHJvb3QuYXBwZW5kQ2hpbGQoZWxlbWVudC5jbG9uZU5vZGUodHJ1ZSkpO1xuICAgICAgY29uc3QgeyB4LCB5LCB3aWR0aCwgaGVpZ2h0IH0gPSBlbGVtZW50LmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpO1xuICAgICAgc3ZnLnNldEF0dHJpYnV0ZShcInhcIiwgeCAtIG94KTtcbiAgICAgIHN2Zy5zZXRBdHRyaWJ1dGUoXCJ5XCIsIHkgLSBveSk7XG4gICAgICBzdmcuc2V0QXR0cmlidXRlKFwid2lkdGhcIiwgd2lkdGgpO1xuICAgICAgc3ZnLnNldEF0dHJpYnV0ZShcImhlaWdodFwiLCBoZWlnaHQpO1xuICAgIH1cbiAgfVxuICBjb25zdCB3YWxrZXIgPSBkb2N1bWVudC5jcmVhdGVUcmVlV2Fsa2VyKHJvb3QsIE5vZGVGaWx0ZXIuU0hPV19FTEVNRU5UKTtcbiAgd2hpbGUgKHdhbGtlci5uZXh0Tm9kZSgpKSB7XG4gICAgY29uc3Qgbm9kZSA9IHdhbGtlci5jdXJyZW50Tm9kZTtcbiAgICBmb3IgKGNvbnN0IGF0dHIgb2Ygbm9kZS5hdHRyaWJ1dGVzKSB7XG4gICAgICBpZiAoYXR0ci52YWx1ZS5pbmNsdWRlcyhmcmFnbWVudCkpIHtcbiAgICAgICAgYXR0ci52YWx1ZSA9IGF0dHIudmFsdWUucmVwbGFjZShmcmFnbWVudCwgXCIjXCIpO1xuICAgICAgfVxuICAgIH1cbiAgfVxuICByb290LnNldEF0dHJpYnV0ZU5TKHhtbG5zLCBcInhtbG5zXCIsIHN2Z25zKTtcbiAgcm9vdC5zZXRBdHRyaWJ1dGVOUyh4bWxucywgXCJ4bWxuczp4bGlua1wiLCB4bGlua25zKTtcbiAgY29uc3Qgc2VyaWFsaXplciA9IG5ldyBYTUxTZXJpYWxpemVyKCk7XG4gIGNvbnN0IHN0cmluZyA9IHNlcmlhbGl6ZXIuc2VyaWFsaXplVG9TdHJpbmcocm9vdCk7XG4gIHJldHVybiBuZXcgQmxvYihbc3RyaW5nXSwgeyB0eXBlOiBcImltYWdlL3N2Zyt4bWxcIiB9KTtcbn1cblxuXG5mdW5jdGlvbiBnZXRCb3VuZHMoZWxlbWVudHMpIHtcbiAgbGV0IHgxID0gSW5maW5pdHk7XG4gIGxldCB5MSA9IHgxO1xuICBsZXQgeDIgPSAteDE7XG4gIGxldCB5MiA9IHgyO1xuICBmb3IgKGNvbnN0IGVsZW1lbnQgb2YgZWxlbWVudHMpIHtcbiAgICBjb25zdCB7IHgsIHksIHdpZHRoLCBoZWlnaHQgfSA9IGVsZW1lbnQuZ2V0Qm91bmRpbmdDbGllbnRSZWN0KCk7XG4gICAgaWYgKHggPCB4MSkgeDEgPSB4O1xuICAgIGlmICh4ICsgd2lkdGggPiB4MikgeDIgPSB4ICsgd2lkdGg7XG4gICAgaWYgKHkgPCB5MSkgeTEgPSB5O1xuICAgIGlmICh5ICsgaGVpZ2h0ID4geTIpIHkyID0geSArIGhlaWdodDtcbiAgfVxuICByZXR1cm4gW3gxLCB5MSwgeDIgLSB4MSwgeTIgLSB5MV07XG59XG5cbi8vIGJhc2VkIG9uIGh0dHBzOi8vb2JzZXJ2YWJsZWhxLmNvbS9AZ2thL2NoZWFwLWZpdC10ZXh0LXRvLWNpcmNsZVxuZnVuY3Rpb24gbGluZXModGV4dCwgdGFyZ2V0V2lkdGgpIHtcbiAgY29uc3QgQ0hBUl9XID0ge1xuICAgIFwiYVwiOjcsXCJCXCI6OCxcIkNcIjo4LFwiY1wiOjYsXCJEXCI6OSxcImZcIjo0LFwiR1wiOjksXCJIXCI6OSxcIklcIjozLFwiaVwiOjMsXCJKXCI6NSxcImpcIjozLFwiS1wiOjgsXCJrXCI6NixcbiAgICBcImxcIjozLFwiTVwiOjExLFwibVwiOjExLFwiTlwiOjksXCJPXCI6OSxcIlBcIjo4LFwiUVwiOjksXCJSXCI6OCxcInJcIjo0LFwiU1wiOjgsXCJzXCI6NixcInRcIjo0LFwiVVwiOjksXCJ2XCI6NixcbiAgICBcIldcIjoxMSxcIndcIjo5LFwieFwiOjYsXCJ5XCI6NixcInpcIjo1LFwiLlwiOjIsXCIsXCI6MixcIjpcIjoyLFwiO1wiOjJcbiAgfTtcbiAgZnVuY3Rpb24gbWVhc3VyZVdpZHRoKHRleHQpIHsgcmV0dXJuICBkMy5zdW0odGV4dCwgY2hhciA9PiBDSEFSX1dbY2hhcl0gfHwgQ0hBUl9XW1wiYVwiXSkgKiAwLjg7IH07XG5cbiAgY29uc3Qgd29yZHMgPSB0ZXh0LnNwbGl0KFwiIFwiKTtcbiAgbGV0IGxpbmU7XG4gIGxldCBsaW5lV2lkdGgwID0gSW5maW5pdHk7XG4gIGNvbnN0IGxpbmVzID0gW107XG4gIGZvciAobGV0IGkgPSAwLCBuID0gd29yZHMubGVuZ3RoOyBpIDwgbjsgKytpKSB7XG4gICAgbGV0IGxpbmVUZXh0MSA9IChsaW5lID8gbGluZS50ZXh0ICsgXCIgXCIgOiBcIlwiKSArIHdvcmRzW2ldO1xuICAgIGxldCBsaW5lV2lkdGgxID0gbWVhc3VyZVdpZHRoKGxpbmVUZXh0MSk7XG4gICAgaWYgKChsaW5lV2lkdGgwICsgbGluZVdpZHRoMSkgLyAyIDwgdGFyZ2V0V2lkdGgpIHtcbiAgICAgIGxpbmUud2lkdGggPSBsaW5lV2lkdGgwID0gbGluZVdpZHRoMTtcbiAgICAgIGxpbmUudGV4dCA9IGxpbmVUZXh0MTtcbiAgICB9IGVsc2Uge1xuICAgICAgbGluZVdpZHRoMCA9IG1lYXN1cmVXaWR0aCh3b3Jkc1tpXSk7XG4gICAgICBsaW5lID0ge3dpZHRoOiBsaW5lV2lkdGgwLCB0ZXh0OiB3b3Jkc1tpXX07XG4gICAgICBsaW5lcy5wdXNoKGxpbmUpO1xuICAgIH1cbiAgfVxuICByZXR1cm4gbGluZXM7XG59XG5cbnhtbG5zID0gXCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3htbG5zL1wiXG5cbnhsaW5rbnMgPSBcImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmtcIlxuXG5zdmducyA9IFwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIlxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblxuLy8gQ29weXJpZ2h0IDIwMjEsIE9ic2VydmFibGUgSW5jLlxuLy8gUmVsZWFzZWQgdW5kZXIgdGhlIElTQyBsaWNlbnNlLlxuLy8gaHR0cHM6Ly9vYnNlcnZhYmxlaHEuY29tL0BkMy9jb2xvci1sZWdlbmRcbmZ1bmN0aW9uIExlZ2VuZChjb2xvciwge1xuICB0aXRsZSxcbiAgdGlja1NpemUgPSA2LFxuICB3aWR0aCA9IDMyMCwgXG4gIGhlaWdodCA9IDQ0ICsgdGlja1NpemUsXG4gIG1hcmdpblRvcCA9IDE4LFxuICBtYXJnaW5SaWdodCA9IDAsXG4gIG1hcmdpbkJvdHRvbSA9IDE2ICsgdGlja1NpemUsXG4gIG1hcmdpbkxlZnQgPSAwLFxuICB0aWNrcyA9IHdpZHRoIC8gNjQsXG4gIHRpY2tGb3JtYXQsXG4gIHRpY2tWYWx1ZXNcbn0gPSB7fSkge1xuXG4gIGZ1bmN0aW9uIHJhbXAoY29sb3IsIG4gPSAyNTYpIHtcbiAgICBjb25zdCBjYW52YXMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiY2FudmFzXCIpO1xuICAgIGNhbnZhcy53aWR0aCA9IG47XG4gICAgY2FudmFzLmhlaWdodCA9IDE7XG4gICAgY29uc3QgY29udGV4dCA9IGNhbnZhcy5nZXRDb250ZXh0KFwiMmRcIik7XG4gICAgZm9yIChsZXQgaSA9IDA7IGkgPCBuOyArK2kpIHtcbiAgICAgIGNvbnRleHQuZmlsbFN0eWxlID0gY29sb3IoaSAvIChuIC0gMSkpO1xuICAgICAgY29udGV4dC5maWxsUmVjdChpLCAwLCAxLCAxKTtcbiAgICB9XG4gICAgcmV0dXJuIGNhbnZhcztcbiAgfVxuXG4gIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxuICAgICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aClcbiAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodClcbiAgICAgIC5hdHRyKFwidmlld0JveFwiLCBbMCwgMCwgd2lkdGgsIGhlaWdodF0pXG4gICAgICAuc3R5bGUoXCJvdmVyZmxvd1wiLCBcInZpc2libGVcIilcbiAgICAgIC5zdHlsZShcImRpc3BsYXlcIiwgXCJibG9ja1wiKTtcblxuICBsZXQgdGlja0FkanVzdCA9IGcgPT4gZy5zZWxlY3RBbGwoXCIudGljayBsaW5lXCIpLmF0dHIoXCJ5MVwiLCBtYXJnaW5Ub3AgKyBtYXJnaW5Cb3R0b20gLSBoZWlnaHQpO1xuICBsZXQgeDtcblxuICAvLyBDb250aW51b3VzXG4gIGlmIChjb2xvci5pbnRlcnBvbGF0ZSkge1xuICAgIGNvbnN0IG4gPSBNYXRoLm1pbihjb2xvci5kb21haW4oKS5sZW5ndGgsIGNvbG9yLnJhbmdlKCkubGVuZ3RoKTtcblxuICAgIHggPSBjb2xvci5jb3B5KCkucmFuZ2VSb3VuZChkMy5xdWFudGl6ZShkMy5pbnRlcnBvbGF0ZShtYXJnaW5MZWZ0LCB3aWR0aCAtIG1hcmdpblJpZ2h0KSwgbikpO1xuXG4gICAgc3ZnLmFwcGVuZChcImltYWdlXCIpXG4gICAgICAgIC5hdHRyKFwieFwiLCBtYXJnaW5MZWZ0KVxuICAgICAgICAuYXR0cihcInlcIiwgbWFyZ2luVG9wKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoIC0gbWFyZ2luTGVmdCAtIG1hcmdpblJpZ2h0KVxuICAgICAgICAuYXR0cihcImhlaWdodFwiLCBoZWlnaHQgLSBtYXJnaW5Ub3AgLSBtYXJnaW5Cb3R0b20pXG4gICAgICAgIC5hdHRyKFwicHJlc2VydmVBc3BlY3RSYXRpb1wiLCBcIm5vbmVcIilcbiAgICAgICAgLmF0dHIoXCJ4bGluazpocmVmXCIsIHJhbXAoY29sb3IuY29weSgpLmRvbWFpbihkMy5xdWFudGl6ZShkMy5pbnRlcnBvbGF0ZSgwLCAxKSwgbikpKS50b0RhdGFVUkwoKSk7XG4gIH1cblxuICAvLyBTZXF1ZW50aWFsXG4gIGVsc2UgaWYgKGNvbG9yLmludGVycG9sYXRvcikge1xuICAgIHggPSBPYmplY3QuYXNzaWduKGNvbG9yLmNvcHkoKVxuICAgICAgICAuaW50ZXJwb2xhdG9yKGQzLmludGVycG9sYXRlUm91bmQobWFyZ2luTGVmdCwgd2lkdGggLSBtYXJnaW5SaWdodCkpLFxuICAgICAgICB7cmFuZ2UoKSB7IHJldHVybiBbbWFyZ2luTGVmdCwgd2lkdGggLSBtYXJnaW5SaWdodF07IH19KTtcblxuICAgIHN2Zy5hcHBlbmQoXCJpbWFnZVwiKVxuICAgICAgICAuYXR0cihcInhcIiwgbWFyZ2luTGVmdClcbiAgICAgICAgLmF0dHIoXCJ5XCIsIG1hcmdpblRvcClcbiAgICAgICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aCAtIG1hcmdpbkxlZnQgLSBtYXJnaW5SaWdodClcbiAgICAgICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0IC0gbWFyZ2luVG9wIC0gbWFyZ2luQm90dG9tKVxuICAgICAgICAuYXR0cihcInByZXNlcnZlQXNwZWN0UmF0aW9cIiwgXCJub25lXCIpXG4gICAgICAgIC5hdHRyKFwieGxpbms6aHJlZlwiLCByYW1wKGNvbG9yLmludGVycG9sYXRvcigpKS50b0RhdGFVUkwoKSk7XG5cbiAgICAvLyBzY2FsZVNlcXVlbnRpYWxRdWFudGlsZSBkb2VzbuKAmXQgaW1wbGVtZW50IHRpY2tzIG9yIHRpY2tGb3JtYXQuXG4gICAgaWYgKCF4LnRpY2tzKSB7XG4gICAgICBpZiAodGlja1ZhbHVlcyA9PT0gdW5kZWZpbmVkKSB7XG4gICAgICAgIGNvbnN0IG4gPSBNYXRoLnJvdW5kKHRpY2tzICsgMSk7XG4gICAgICAgIHRpY2tWYWx1ZXMgPSBkMy5yYW5nZShuKS5tYXAoaSA9PiBkMy5xdWFudGlsZShjb2xvci5kb21haW4oKSwgaSAvIChuIC0gMSkpKTtcbiAgICAgIH1cbiAgICAgIGlmICh0eXBlb2YgdGlja0Zvcm1hdCAhPT0gXCJmdW5jdGlvblwiKSB7XG4gICAgICAgIHRpY2tGb3JtYXQgPSBkMy5mb3JtYXQodGlja0Zvcm1hdCA9PT0gdW5kZWZpbmVkID8gXCIsZlwiIDogdGlja0Zvcm1hdCk7XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgLy8gVGhyZXNob2xkXG4gIGVsc2UgaWYgKGNvbG9yLmludmVydEV4dGVudCkge1xuICAgIGNvbnN0IHRocmVzaG9sZHNcbiAgICAgICAgPSBjb2xvci50aHJlc2hvbGRzID8gY29sb3IudGhyZXNob2xkcygpIC8vIHNjYWxlUXVhbnRpemVcbiAgICAgICAgOiBjb2xvci5xdWFudGlsZXMgPyBjb2xvci5xdWFudGlsZXMoKSAvLyBzY2FsZVF1YW50aWxlXG4gICAgICAgIDogY29sb3IuZG9tYWluKCk7IC8vIHNjYWxlVGhyZXNob2xkXG5cbiAgICBjb25zdCB0aHJlc2hvbGRGb3JtYXRcbiAgICAgICAgPSB0aWNrRm9ybWF0ID09PSB1bmRlZmluZWQgPyBkID0+IGRcbiAgICAgICAgOiB0eXBlb2YgdGlja0Zvcm1hdCA9PT0gXCJzdHJpbmdcIiA/IGQzLmZvcm1hdCh0aWNrRm9ybWF0KVxuICAgICAgICA6IHRpY2tGb3JtYXQ7XG5cbiAgICB4ID0gZDMuc2NhbGVMaW5lYXIoKVxuICAgICAgICAuZG9tYWluKFstMSwgY29sb3IucmFuZ2UoKS5sZW5ndGggLSAxXSlcbiAgICAgICAgLnJhbmdlUm91bmQoW21hcmdpbkxlZnQsIHdpZHRoIC0gbWFyZ2luUmlnaHRdKTtcblxuICAgIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgICAuc2VsZWN0QWxsKFwicmVjdFwiKVxuICAgICAgLmRhdGEoY29sb3IucmFuZ2UoKSlcbiAgICAgIC5qb2luKFwicmVjdFwiKVxuICAgICAgICAuYXR0cihcInhcIiwgKGQsIGkpID0+IHgoaSAtIDEpKVxuICAgICAgICAuYXR0cihcInlcIiwgbWFyZ2luVG9wKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIChkLCBpKSA9PiB4KGkpIC0geChpIC0gMSkpXG4gICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodCAtIG1hcmdpblRvcCAtIG1hcmdpbkJvdHRvbSlcbiAgICAgICAgLmF0dHIoXCJmaWxsXCIsIGQgPT4gZCk7XG5cbiAgICB0aWNrVmFsdWVzID0gZDMucmFuZ2UodGhyZXNob2xkcy5sZW5ndGgpO1xuICAgIHRpY2tGb3JtYXQgPSBpID0+IHRocmVzaG9sZEZvcm1hdCh0aHJlc2hvbGRzW2ldLCBpKTtcbiAgfVxuXG4gIC8vIE9yZGluYWxcbiAgZWxzZSB7XG4gICAgeCA9IGQzLnNjYWxlQmFuZCgpXG4gICAgICAgIC5kb21haW4oY29sb3IuZG9tYWluKCkpXG4gICAgICAgIC5yYW5nZVJvdW5kKFttYXJnaW5MZWZ0LCB3aWR0aCAtIG1hcmdpblJpZ2h0XSk7XG5cbiAgICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgICAgLnNlbGVjdEFsbChcInJlY3RcIilcbiAgICAgIC5kYXRhKGNvbG9yLmRvbWFpbigpKVxuICAgICAgLmpvaW4oXCJyZWN0XCIpXG4gICAgICAgIC5hdHRyKFwieFwiLCB4KVxuICAgICAgICAuYXR0cihcInlcIiwgbWFyZ2luVG9wKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIE1hdGgubWF4KDAsIHguYmFuZHdpZHRoKCkgLSAxKSlcbiAgICAgICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0IC0gbWFyZ2luVG9wIC0gbWFyZ2luQm90dG9tKVxuICAgICAgICAuYXR0cihcImZpbGxcIiwgY29sb3IpO1xuXG4gICAgdGlja0FkanVzdCA9ICgpID0+IHt9O1xuICB9XG5cbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2hlaWdodCAtIG1hcmdpbkJvdHRvbX0pYClcbiAgICAgIC5jYWxsKGQzLmF4aXNCb3R0b20oeClcbiAgICAgICAgLnRpY2tzKHRpY2tzLCB0eXBlb2YgdGlja0Zvcm1hdCA9PT0gXCJzdHJpbmdcIiA/IHRpY2tGb3JtYXQgOiB1bmRlZmluZWQpXG4gICAgICAgIC50aWNrRm9ybWF0KHR5cGVvZiB0aWNrRm9ybWF0ID09PSBcImZ1bmN0aW9uXCIgPyB0aWNrRm9ybWF0IDogdW5kZWZpbmVkKVxuICAgICAgICAudGlja1NpemUodGlja1NpemUpXG4gICAgICAgIC50aWNrVmFsdWVzKHRpY2tWYWx1ZXMpKVxuICAgICAgLmNhbGwodGlja0FkanVzdClcbiAgICAgIC5jYWxsKGcgPT4gZy5zZWxlY3QoXCIuZG9tYWluXCIpLnJlbW92ZSgpKVxuICAgICAgLmNhbGwoZyA9PiBnLmFwcGVuZChcInRleHRcIilcbiAgICAgICAgLmF0dHIoXCJ4XCIsIG1hcmdpbkxlZnQpXG4gICAgICAgIC5hdHRyKFwieVwiLCBtYXJnaW5Ub3AgKyBtYXJnaW5Cb3R0b20gLSBoZWlnaHQgLSA2KVxuICAgICAgICAuYXR0cihcImZpbGxcIiwgXCJjdXJyZW50Q29sb3JcIilcbiAgICAgICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcInN0YXJ0XCIpXG4gICAgICAgIC5hdHRyKFwiZm9udC13ZWlnaHRcIiwgXCJib2xkXCIpXG4gICAgICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIjEycHhcIilcbiAgICAgICAgLmF0dHIoXCJjbGFzc1wiLCBcInRpdGxlXCIpXG4gICAgICAgIC50ZXh0KHRpdGxlKSk7XG5cbiAgcmV0dXJuIHN2Zy5ub2RlKCk7XG59XG5cblxuZnVuY3Rpb24gbGVnZW5kKHtjb2xvciwgLi4ub3B0aW9uc30pIHtcbiAgcmV0dXJuIExlZ2VuZChjb2xvciwgb3B0aW9ucyk7XG59XG5cblxuLy8gQ29weXJpZ2h0IDIwMjEsIE9ic2VydmFibGUgSW5jLlxuLy8gUmVsZWFzZWQgdW5kZXIgdGhlIElTQyBsaWNlbnNlLlxuLy8gaHR0cHM6Ly9vYnNlcnZhYmxlaHEuY29tL0BkMy9jb2xvci1sZWdlbmRcbmZ1bmN0aW9uIFN3YXRjaGVzKGNvbG9yLCB7XG4gIGNvbHVtbnMgPSBudWxsLFxuICBmb3JtYXQsXG4gIHVua25vd246IGZvcm1hdFVua25vd24sXG4gIHN3YXRjaFNpemUgPSAxNSxcbiAgc3dhdGNoV2lkdGggPSBzd2F0Y2hTaXplLFxuICBzd2F0Y2hIZWlnaHQgPSBzd2F0Y2hTaXplLFxuICBtYXJnaW5MZWZ0ID0gMFxufSA9IHt9KSB7XG4gIGNvbnN0IGlkID0gYC1zd2F0Y2hlcy0ke01hdGgucmFuZG9tKCkudG9TdHJpbmcoMTYpLnNsaWNlKDIpfWA7XG4gIGNvbnN0IHVua25vd24gPSBmb3JtYXRVbmtub3duID09IG51bGwgPyB1bmRlZmluZWQgOiBjb2xvci51bmtub3duKCk7XG4gIGNvbnN0IHVua25vd25zID0gdW5rbm93biA9PSBudWxsIHx8IHVua25vd24gPT09IGQzLnNjYWxlSW1wbGljaXQgPyBbXSA6IFt1bmtub3duXTtcbiAgY29uc3QgZG9tYWluID0gY29sb3IuZG9tYWluKCkuY29uY2F0KHVua25vd25zKTtcbiAgaWYgKGZvcm1hdCA9PT0gdW5kZWZpbmVkKSBmb3JtYXQgPSB4ID0+IHggPT09IHVua25vd24gPyBmb3JtYXRVbmtub3duIDogeDtcblxuICBmdW5jdGlvbiBlbnRpdHkoY2hhcmFjdGVyKSB7XG4gICAgcmV0dXJuIGAmIyR7Y2hhcmFjdGVyLmNoYXJDb2RlQXQoMCkudG9TdHJpbmcoKX07YDtcbiAgfVxuXG4gIGlmIChjb2x1bW5zICE9PSBudWxsKSByZXR1cm4gaHRsLmh0bWxgPGRpdiBzdHlsZT1cImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IG1hcmdpbi1sZWZ0OiAkeyttYXJnaW5MZWZ0fXB4OyBtaW4taGVpZ2h0OiAzM3B4OyBmb250OiAxMnB4IHNhbnMtc2VyaWY7XCI+XG4gIDxzdHlsZT5cblxuLiR7aWR9LWl0ZW0ge1xuICBicmVhay1pbnNpZGU6IGF2b2lkO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBwYWRkaW5nLWJvdHRvbTogMXB4O1xufVxuXG4uJHtpZH0tbGFiZWwge1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgbWF4LXdpZHRoOiBjYWxjKDEwMCUgLSAkeytzd2F0Y2hXaWR0aH1weCAtIDAuNWVtKTtcbn1cblxuLiR7aWR9LXN3YXRjaCB7XG4gIHdpZHRoOiAkeytzd2F0Y2hXaWR0aH1weDtcbiAgaGVpZ2h0OiAkeytzd2F0Y2hIZWlnaHR9cHg7XG4gIG1hcmdpbjogMCAwLjVlbSAwIDA7XG59XG5cbiAgPC9zdHlsZT5cbiAgPGRpdiBzdHlsZT0ke3t3aWR0aDogXCIxMDAlXCIsIGNvbHVtbnN9fT4ke2RvbWFpbi5tYXAodmFsdWUgPT4ge1xuICAgIGNvbnN0IGxhYmVsID0gYCR7Zm9ybWF0KHZhbHVlKX1gO1xuICAgIHJldHVybiBodGwuaHRtbGA8ZGl2IGNsYXNzPSR7aWR9LWl0ZW0+XG4gICAgICA8ZGl2IGNsYXNzPSR7aWR9LXN3YXRjaCBzdHlsZT0ke3tiYWNrZ3JvdW5kOiBjb2xvcih2YWx1ZSl9fT48L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3M9JHtpZH0tbGFiZWwgdGl0bGU9JHtsYWJlbH0+JHtsYWJlbH08L2Rpdj5cbiAgICA8L2Rpdj5gO1xuICB9KX1cbiAgPC9kaXY+XG48L2Rpdj5gO1xuXG4gIHJldHVybiBodGwuaHRtbGA8ZGl2IHN0eWxlPVwiZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgbWluLWhlaWdodDogMzNweDsgbWFyZ2luLWxlZnQ6ICR7K21hcmdpbkxlZnR9cHg7IGZvbnQ6IDEycHggc2Fucy1zZXJpZjtcIj5cbiAgPHN0eWxlPlxuXG4uJHtpZH0ge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgbWFyZ2luLXJpZ2h0OiAxZW07XG59XG5cbi4ke2lkfTo6YmVmb3JlIHtcbiAgY29udGVudDogXCJcIjtcbiAgd2lkdGg6ICR7K3N3YXRjaFdpZHRofXB4O1xuICBoZWlnaHQ6ICR7K3N3YXRjaEhlaWdodH1weDtcbiAgbWFyZ2luLXJpZ2h0OiAwLjVlbTtcbiAgYmFja2dyb3VuZDogdmFyKC0tY29sb3IpO1xufVxuXG4gIDwvc3R5bGU+XG4gIDxkaXY+JHtkb21haW4ubWFwKHZhbHVlID0+IGh0bC5odG1sYDxzcGFuIGNsYXNzPVwiJHtpZH1cIiBzdHlsZT1cIi0tY29sb3I6ICR7Y29sb3IodmFsdWUpfVwiPiR7Zm9ybWF0KHZhbHVlKX08L3NwYW4+YCl9PC9kaXY+YDtcbn1cblxuZnVuY3Rpb24gc3dhdGNoZXMoe2NvbG9yLCAuLi5vcHRpb25zfSkge1xuICByZXR1cm4gU3dhdGNoZXMoY29sb3IsIG9wdGlvbnMpO1xufVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblxuY2hhcnRfbWFwX2QzID0gZnVuY3Rpb24oZGF0YSwgbWFwVG9wb0pTT04sIGNvbG9yLCBjb2xvckJvcmRlciwgdHh0VGl0bGUsIGNoYXJ0X3dpZHRoLCBjaGFydF9oZWlnaHQpIHtcblxuICBjb25zdCBwcm9qZWN0aW9uID0gZDMuZ2VvTWVyY2F0b3IoKVxuICAuc2NhbGUoMTIwMClcbiAgLy8uY2VudGVyKFs0MCwgNjcuNV0pXG4gIC5jZW50ZXIoWzQwLCA2Ny4zXSlcbiAgLnRyYW5zbGF0ZShbNDAwLCAyMjBdKVxuICBjb25zdCBwYXRoID0gZDMuZ2VvUGF0aCgpLnByb2plY3Rpb24ocHJvamVjdGlvbik7XG4gIGNvbnN0IGZvcm1hdCA9IGQgPT4gYCR7ZH0lYDtcbiAgXG4gIC8vTcOkw6RyaXRlbGzDpMOkbiB0w6Row6RuIG11dXR0dWphdCBDU1Y6c3TDpCEhISEhIVxuICBjb25zdCB2YWx1ZW1hcCA9IG5ldyBNYXAoZGF0YS5tYXAoZCA9PiBbZC5pZCwgZC5tdXV0b3NdKSk7XG4gIFxuICAvL03DpMOkcml0ZWxsw6TDpG4gbWFha3VubmF0XG4gIGNvbnN0IG1hYWt1bnRhbWVzaCA9IHRvcG9qc29uLm1lc2gobWFha3VubmF0XzIwMjRfdG9wbywgbWFha3VubmF0XzIwMjRfdG9wby5vYmplY3RzLm1hYWt1bm5hdF8yMDI0LCAoYSwgYikgPT4gYSAhPT0gYik7XG4gIFxuICBjb25zdCB6b29tID0gZDMuem9vbSgpXG4gICAgICAuc2NhbGVFeHRlbnQoWzEsIDhdKVxuICAgICAgLm9uKFwiem9vbVwiLCB6b29tZWQpO1xuXG4gIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxuICAgICAgLmF0dHIoXCJ3aWR0aFwiLCA5MDApXG4gICAgICAuYXR0cihcImhlaWdodFwiLCA2NTApXG4gICAgICAuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIDkwMCwgNjUwXSlcbiAgICAgIC5vbihcImNsaWNrXCIsIHJlc2V0KTtcbiAgICAgIFxuICBjb25zdCBnID0gc3ZnLmFwcGVuZChcImdcIilcbiAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIFwidHJhbnNsYXRlKDIwLDM1KVwiKVxuICAgICAgLmFwcGVuZCgoKSA9PiBMZWdlbmQoY29sb3IsIHt0aXRsZTogdHh0VGl0bGUsIHdpZHRoOiAyNjB9KSk7XG5cbiAgZy5hcHBlbmQoXCJnXCIpXG4gICAgLnNlbGVjdEFsbChcInBhdGhcIilcbiAgICAuZGF0YShtYXBUb3BvSlNPTilcbiAgICAuam9pbihcInBhdGhcIilcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBkID0+IGNvbG9yKHZhbHVlbWFwLmdldChkLnByb3BlcnRpZXMua3VudGEpKSkgXG4gICAgICAuYXR0cihcImRcIiwgcGF0aClcbiAgICAuYXBwZW5kKFwidGl0bGVcIilcbiAgICAgIC50ZXh0KGQgPT4gYCR7ZC5wcm9wZXJ0aWVzLm5hbWV9LFxcbigke2QucHJvcGVydGllcy5uaW1pXzJ9KSxcXG4ke3ZhbHVlbWFwLmdldChkLnByb3BlcnRpZXMua3VudGEpfWApO1xuICAgICAgXG4gIGcuYXBwZW5kKFwicGF0aFwiKVxuICAgICAgLmRhdHVtKG1hYWt1bnRhbWVzaClcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAgIC5hdHRyKFwic3Ryb2tlXCIsIGNvbG9yQm9yZGVyKVxuICAgICAgLmF0dHIoXCJzdHJva2UtbGluZWpvaW5cIiwgXCJyb3VuZFwiKVxuICAgICAgLmF0dHIoXCJkXCIsIHBhdGgpO1xuICAgICAgXG4gICBzdmcuY2FsbCh6b29tKTtcbiAgIFxuXG4gIGZ1bmN0aW9uIHJlc2V0KCkge1xuICAgIC8vIHN0YXRlcy50cmFuc2l0aW9uKCkuc3R5bGUoXCJmaWxsXCIsIG51bGwpO1xuICAgIHN2Zy50cmFuc2l0aW9uKCkuZHVyYXRpb24oNzUwKS5jYWxsKFxuICAgICAgem9vbS50cmFuc2Zvcm0sXG4gICAgICBkMy56b29tSWRlbnRpdHksXG4gICAgICBkMy56b29tVHJhbnNmb3JtKHN2Zy5ub2RlKCkpLmludmVydChbY2hhcnRfd2lkdGggLyAyLCBjaGFydF9oZWlnaHQgLyAyXSlcbiAgICApO1xuICB9XG5cbiAgZnVuY3Rpb24gem9vbWVkKGV2ZW50KSB7XG4gICAgY29uc3Qge3RyYW5zZm9ybX0gPSBldmVudDtcbiAgICBnLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgdHJhbnNmb3JtKTtcbiAgICBnLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMSAvIHRyYW5zZm9ybS5rKTtcbiAgfSAgICAgXG4gICAgICBcbiAgcmV0dXJuIHN2Zy5ub2RlKCk7XG59XG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuY2hhcnRfY2hvcmRfZDMgPSBmdW5jdGlvbihkYXRhLCB0aXRsZV90eHRfY2hvcmQsIGNoYXJ0X3dpZHRoLCBjaGFydF9oZWlnaHQpIHtcblxuICB2YXIgc3VtX3RhcmdldDtcbiAgdmFyIHN1bV9zb3VyY2U7XG4gIGxldCB2YXJpO1xuICB2YXIgc3VtX3lodDtcbiAgXG4gIGNvbnN0IG1hcmdpbiA9ICh7dG9wOiAyMCwgcmlnaHQ6IDIwLCBib3R0b206IDAsIGxlZnQ6IDUwfSk7XG4gIGNvbnN0IHdpZHRoID0gMzAwO1xuICBjb25zdCBoZWlnaHQgPSB3aWR0aDtcbiAgY29uc3QgaW5uZXJSYWRpdXMgPSBNYXRoLm1pbih3aWR0aCwgaGVpZ2h0KSAqIC4zIC0gNDA7XG4gIGNvbnN0IG91dGVyUmFkaXVzID0gaW5uZXJSYWRpdXMgKyAxNTtcbiAgXG4gIFxuICBjb25zdCBjaG9yZCA9IGQzLmNob3JkRGlyZWN0ZWQoKVxuICAgIC5wYWRBbmdsZSgwLjUgLyBpbm5lclJhZGl1cylcbiAgICAuc29ydFN1Ymdyb3VwcyhkMy5hc2NlbmRpbmcpXG4gICAgLnNvcnRDaG9yZHMoZDMuYXNjZW5kaW5nKTtcbiAgICBcbiAgY29uc3QgcmliYm9uID0gZDMucmliYm9uKClcbiAgICAucmFkaXVzKGlubmVyUmFkaXVzIC0gMSlcbiAgICAucGFkQW5nbGUoMC41IC8gaW5uZXJSYWRpdXMpO1xuICAgIFxuICBjb25zdCByZW5hbWUgPSBuYW1lID0+IG5hbWUuc3Vic3RyaW5nKG5hbWUuaW5kZXhPZihcIi5cIikgKyAxLCBuYW1lLmxhc3RJbmRleE9mKFwiLlwiKSlcbiAgY29uc3QgbmFtZXMgPSBBcnJheS5mcm9tKG5ldyBTZXQoZGF0YS5mbGF0TWFwKGQgPT4gW2Quc291cmNlLCBkLnRhcmdldF0pKSkuc29ydChkMy5hc2NlbmRpbmcpO1xuICBcbiAgZnVuY3Rpb24gbWF0cmlpc2kobmFtZXMpIHtcbiAgICBjb25zdCBpbmRleCA9IG5ldyBNYXAobmFtZXMubWFwKChuYW1lLCBpKSA9PiBbbmFtZSwgaV0pKTtcbiAgICBjb25zdCBtYXRyaXggPSBBcnJheS5mcm9tKGluZGV4LCAoKSA9PiBuZXcgQXJyYXkobmFtZXMubGVuZ3RoKS5maWxsKDApKTtcbiAgICBmb3IgKGNvbnN0IHtzb3VyY2UsIHRhcmdldCwgdmFsdWV9IG9mIGRhdGEpIG1hdHJpeFtpbmRleC5nZXQoc291cmNlKV1baW5kZXguZ2V0KHRhcmdldCldICs9IHZhbHVlO1xuICAgIHJldHVybiBtYXRyaXg7XG4gIH1cblxuIGNvbnN0IG1hdHJpeCA9IG1hdHJpaXNpKG5hbWVzKVxuICBcbiBjb25zdCBhcmMgPSBkMy5hcmMoKVxuICAgIC5pbm5lclJhZGl1cyhpbm5lclJhZGl1cylcbiAgICAub3V0ZXJSYWRpdXMob3V0ZXJSYWRpdXMpXG5cbiAgLy9Uw4RTVMOEIEFMS0FBIFBJSVJST1NcbiAgXG4gIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxuICAgICAgLmF0dHIoXCJ2aWV3Qm94XCIsIFstd2lkdGggLyAyLCAtaGVpZ2h0IC8gMi41LCB3aWR0aCwgaGVpZ2h0XSk7XG5cbiAgY29uc3QgY2hvcmRzID0gY2hvcmQobWF0cml4KTtcbiAgXG4gIGNvbnN0IGdyb3VwID0gc3ZnLmFwcGVuZChcImdcIilcbiAgICAgIC5hdHRyKFwiZm9udC1zaXplXCIsIDMpXG4gICAgICAuYXR0cihcImZvbnQtZmFtaWx5XCIsIFwiQ2VudHVyeSBHb3RoaWNcIilcbiAgICAuc2VsZWN0QWxsKFwiZ1wiKVxuICAgIC5kYXRhKGNob3Jkcy5ncm91cHMpXG4gICAgLmpvaW4oXCJnXCIpO1xuXG4gIGdyb3VwLmFwcGVuZChcInBhdGhcIilcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBkID0+IHtcbiAgICAgICAgICAgc3VtX3RhcmdldCA9IGQzLnN1bShjaG9yZHMsIGMgPT4gKGMudGFyZ2V0LmluZGV4ID09PSBkLmluZGV4KSAqIGMudGFyZ2V0LnZhbHVlKTtcbiAgICAgICAgICAgc3VtX3NvdXJjZSA9IGQzLnN1bShjaG9yZHMsIGMgPT4gKGMuc291cmNlLmluZGV4ID09PSBkLmluZGV4KSAqIGMuc291cmNlLnZhbHVlKTtcbiAgICAgICAgICAgc3VtX3lodCA9IHN1bV90YXJnZXQtc3VtX3NvdXJjZTtcbiAgICAgICAgICAgIGlmIChzdW1feWh0ID4gMCkgeyBcbiAgICAgICAgICAgICAgdmFyaSA9IFwiIzAwOTY1MVwiXG4gICAgICAgICAgICAgIHJldHVybiB2YXJpIFxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSBpZiAoc3VtX3lodCA9PSAwKSB7IFxuICAgICAgICAgICAgICB2YXJpID0gXCIjMjgzMzZDXCJcbiAgICAgICAgICAgICAgcmV0dXJuIHZhcmkgXG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIFx0eyBcbiAgICAgICAgICAgICAgdmFyaSA9IFwiI0RFMjMyRlwiIFxuICAgICAgICAgICAgICByZXR1cm4gdmFyaSBcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSlcbiAgICAgIC5hdHRyKFwiZFwiLCBhcmMpO1xuXG4gIGdyb3VwLmFwcGVuZChcInRleHRcIilcbiAgICAgIC5lYWNoKGQgPT4gKGQuYW5nbGUgPSAoZC5zdGFydEFuZ2xlICsgZC5lbmRBbmdsZSkgLyAyKSlcbiAgICAgIC5hdHRyKFwiZHlcIiwgXCIwLjM1ZW1cIilcbiAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGQgPT4gYFxuICAgICAgICByb3RhdGUoJHsoZC5hbmdsZSAqIDE4MCAvIE1hdGguUEkgLSA5MCl9KVxuICAgICAgICB0cmFuc2xhdGUoJHtvdXRlclJhZGl1cyArIDZ9KVxuICAgICAgICAke2QuYW5nbGUgPiBNYXRoLlBJID8gXCJyb3RhdGUoMTgwKVwiIDogXCJcIn1cbiAgICAgIGApXG4gICAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIGQgPT4gZC5hbmdsZSA+IE1hdGguUEkgPyBcImVuZFwiIDogbnVsbClcbiAgICAgIC8vLnRleHQoZCA9PiBuYW1lc1tkLmluZGV4XSlcbiAgICAgIC50ZXh0KGQgPT4gKGQuaW5kZXggPj0gMykgPyBuYW1lc1tkLmluZGV4XSA6IFwiXCIpXG4gICAgICAuYXR0cihcImZpbGxcIiwgZCA9PiB7XG4gICAgICAgICAgIHN1bV90YXJnZXQgPSBkMy5zdW0oY2hvcmRzLCBjID0+IChjLnRhcmdldC5pbmRleCA9PT0gZC5pbmRleCkgKiBjLnRhcmdldC52YWx1ZSk7XG4gICAgICAgICAgIHN1bV9zb3VyY2UgPSBkMy5zdW0oY2hvcmRzLCBjID0+IChjLnNvdXJjZS5pbmRleCA9PT0gZC5pbmRleCkgKiBjLnNvdXJjZS52YWx1ZSk7XG4gICAgICAgICAgIHN1bV95aHQgPSBzdW1fdGFyZ2V0LXN1bV9zb3VyY2U7XG4gICAgICAgICAgICBpZiAoc3VtX3lodCA+IDApIHsgXG4gICAgICAgICAgICAgIHZhcmkgPSBcIiMwMDk2NTFcIlxuICAgICAgICAgICAgICByZXR1cm4gdmFyaVxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSBpZiAoc3VtX3lodCA9PSAwKSB7IFxuICAgICAgICAgICAgICB2YXJpID0gXCIjMjgzMzZDXCJcbiAgICAgICAgICAgICAgcmV0dXJuIHZhcmkgXG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIFx0eyBcbiAgICAgICAgICAgICAgdmFyaSA9IFwiI0RFMjMyRlwiIFxuICAgICAgICAgICAgICByZXR1cm4gdmFyaSBcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSk7XG5cbiAgZ3JvdXAuYXBwZW5kKFwidGl0bGVcIilcbiAgICAgIC50ZXh0KGQgPT4gYCR7bmFtZXNbZC5pbmRleF19IFxuXG4ke2QzLnN1bShjaG9yZHMsIGMgPT4gKGMuc291cmNlLmluZGV4ID09PSBkLmluZGV4KSAqIGMuc291cmNlLnZhbHVlKX0gbMOkaHRlZSDihpJcbiR7ZDMuc3VtKGNob3JkcywgYyA9PiAoYy50YXJnZXQuaW5kZXggPT09IGQuaW5kZXgpICogYy5zb3VyY2UudmFsdWUpfSB0dWxlZSDihpBcbiR7ZDMuc3VtKGNob3JkcywgYyA9PiAoYy50YXJnZXQuaW5kZXggPT09IGQuaW5kZXgpICogYy50YXJnZXQudmFsdWUpLSBkMy5zdW0oY2hvcmRzLCBjID0+IChjLnNvdXJjZS5pbmRleCA9PT0gZC5pbmRleCkgKiBjLnNvdXJjZS52YWx1ZSl9IG5ldHRvID1gKTsgIFxuXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgICAuYXR0cihcImZpbGwtb3BhY2l0eVwiLCAwLjc1KVxuICAgIC5zZWxlY3RBbGwoXCJwYXRoXCIpXG4gICAgLmRhdGEoY2hvcmRzKVxuICAgIC5qb2luKFwicGF0aFwiKVxuICAgICAgLnN0eWxlKFwibWl4LWJsZW5kLW1vZGVcIiwgXCJtdWx0aXBseVwiKVxuICAgICAgICAgIC5hdHRyKFwiZmlsbFwiLCBkID0+IHtcbiAgICAgICAgICAgc3VtX3RhcmdldCA9IGQzLnN1bShjaG9yZHMsIGMgPT4gKGMudGFyZ2V0LmluZGV4ID09PSBkLmluZGV4KSAqIGMudGFyZ2V0LnZhbHVlKTtcbiAgICAgICAgICAgc3VtX3NvdXJjZSA9IGQzLnN1bShjaG9yZHMsIGMgPT4gKGMuc291cmNlLmluZGV4ID09PSBkLmluZGV4KSAqIGMuc291cmNlLnZhbHVlKTtcbiAgICAgICAgICAgc3VtX3lodCA9IHN1bV90YXJnZXQtc3VtX3NvdXJjZTtcbiAgICAgICAgICAgIGlmIChzdW1feWh0ID4gMCkgeyBcbiAgICAgICAgICAgICAgdmFyaSA9IFwiIzAwOTY1MVwiXG4gICAgICAgICAgICAgIHJldHVybiB2YXJpIFxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSBpZiAoc3VtX3lodCA9PSAwKSB7IFxuICAgICAgICAgICAgICB2YXJpID0gXCIjMjgzMzZDXCJcbiAgICAgICAgICAgICAgcmV0dXJuIHZhcmkgXG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIFx0eyBcbiAgICAgICAgICAgICAgdmFyaSA9IFwiI0RFMjMyRlwiIFxuICAgICAgICAgICAgICByZXR1cm4gdmFyaSBcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSlcbiAgICAgIC5hdHRyKFwiZFwiLCByaWJib24pXG4gICAgLmFwcGVuZChcInRpdGxlXCIpXG4gICAgICAudGV4dChkID0+IGAke25hbWVzW2Quc291cmNlLmluZGV4XX0gLS0+ICR7bmFtZXNbZC50YXJnZXQuaW5kZXhdfSAke2Quc291cmNlLnZhbHVlfWApO1xuXG4gIHJldHVybiBzdmcubm9kZSgpO1xuXG5cbn1cblxuIn1dfQ==
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuXG5kMyA9IHJlcXVpcmUoXCJkM0A3XCIpXG4vL2ltcG9ydCB7TGVnZW5kfSBmcm9tIFwiQGQzL2NvbG9yLWxlZ2VuZFwiXG5cbmZvbGRlckt1bm5hdDI0VG9wb0pTT04gPSBcIi4vbWFwcy9LdW5uYXQyMDI0VG9wby5qc29uXCJcbmt1bm5hdDIwMjR0b3BvID0gRmlsZUF0dGFjaG1lbnREeW5hbWljKGZvbGRlckt1bm5hdDI0VG9wb0pTT04pLmpzb24oKVxubWFwVG9wb0pTT04gPSB0b3BvanNvbi5mZWF0dXJlKGt1bm5hdDIwMjR0b3BvLCBrdW5uYXQyMDI0dG9wby5vYmplY3RzLkt1bm5hdDIwMjRfZ2VvKS5mZWF0dXJlc1xuXG5cbmZvbGRlck1hYWt1bm5hdDI0VG9wb0pTT04gPSBcIi4vbWFwcy9NYWFrdW5uYXQyMDI0VG9wby5qc29uXCJcbm1hYWt1bm5hdF8yMDI0X3RvcG8gPSAgRmlsZUF0dGFjaG1lbnREeW5hbWljKGZvbGRlck1hYWt1bm5hdDI0VG9wb0pTT04pLmpzb24oKVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblxuLy8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBGVU5LVElPVCBBTEtBQVxuXG4vL1RlaGTDpMOkbiB1dXNpIGZ1bmt0aW8sIGpvc3NhIHZvaWRhYW4gc3nDtnR0w6TDpCBtdXV0dHVqYVxuRmlsZUF0dGFjaG1lbnREeW5hbWljID0gZnVuY3Rpb24oZmlsZW5hbWUpIHtcbiAgcmV0dXJuIG5ldyBGdW5jdGlvbihcIkZpbGVBdHRhY2htZW50XCIsIGByZXR1cm4gRmlsZUF0dGFjaG1lbnQoXCIke2ZpbGVuYW1lfVwiKWApKEZpbGVBdHRhY2htZW50KVxufVxuXG4vLyBWYWloZGV0YWFuIHRla3N0aW4gdsOkcmlcbmNvbG9yID0gZnVuY3Rpb24odmFyaSkge1xuICBpZih2YXJpID4gMCl7XG4gICAgICByZXR1cm4gXCJncmVlblwiXG4gICAgfWVsc2V7XG4gICAgICByZXR1cm4gXCJyZWRcIlxuICAgIH1cbn1cbi8vIFB5w7ZyaXN0eXNcbnB5b3Jpc3R5cyA9IGZ1bmN0aW9uKG4sIHBsYWNlcykge1xuICBpZiAoIXBsYWNlcykgcmV0dXJuIE1hdGgucm91bmQobik7XG4gIGNvbnN0IGQgPSAxMCAqKiBwbGFjZXM7XG4gIHJldHVybiBNYXRoLnJvdW5kKG4gKiBkKSAvIGQ7XG59XG4vL0V1cm9tZXJraW50w6RcbmV1cm90ID0gZnVuY3Rpb24obnVtYmVyKSB7XG4gIHJldHVybiBudW1iZXIudG9Mb2NhbGVTdHJpbmcoJ2ZpLUZJJywgeyBzdHlsZTogJ2N1cnJlbmN5JywgY3VycmVuY3k6ICdFVVInLG1pbmltdW1GcmFjdGlvbkRpZ2l0czogMCB9KTtcbn1cbi8vIEV1cm9tdXV0b2tzZW4gbGFza2VtaW5lbiBrZXJ0b2ltZWxsYVxubXV1dG9za2Vycm9pbiA9IGZ1bmN0aW9uKHgsIHkpIHtcbiAgcmV0dXJuICgxK3gvMTAwKSp5O1xufVxuLy8gTXV1dG9zcHJvc2VudHRpXG5tdXV0b3Nwcm9zZW50dGkgPSBmdW5jdGlvbih4LCB5KSB7XG4gIHJldHVybiBweW9yaXN0eXMoKCh4LXkpL3kpKjEwMCwxKTtcbn1cbi8vIFR1aGF0amFrYWphXG50dWhhdGpha2FqYSA9IGZ1bmN0aW9uKHgpIHtcbiAgcmV0dXJuIHgvMTAwMDtcbn1cbi8vIEV1cm9tdXV0b2tzZW4gbGFza2VtaW5lbiBrZXJ0b2ltZWxsYVxucGFsa2tha2Vycm9pbiA9IGZ1bmN0aW9uKHgsIHkpIHtcbiAgcmV0dXJuIDEwMCooKDEreC8xMDApKigxK3kvMTAwKS0xKTtcbn1cbi8vIEpha28tb3N1dWRlbiBhc3VrYXNrZXJyb2luXG5hc3VrYXNrZXJyb2luID0gZnVuY3Rpb24oeCwgeSkge1xuICByZXR1cm4gKHgveSk7XG59XG4vLyBKYWtvLW9zdXVkZW4gdmVyb3Byb3NlbnR0aWtlcnJvaW4gbWlpbnVzMS9taWludXMzIHZ1b3R0YSBtaWludXMgMSB2dW9kZW4ga2Vycm9pblxudmVyb3Byb3NlbnR0aWtlcnJvaW4gPSBmdW5jdGlvbih4LCB5KSB7XG4gIHJldHVybiAoeC95KTtcbn1cbi8vIEt1bm5hbiBtdW9rLiBrdW5uYWxsaXN2ZXJvLCBhbGt1dnVvc2kgamEgbG9wcHV2dW9zaSBcbmt1bm5hbGxpc3Zlcm9fbXVva2thdXMgPSBmdW5jdGlvbihrdW5uYWxsaXN2ZXJvLGFzdWthc2tlcnJvaW4sdmVyb3Byb3NlbnR0aSkge1xuICByZXR1cm4ga3VubmFsbGlzdmVybyphc3VrYXNrZXJyb2luKnZlcm9wcm9zZW50dGk7XG59XG5cbi8vVGVrc3RpbXV1dG9rc2V0XG5mbl9ub3VzdV9sYXNrdV90eHQgPSBmdW5jdGlvbihhcnZvKXtcbiAgaWYoYXJ2byA+IDApIHtcbiAgcmV0dXJuIFwia2FzdmFudXRcIiBcbiAgfVxuICBlbHNlIHsgXG4gIHJldHVybiBcImxhc2tlbnV0XCI7XG4gIH1cbn1cblxuLy9UQVJWSVRBQU4gS0FSVE9JU1NBXG5zZXJpYWxpemUgPSB7XG4gIGNvbnN0IHhtbG5zID0gXCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3htbG5zL1wiO1xuICBjb25zdCB4bGlua25zID0gXCJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rXCI7XG4gIGNvbnN0IHN2Z25zID0gXCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiO1xuICByZXR1cm4gZnVuY3Rpb24gc2VyaWFsaXplKHN2Zykge1xuICAgIHN2ZyA9IHN2Zy5jbG9uZU5vZGUodHJ1ZSk7XG4gICAgY29uc3QgZnJhZ21lbnQgPSB3aW5kb3cubG9jYXRpb24uaHJlZiArIFwiI1wiO1xuICAgIGNvbnN0IHdhbGtlciA9IGRvY3VtZW50LmNyZWF0ZVRyZWVXYWxrZXIoc3ZnLCBOb2RlRmlsdGVyLlNIT1dfRUxFTUVOVCk7XG4gICAgd2hpbGUgKHdhbGtlci5uZXh0Tm9kZSgpKSB7XG4gICAgICBmb3IgKGNvbnN0IGF0dHIgb2Ygd2Fsa2VyLmN1cnJlbnROb2RlLmF0dHJpYnV0ZXMpIHtcbiAgICAgICAgaWYgKGF0dHIudmFsdWUuaW5jbHVkZXMoZnJhZ21lbnQpKSB7XG4gICAgICAgICAgYXR0ci52YWx1ZSA9IGF0dHIudmFsdWUucmVwbGFjZShmcmFnbWVudCwgXCIjXCIpO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICAgIHN2Zy5zZXRBdHRyaWJ1dGVOUyh4bWxucywgXCJ4bWxuc1wiLCBzdmducyk7XG4gICAgc3ZnLnNldEF0dHJpYnV0ZU5TKHhtbG5zLCBcInhtbG5zOnhsaW5rXCIsIHhsaW5rbnMpO1xuICAgIGNvbnN0IHNlcmlhbGl6ZXIgPSBuZXcgd2luZG93LlhNTFNlcmlhbGl6ZXI7XG4gICAgY29uc3Qgc3RyaW5nID0gc2VyaWFsaXplci5zZXJpYWxpemVUb1N0cmluZyhzdmcpO1xuICAgIHJldHVybiBuZXcgQmxvYihbc3RyaW5nXSwge3R5cGU6IFwiaW1hZ2Uvc3ZnK3htbFwifSk7XG4gIH07XG59XG5cblxuZnVuY3Rpb24gdG9TVkcoY2hhcnQpIHtcbiAgaWYgKGNoYXJ0Lm5vZGVOYW1lICE9PSBcIkZJR1VSRVwiKSB7XG4gICAgcmV0dXJuIGNoYXJ0O1xuICB9XG5cbiAgLy8gdGhlIGNoYXJ0IG5lZWRzIHRvIGJlIGluIHRoZSBib2R5IGlmIHdlIHdhbnQgdG8gcmVhZCB2YWx1ZXMsIHBvc2l0aW9ucywgc2l6ZXPigKZcbiAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChjaGFydCk7XG4gIGNvbnN0IFt4MCwgeTAsIHdpZHRoLCBoZWlnaHRdID0gZ2V0Qm91bmRzKFtjaGFydF0pO1xuXG4gIGNvbnN0IG5vZGVzID0gW107XG5cbiAgZm9yIChjb25zdCBub2RlIG9mIGQzXG4gICAgLnNlbGVjdChjaGFydClcbiAgICAuc2VsZWN0Q2hpbGRyZW4oXCJoMSxoMixoMyxkaXYsZmlnY2FwdGlvbixzdmdcIikpIHtcbiAgICBzd2l0Y2ggKG5vZGUubm9kZU5hbWUudG9Mb3dlckNhc2UoKSkge1xuICAgICAgY2FzZSBcImRpdlwiOlxuICAgICAgICB7XG4gICAgICAgICAgY29uc3QgY2hpbGRyZW4gPSBkMy5zZWxlY3Qobm9kZSkuc2VsZWN0Q2hpbGRyZW4oXCJkaXYsc3BhblwiKTtcbiAgICAgICAgICBjb25zdCBoZWlnaHQgPSBnZXRCb3VuZHMoW25vZGUsIC4uLmNoaWxkcmVuXSlbM10gKyAyO1xuICAgICAgICAgIGNvbnN0IHN2ZyA9IGQzXG4gICAgICAgICAgICAuc2VsZWN0KGNoYXJ0KVxuICAgICAgICAgICAgLmFwcGVuZChcInN2Z1wiKVxuICAgICAgICAgICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aClcbiAgICAgICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodCk7XG4gICAgICAgICAgbm9kZXMucHVzaChzdmcubm9kZSgpKTtcblxuICAgICAgICAgIGNvbnN0IHN3YXRjaGVzID0gc3ZnXG4gICAgICAgICAgICAuc2VsZWN0QWxsKClcbiAgICAgICAgICAgIC5kYXRhKFxuICAgICAgICAgICAgICBBcnJheS5mcm9tKGNoaWxkcmVuLCAoZCkgPT4ge1xuICAgICAgICAgICAgICAgIGNvbnN0IHN2ZyA9IGQzLnNlbGVjdChkKS5zZWxlY3QoXCJzdmdcIikubm9kZSgpO1xuICAgICAgICAgICAgICAgIGNvbnN0IGJib3ggPSBzdmcuZ2V0QkJveCgpO1xuICAgICAgICAgICAgICAgIHJldHVybiB7XG4gICAgICAgICAgICAgICAgICBzdHlsZTogd2luZG93LmdldENvbXB1dGVkU3R5bGUoZCksXG4gICAgICAgICAgICAgICAgICBzdmcsXG4gICAgICAgICAgICAgICAgICB3aWR0aDogYmJveC53aWR0aCxcbiAgICAgICAgICAgICAgICAgIGhlaWdodDogYmJveC5oZWlnaHQsXG4gICAgICAgICAgICAgICAgICB0ZXh0OiBkLnRleHRDb250ZW50LFxuICAgICAgICAgICAgICAgICAgYm91bmRzOiBnZXRCb3VuZHMoW2RdKVxuICAgICAgICAgICAgICAgIH07XG4gICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICApXG4gICAgICAgICAgICAuam9pbihcImdcIilcbiAgICAgICAgICAgIC5hdHRyKFxuICAgICAgICAgICAgICBcInRyYW5zZm9ybVwiLFxuICAgICAgICAgICAgICAoZCkgPT4gYHRyYW5zbGF0ZSgke2QuYm91bmRzWzBdIC0geDB9LCR7MTAgKyBkLmJvdW5kc1sxXSAtIHkwfSlgXG4gICAgICAgICAgICApO1xuXG4gICAgICAgICAgc3dhdGNoZXNcbiAgICAgICAgICAgIC5hcHBlbmQoKGQpID0+IGQuc3ZnKSAvLyBcInJlY3RcIilcbiAgICAgICAgICAgIC5hdHRyKFwid2lkdGhcIiwgKGQpID0+IGQud2lkdGgpXG4gICAgICAgICAgICAuYXR0cihcImhlaWdodFwiLCAoZCkgPT4gZC5oZWlnaHQpXG4gICAgICAgICAgICAuYXR0cihcInlcIiwgKGQpID0+IGAkey1wYXJzZUZsb2F0KGQuaGVpZ2h0KSAvIDJ9cHhgKTtcbiAgICAgICAgICBzd2F0Y2hlc1xuICAgICAgICAgICAgLmFwcGVuZChcInRleHRcIilcbiAgICAgICAgICAgIC50ZXh0KChkKSA9PiBkLnRleHQpXG4gICAgICAgICAgICAuYXR0cihcInhcIiwgKGQpID0+IGQud2lkdGgpXG4gICAgICAgICAgICAuYXR0cihcImR4XCIsIDUpXG4gICAgICAgICAgICAuYXR0cihcImR5XCIsIFwiMC4zOGVtXCIpXG4gICAgICAgICAgICAuYXR0cihcImZvbnQtZmFtaWx5XCIsIChkKSA9PiBkLnN0eWxlLmZvbnRGYW1pbHkpXG4gICAgICAgICAgICAuYXR0cihcImZvbnQtc2l6ZVwiLCAoZCkgPT4gZC5zdHlsZS5mb250U2l6ZSlcbiAgICAgICAgICAgIC5hdHRyKFwiZmlsbFwiLCAoZCkgPT4gZC5zdHlsZS5jb2xvcik7XG4gICAgICAgIH1cbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIFwiZmlnY2FwdGlvblwiOlxuICAgICAgY2FzZSBcImgxXCI6XG4gICAgICBjYXNlIFwiaDJcIjpcbiAgICAgIGNhc2UgXCJoM1wiOlxuICAgICAgICB7XG4gICAgICAgICAgY29uc3Qgc3ZnID0gZDNcbiAgICAgICAgICAgIC5zZWxlY3QoY2hhcnQpXG4gICAgICAgICAgICAuYXBwZW5kKFwic3ZnXCIpXG4gICAgICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoKVxuICAgICAgICAgICAgLmF0dHIoXCJvdmVyZmxvd1wiLCBcInZpc2libGVcIik7XG4gICAgICAgICAgbm9kZXMucHVzaChzdmcubm9kZSgpKTtcblxuICAgICAgICAgIGNvbnN0IGNoaWxkcmVuID0gZDMuc2VsZWN0KG5vZGUpLnNlbGVjdENoaWxkcmVuKCk7XG5cbiAgICAgICAgICBsZXQgaCA9IDA7XG4gICAgICAgICAgZm9yIChjb25zdCBkIG9mIGNoaWxkcmVuLnNpemUoKSA+IDBcbiAgICAgICAgICAgID8gY2hpbGRyZW4uc2VsZWN0Q2hpbGRyZW4oKVxuICAgICAgICAgICAgOiBbbm9kZV0pIHtcbiAgICAgICAgICAgIGNvbnN0IHN0eWxlID0gd2luZG93LmdldENvbXB1dGVkU3R5bGUoZCk7XG4gICAgICAgICAgICBjb25zdCB0ID0gc3ZnXG4gICAgICAgICAgICAgIC5hcHBlbmQoXCJnXCIpXG4gICAgICAgICAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2h9KWApXG4gICAgICAgICAgICAgIC5hcHBlbmQoKCkgPT5cbiAgICAgICAgICAgICAgICBkM1xuICAgICAgICAgICAgICAgICAgLnNlbGVjdChcbiAgICAgICAgICAgICAgICAgICAgUGxvdC50ZXh0KFtkLnRleHRDb250ZW50XSwge1xuICAgICAgICAgICAgICAgICAgICAgIHRleHQ6IChkKSA9PiBkLFxuICAgICAgICAgICAgICAgICAgICAgIGxpbmVXaWR0aDpcbiAgICAgICAgICAgICAgICAgICAgICAgICgxLjA2ICogcGFyc2VGbG9hdChzdHlsZS53aWR0aCkpIC9cbiAgICAgICAgICAgICAgICAgICAgICAgIHBhcnNlRmxvYXQoc3R5bGUuZm9udFNpemUpLFxuICAgICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEuMixcbiAgICAgICAgICAgICAgICAgICAgICBmcmFtZUFuY2hvcjogXCJ0b3AtbGVmdFwiXG4gICAgICAgICAgICAgICAgICAgIH0pLnBsb3QoKVxuICAgICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgICAgICAgLnNlbGVjdChcInRleHRcIilcbiAgICAgICAgICAgICAgICAgIC5hdHRyKFwiZm9udC1mYW1pbHlcIiwgc3R5bGUuZm9udEZhbWlseSlcbiAgICAgICAgICAgICAgICAgIC5hdHRyKFwiZm9udC1zaXplXCIsIDEuMDggKiBwYXJzZUZsb2F0KHN0eWxlLmZvbnRTaXplKSlcbiAgICAgICAgICAgICAgICAgIC5hdHRyKFwiZm9udC13ZWlnaHRcIiwgc3R5bGUuZm9udFdlaWdodClcbiAgICAgICAgICAgICAgICAgIC5hdHRyKFwiZmlsbFwiLCBzdHlsZS5jb2xvcilcbiAgICAgICAgICAgICAgICAgIC5ub2RlKClcbiAgICAgICAgICAgICAgKTtcbiAgICAgICAgICAgIGggKz0gZ2V0Qm91bmRzKFt0Lm5vZGUoKV0pWzNdICsgNDtcbiAgICAgICAgICB9XG4gICAgICAgICAgc3ZnLmF0dHIoXCJoZWlnaHRcIiwgaCk7XG4gICAgICAgIH1cbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIFwic3ZnXCI6XG4gICAgICAgIGQzLnNlbGVjdChjaGFydCkuYXBwZW5kKCgpID0+IG5vZGUpO1xuICAgICAgICBub2Rlcy5wdXNoKG5vZGUpO1xuICAgICAgICBicmVhaztcbiAgICB9XG4gIH1cblxuICByZXR1cm4gc2VyaWFsaXplQWxsKG5vZGVzKVxuICAgIC50aGVuKChibG9iKSA9PiBibG9iLnRleHQoKSlcbiAgICAudGhlbigoYykgPT4ge1xuICAgICAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChjaGFydCk7XG4gICAgICByZXR1cm4gT2JqZWN0LmFzc2lnbihzdmdgJHtjfWAsIGNoYXJ0KTtcbiAgICB9KTtcbn1cblxuXG4vLyBHaXZlbiBhbiBhcnJheSBvZiBTVkcgZWxlbWVudHMsIGNvbXBvc2l0ZXMgdGhlbSBpbnRvIGEgc2luZ2xlIFNWRyBlbGVtZW50LFxuLy8gYW5kIHRoZW4gc2VyaWFsaXplcyB0aGUgcmVzdWx0IHRvIGEgYmxvYi5cbmFzeW5jIGZ1bmN0aW9uIHNlcmlhbGl6ZUFsbChlbGVtZW50cywge3BhZGRpbmcgPSAxMH0gPSB7fSkge1xuICBjb25zdCBmcmFnbWVudCA9IGxvY2F0aW9uLmhyZWYgKyBcIiNcIjtcbiAgbGV0IHJvb3Q7XG4gIGlmIChlbGVtZW50cy5sZW5ndGggPT09IDEpIHtcbiAgICByb290ID0gZWxlbWVudHNbMF0uY2xvbmVOb2RlKHRydWUpOyAvLyBvcHRpbWl6ZSBjb21tb24gY2FzZVxuICB9IGVsc2Uge1xuICAgIGNvbnN0IFtveCwgb3ksIGR4LCBkeV0gPSBnZXRCb3VuZHMoZWxlbWVudHMpO1xuICAgIHJvb3QgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoc3ZnbnMsIFwic3ZnXCIpO1xuICAgIHJvb3Quc2V0QXR0cmlidXRlKFwid2lkdGhcIiwgZHggKyAyICogcGFkZGluZyk7XG4gICAgcm9vdC5zZXRBdHRyaWJ1dGUoXCJoZWlnaHRcIiwgZHkgKyAyICogcGFkZGluZyk7XG4gICAgcm9vdC5zZXRBdHRyaWJ1dGUoXCJ2aWV3Qm94XCIsIFstcGFkZGluZywgLXBhZGRpbmcsIGR4ICsgMiAqIHBhZGRpbmcsIGR5ICsgMiAqIHBhZGRpbmddKTtcbiAgICBmb3IgKGNvbnN0IGVsZW1lbnQgb2YgZWxlbWVudHMpIHtcbiAgICAgIGNvbnN0IHN2ZyA9IHJvb3QuYXBwZW5kQ2hpbGQoZWxlbWVudC5jbG9uZU5vZGUodHJ1ZSkpO1xuICAgICAgY29uc3QgeyB4LCB5LCB3aWR0aCwgaGVpZ2h0IH0gPSBlbGVtZW50LmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpO1xuICAgICAgc3ZnLnNldEF0dHJpYnV0ZShcInhcIiwgeCAtIG94KTtcbiAgICAgIHN2Zy5zZXRBdHRyaWJ1dGUoXCJ5XCIsIHkgLSBveSk7XG4gICAgICBzdmcuc2V0QXR0cmlidXRlKFwid2lkdGhcIiwgd2lkdGgpO1xuICAgICAgc3ZnLnNldEF0dHJpYnV0ZShcImhlaWdodFwiLCBoZWlnaHQpO1xuICAgIH1cbiAgfVxuICBjb25zdCB3YWxrZXIgPSBkb2N1bWVudC5jcmVhdGVUcmVlV2Fsa2VyKHJvb3QsIE5vZGVGaWx0ZXIuU0hPV19FTEVNRU5UKTtcbiAgd2hpbGUgKHdhbGtlci5uZXh0Tm9kZSgpKSB7XG4gICAgY29uc3Qgbm9kZSA9IHdhbGtlci5jdXJyZW50Tm9kZTtcbiAgICBmb3IgKGNvbnN0IGF0dHIgb2Ygbm9kZS5hdHRyaWJ1dGVzKSB7XG4gICAgICBpZiAoYXR0ci52YWx1ZS5pbmNsdWRlcyhmcmFnbWVudCkpIHtcbiAgICAgICAgYXR0ci52YWx1ZSA9IGF0dHIudmFsdWUucmVwbGFjZShmcmFnbWVudCwgXCIjXCIpO1xuICAgICAgfVxuICAgIH1cbiAgfVxuICByb290LnNldEF0dHJpYnV0ZU5TKHhtbG5zLCBcInhtbG5zXCIsIHN2Z25zKTtcbiAgcm9vdC5zZXRBdHRyaWJ1dGVOUyh4bWxucywgXCJ4bWxuczp4bGlua1wiLCB4bGlua25zKTtcbiAgY29uc3Qgc2VyaWFsaXplciA9IG5ldyBYTUxTZXJpYWxpemVyKCk7XG4gIGNvbnN0IHN0cmluZyA9IHNlcmlhbGl6ZXIuc2VyaWFsaXplVG9TdHJpbmcocm9vdCk7XG4gIHJldHVybiBuZXcgQmxvYihbc3RyaW5nXSwgeyB0eXBlOiBcImltYWdlL3N2Zyt4bWxcIiB9KTtcbn1cblxuXG5mdW5jdGlvbiBnZXRCb3VuZHMoZWxlbWVudHMpIHtcbiAgbGV0IHgxID0gSW5maW5pdHk7XG4gIGxldCB5MSA9IHgxO1xuICBsZXQgeDIgPSAteDE7XG4gIGxldCB5MiA9IHgyO1xuICBmb3IgKGNvbnN0IGVsZW1lbnQgb2YgZWxlbWVudHMpIHtcbiAgICBjb25zdCB7IHgsIHksIHdpZHRoLCBoZWlnaHQgfSA9IGVsZW1lbnQuZ2V0Qm91bmRpbmdDbGllbnRSZWN0KCk7XG4gICAgaWYgKHggPCB4MSkgeDEgPSB4O1xuICAgIGlmICh4ICsgd2lkdGggPiB4MikgeDIgPSB4ICsgd2lkdGg7XG4gICAgaWYgKHkgPCB5MSkgeTEgPSB5O1xuICAgIGlmICh5ICsgaGVpZ2h0ID4geTIpIHkyID0geSArIGhlaWdodDtcbiAgfVxuICByZXR1cm4gW3gxLCB5MSwgeDIgLSB4MSwgeTIgLSB5MV07XG59XG5cbi8vIGJhc2VkIG9uIGh0dHBzOi8vb2JzZXJ2YWJsZWhxLmNvbS9AZ2thL2NoZWFwLWZpdC10ZXh0LXRvLWNpcmNsZVxuZnVuY3Rpb24gbGluZXModGV4dCwgdGFyZ2V0V2lkdGgpIHtcbiAgY29uc3QgQ0hBUl9XID0ge1xuICAgIFwiYVwiOjcsXCJCXCI6OCxcIkNcIjo4LFwiY1wiOjYsXCJEXCI6OSxcImZcIjo0LFwiR1wiOjksXCJIXCI6OSxcIklcIjozLFwiaVwiOjMsXCJKXCI6NSxcImpcIjozLFwiS1wiOjgsXCJrXCI6NixcbiAgICBcImxcIjozLFwiTVwiOjExLFwibVwiOjExLFwiTlwiOjksXCJPXCI6OSxcIlBcIjo4LFwiUVwiOjksXCJSXCI6OCxcInJcIjo0LFwiU1wiOjgsXCJzXCI6NixcInRcIjo0LFwiVVwiOjksXCJ2XCI6NixcbiAgICBcIldcIjoxMSxcIndcIjo5LFwieFwiOjYsXCJ5XCI6NixcInpcIjo1LFwiLlwiOjIsXCIsXCI6MixcIjpcIjoyLFwiO1wiOjJcbiAgfTtcbiAgZnVuY3Rpb24gbWVhc3VyZVdpZHRoKHRleHQpIHsgcmV0dXJuICBkMy5zdW0odGV4dCwgY2hhciA9PiBDSEFSX1dbY2hhcl0gfHwgQ0hBUl9XW1wiYVwiXSkgKiAwLjg7IH07XG5cbiAgY29uc3Qgd29yZHMgPSB0ZXh0LnNwbGl0KFwiIFwiKTtcbiAgbGV0IGxpbmU7XG4gIGxldCBsaW5lV2lkdGgwID0gSW5maW5pdHk7XG4gIGNvbnN0IGxpbmVzID0gW107XG4gIGZvciAobGV0IGkgPSAwLCBuID0gd29yZHMubGVuZ3RoOyBpIDwgbjsgKytpKSB7XG4gICAgbGV0IGxpbmVUZXh0MSA9IChsaW5lID8gbGluZS50ZXh0ICsgXCIgXCIgOiBcIlwiKSArIHdvcmRzW2ldO1xuICAgIGxldCBsaW5lV2lkdGgxID0gbWVhc3VyZVdpZHRoKGxpbmVUZXh0MSk7XG4gICAgaWYgKChsaW5lV2lkdGgwICsgbGluZVdpZHRoMSkgLyAyIDwgdGFyZ2V0V2lkdGgpIHtcbiAgICAgIGxpbmUud2lkdGggPSBsaW5lV2lkdGgwID0gbGluZVdpZHRoMTtcbiAgICAgIGxpbmUudGV4dCA9IGxpbmVUZXh0MTtcbiAgICB9IGVsc2Uge1xuICAgICAgbGluZVdpZHRoMCA9IG1lYXN1cmVXaWR0aCh3b3Jkc1tpXSk7XG4gICAgICBsaW5lID0ge3dpZHRoOiBsaW5lV2lkdGgwLCB0ZXh0OiB3b3Jkc1tpXX07XG4gICAgICBsaW5lcy5wdXNoKGxpbmUpO1xuICAgIH1cbiAgfVxuICByZXR1cm4gbGluZXM7XG59XG5cbnhtbG5zID0gXCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3htbG5zL1wiXG5cbnhsaW5rbnMgPSBcImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmtcIlxuXG5zdmducyA9IFwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIlxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblxuLy8gQ29weXJpZ2h0IDIwMjEsIE9ic2VydmFibGUgSW5jLlxuLy8gUmVsZWFzZWQgdW5kZXIgdGhlIElTQyBsaWNlbnNlLlxuLy8gaHR0cHM6Ly9vYnNlcnZhYmxlaHEuY29tL0BkMy9jb2xvci1sZWdlbmRcbmZ1bmN0aW9uIExlZ2VuZChjb2xvciwge1xuICB0aXRsZSxcbiAgdGlja1NpemUgPSA2LFxuICB3aWR0aCA9IDMyMCwgXG4gIGhlaWdodCA9IDQ0ICsgdGlja1NpemUsXG4gIG1hcmdpblRvcCA9IDE4LFxuICBtYXJnaW5SaWdodCA9IDAsXG4gIG1hcmdpbkJvdHRvbSA9IDE2ICsgdGlja1NpemUsXG4gIG1hcmdpbkxlZnQgPSAwLFxuICB0aWNrcyA9IHdpZHRoIC8gNjQsXG4gIHRpY2tGb3JtYXQsXG4gIHRpY2tWYWx1ZXNcbn0gPSB7fSkge1xuXG4gIGZ1bmN0aW9uIHJhbXAoY29sb3IsIG4gPSAyNTYpIHtcbiAgICBjb25zdCBjYW52YXMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiY2FudmFzXCIpO1xuICAgIGNhbnZhcy53aWR0aCA9IG47XG4gICAgY2FudmFzLmhlaWdodCA9IDE7XG4gICAgY29uc3QgY29udGV4dCA9IGNhbnZhcy5nZXRDb250ZXh0KFwiMmRcIik7XG4gICAgZm9yIChsZXQgaSA9IDA7IGkgPCBuOyArK2kpIHtcbiAgICAgIGNvbnRleHQuZmlsbFN0eWxlID0gY29sb3IoaSAvIChuIC0gMSkpO1xuICAgICAgY29udGV4dC5maWxsUmVjdChpLCAwLCAxLCAxKTtcbiAgICB9XG4gICAgcmV0dXJuIGNhbnZhcztcbiAgfVxuXG4gIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxuICAgICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aClcbiAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodClcbiAgICAgIC5hdHRyKFwidmlld0JveFwiLCBbMCwgMCwgd2lkdGgsIGhlaWdodF0pXG4gICAgICAuc3R5bGUoXCJvdmVyZmxvd1wiLCBcInZpc2libGVcIilcbiAgICAgIC5zdHlsZShcImRpc3BsYXlcIiwgXCJibG9ja1wiKTtcblxuICBsZXQgdGlja0FkanVzdCA9IGcgPT4gZy5zZWxlY3RBbGwoXCIudGljayBsaW5lXCIpLmF0dHIoXCJ5MVwiLCBtYXJnaW5Ub3AgKyBtYXJnaW5Cb3R0b20gLSBoZWlnaHQpO1xuICBsZXQgeDtcblxuICAvLyBDb250aW51b3VzXG4gIGlmIChjb2xvci5pbnRlcnBvbGF0ZSkge1xuICAgIGNvbnN0IG4gPSBNYXRoLm1pbihjb2xvci5kb21haW4oKS5sZW5ndGgsIGNvbG9yLnJhbmdlKCkubGVuZ3RoKTtcblxuICAgIHggPSBjb2xvci5jb3B5KCkucmFuZ2VSb3VuZChkMy5xdWFudGl6ZShkMy5pbnRlcnBvbGF0ZShtYXJnaW5MZWZ0LCB3aWR0aCAtIG1hcmdpblJpZ2h0KSwgbikpO1xuXG4gICAgc3ZnLmFwcGVuZChcImltYWdlXCIpXG4gICAgICAgIC5hdHRyKFwieFwiLCBtYXJnaW5MZWZ0KVxuICAgICAgICAuYXR0cihcInlcIiwgbWFyZ2luVG9wKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoIC0gbWFyZ2luTGVmdCAtIG1hcmdpblJpZ2h0KVxuICAgICAgICAuYXR0cihcImhlaWdodFwiLCBoZWlnaHQgLSBtYXJnaW5Ub3AgLSBtYXJnaW5Cb3R0b20pXG4gICAgICAgIC5hdHRyKFwicHJlc2VydmVBc3BlY3RSYXRpb1wiLCBcIm5vbmVcIilcbiAgICAgICAgLmF0dHIoXCJ4bGluazpocmVmXCIsIHJhbXAoY29sb3IuY29weSgpLmRvbWFpbihkMy5xdWFudGl6ZShkMy5pbnRlcnBvbGF0ZSgwLCAxKSwgbikpKS50b0RhdGFVUkwoKSk7XG4gIH1cblxuICAvLyBTZXF1ZW50aWFsXG4gIGVsc2UgaWYgKGNvbG9yLmludGVycG9sYXRvcikge1xuICAgIHggPSBPYmplY3QuYXNzaWduKGNvbG9yLmNvcHkoKVxuICAgICAgICAuaW50ZXJwb2xhdG9yKGQzLmludGVycG9sYXRlUm91bmQobWFyZ2luTGVmdCwgd2lkdGggLSBtYXJnaW5SaWdodCkpLFxuICAgICAgICB7cmFuZ2UoKSB7IHJldHVybiBbbWFyZ2luTGVmdCwgd2lkdGggLSBtYXJnaW5SaWdodF07IH19KTtcblxuICAgIHN2Zy5hcHBlbmQoXCJpbWFnZVwiKVxuICAgICAgICAuYXR0cihcInhcIiwgbWFyZ2luTGVmdClcbiAgICAgICAgLmF0dHIoXCJ5XCIsIG1hcmdpblRvcClcbiAgICAgICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aCAtIG1hcmdpbkxlZnQgLSBtYXJnaW5SaWdodClcbiAgICAgICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0IC0gbWFyZ2luVG9wIC0gbWFyZ2luQm90dG9tKVxuICAgICAgICAuYXR0cihcInByZXNlcnZlQXNwZWN0UmF0aW9cIiwgXCJub25lXCIpXG4gICAgICAgIC5hdHRyKFwieGxpbms6aHJlZlwiLCByYW1wKGNvbG9yLmludGVycG9sYXRvcigpKS50b0RhdGFVUkwoKSk7XG5cbiAgICAvLyBzY2FsZVNlcXVlbnRpYWxRdWFudGlsZSBkb2VzbuKAmXQgaW1wbGVtZW50IHRpY2tzIG9yIHRpY2tGb3JtYXQuXG4gICAgaWYgKCF4LnRpY2tzKSB7XG4gICAgICBpZiAodGlja1ZhbHVlcyA9PT0gdW5kZWZpbmVkKSB7XG4gICAgICAgIGNvbnN0IG4gPSBNYXRoLnJvdW5kKHRpY2tzICsgMSk7XG4gICAgICAgIHRpY2tWYWx1ZXMgPSBkMy5yYW5nZShuKS5tYXAoaSA9PiBkMy5xdWFudGlsZShjb2xvci5kb21haW4oKSwgaSAvIChuIC0gMSkpKTtcbiAgICAgIH1cbiAgICAgIGlmICh0eXBlb2YgdGlja0Zvcm1hdCAhPT0gXCJmdW5jdGlvblwiKSB7XG4gICAgICAgIHRpY2tGb3JtYXQgPSBkMy5mb3JtYXQodGlja0Zvcm1hdCA9PT0gdW5kZWZpbmVkID8gXCIsZlwiIDogdGlja0Zvcm1hdCk7XG4gICAgICB9XG4gICAgfVxuICB9XG5cbiAgLy8gVGhyZXNob2xkXG4gIGVsc2UgaWYgKGNvbG9yLmludmVydEV4dGVudCkge1xuICAgIGNvbnN0IHRocmVzaG9sZHNcbiAgICAgICAgPSBjb2xvci50aHJlc2hvbGRzID8gY29sb3IudGhyZXNob2xkcygpIC8vIHNjYWxlUXVhbnRpemVcbiAgICAgICAgOiBjb2xvci5xdWFudGlsZXMgPyBjb2xvci5xdWFudGlsZXMoKSAvLyBzY2FsZVF1YW50aWxlXG4gICAgICAgIDogY29sb3IuZG9tYWluKCk7IC8vIHNjYWxlVGhyZXNob2xkXG5cbiAgICBjb25zdCB0aHJlc2hvbGRGb3JtYXRcbiAgICAgICAgPSB0aWNrRm9ybWF0ID09PSB1bmRlZmluZWQgPyBkID0+IGRcbiAgICAgICAgOiB0eXBlb2YgdGlja0Zvcm1hdCA9PT0gXCJzdHJpbmdcIiA/IGQzLmZvcm1hdCh0aWNrRm9ybWF0KVxuICAgICAgICA6IHRpY2tGb3JtYXQ7XG5cbiAgICB4ID0gZDMuc2NhbGVMaW5lYXIoKVxuICAgICAgICAuZG9tYWluKFstMSwgY29sb3IucmFuZ2UoKS5sZW5ndGggLSAxXSlcbiAgICAgICAgLnJhbmdlUm91bmQoW21hcmdpbkxlZnQsIHdpZHRoIC0gbWFyZ2luUmlnaHRdKTtcblxuICAgIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgICAuc2VsZWN0QWxsKFwicmVjdFwiKVxuICAgICAgLmRhdGEoY29sb3IucmFuZ2UoKSlcbiAgICAgIC5qb2luKFwicmVjdFwiKVxuICAgICAgICAuYXR0cihcInhcIiwgKGQsIGkpID0+IHgoaSAtIDEpKVxuICAgICAgICAuYXR0cihcInlcIiwgbWFyZ2luVG9wKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIChkLCBpKSA9PiB4KGkpIC0geChpIC0gMSkpXG4gICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodCAtIG1hcmdpblRvcCAtIG1hcmdpbkJvdHRvbSlcbiAgICAgICAgLmF0dHIoXCJmaWxsXCIsIGQgPT4gZCk7XG5cbiAgICB0aWNrVmFsdWVzID0gZDMucmFuZ2UodGhyZXNob2xkcy5sZW5ndGgpO1xuICAgIHRpY2tGb3JtYXQgPSBpID0+IHRocmVzaG9sZEZvcm1hdCh0aHJlc2hvbGRzW2ldLCBpKTtcbiAgfVxuXG4gIC8vIE9yZGluYWxcbiAgZWxzZSB7XG4gICAgeCA9IGQzLnNjYWxlQmFuZCgpXG4gICAgICAgIC5kb21haW4oY29sb3IuZG9tYWluKCkpXG4gICAgICAgIC5yYW5nZVJvdW5kKFttYXJnaW5MZWZ0LCB3aWR0aCAtIG1hcmdpblJpZ2h0XSk7XG5cbiAgICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgICAgLnNlbGVjdEFsbChcInJlY3RcIilcbiAgICAgIC5kYXRhKGNvbG9yLmRvbWFpbigpKVxuICAgICAgLmpvaW4oXCJyZWN0XCIpXG4gICAgICAgIC5hdHRyKFwieFwiLCB4KVxuICAgICAgICAuYXR0cihcInlcIiwgbWFyZ2luVG9wKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIE1hdGgubWF4KDAsIHguYmFuZHdpZHRoKCkgLSAxKSlcbiAgICAgICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0IC0gbWFyZ2luVG9wIC0gbWFyZ2luQm90dG9tKVxuICAgICAgICAuYXR0cihcImZpbGxcIiwgY29sb3IpO1xuXG4gICAgdGlja0FkanVzdCA9ICgpID0+IHt9O1xuICB9XG5cbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2hlaWdodCAtIG1hcmdpbkJvdHRvbX0pYClcbiAgICAgIC5jYWxsKGQzLmF4aXNCb3R0b20oeClcbiAgICAgICAgLnRpY2tzKHRpY2tzLCB0eXBlb2YgdGlja0Zvcm1hdCA9PT0gXCJzdHJpbmdcIiA/IHRpY2tGb3JtYXQgOiB1bmRlZmluZWQpXG4gICAgICAgIC50aWNrRm9ybWF0KHR5cGVvZiB0aWNrRm9ybWF0ID09PSBcImZ1bmN0aW9uXCIgPyB0aWNrRm9ybWF0IDogdW5kZWZpbmVkKVxuICAgICAgICAudGlja1NpemUodGlja1NpemUpXG4gICAgICAgIC50aWNrVmFsdWVzKHRpY2tWYWx1ZXMpKVxuICAgICAgLmNhbGwodGlja0FkanVzdClcbiAgICAgIC5jYWxsKGcgPT4gZy5zZWxlY3QoXCIuZG9tYWluXCIpLnJlbW92ZSgpKVxuICAgICAgLmNhbGwoZyA9PiBnLmFwcGVuZChcInRleHRcIilcbiAgICAgICAgLmF0dHIoXCJ4XCIsIG1hcmdpbkxlZnQpXG4gICAgICAgIC5hdHRyKFwieVwiLCBtYXJnaW5Ub3AgKyBtYXJnaW5Cb3R0b20gLSBoZWlnaHQgLSA2KVxuICAgICAgICAuYXR0cihcImZpbGxcIiwgXCJjdXJyZW50Q29sb3JcIilcbiAgICAgICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcInN0YXJ0XCIpXG4gICAgICAgIC5hdHRyKFwiZm9udC13ZWlnaHRcIiwgXCJib2xkXCIpXG4gICAgICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIjEycHhcIilcbiAgICAgICAgLmF0dHIoXCJjbGFzc1wiLCBcInRpdGxlXCIpXG4gICAgICAgIC50ZXh0KHRpdGxlKSk7XG5cbiAgcmV0dXJuIHN2Zy5ub2RlKCk7XG59XG5cblxuZnVuY3Rpb24gbGVnZW5kKHtjb2xvciwgLi4ub3B0aW9uc30pIHtcbiAgcmV0dXJuIExlZ2VuZChjb2xvciwgb3B0aW9ucyk7XG59XG5cblxuLy8gQ29weXJpZ2h0IDIwMjEsIE9ic2VydmFibGUgSW5jLlxuLy8gUmVsZWFzZWQgdW5kZXIgdGhlIElTQyBsaWNlbnNlLlxuLy8gaHR0cHM6Ly9vYnNlcnZhYmxlaHEuY29tL0BkMy9jb2xvci1sZWdlbmRcbmZ1bmN0aW9uIFN3YXRjaGVzKGNvbG9yLCB7XG4gIGNvbHVtbnMgPSBudWxsLFxuICBmb3JtYXQsXG4gIHVua25vd246IGZvcm1hdFVua25vd24sXG4gIHN3YXRjaFNpemUgPSAxNSxcbiAgc3dhdGNoV2lkdGggPSBzd2F0Y2hTaXplLFxuICBzd2F0Y2hIZWlnaHQgPSBzd2F0Y2hTaXplLFxuICBtYXJnaW5MZWZ0ID0gMFxufSA9IHt9KSB7XG4gIGNvbnN0IGlkID0gYC1zd2F0Y2hlcy0ke01hdGgucmFuZG9tKCkudG9TdHJpbmcoMTYpLnNsaWNlKDIpfWA7XG4gIGNvbnN0IHVua25vd24gPSBmb3JtYXRVbmtub3duID09IG51bGwgPyB1bmRlZmluZWQgOiBjb2xvci51bmtub3duKCk7XG4gIGNvbnN0IHVua25vd25zID0gdW5rbm93biA9PSBudWxsIHx8IHVua25vd24gPT09IGQzLnNjYWxlSW1wbGljaXQgPyBbXSA6IFt1bmtub3duXTtcbiAgY29uc3QgZG9tYWluID0gY29sb3IuZG9tYWluKCkuY29uY2F0KHVua25vd25zKTtcbiAgaWYgKGZvcm1hdCA9PT0gdW5kZWZpbmVkKSBmb3JtYXQgPSB4ID0+IHggPT09IHVua25vd24gPyBmb3JtYXRVbmtub3duIDogeDtcblxuICBmdW5jdGlvbiBlbnRpdHkoY2hhcmFjdGVyKSB7XG4gICAgcmV0dXJuIGAmIyR7Y2hhcmFjdGVyLmNoYXJDb2RlQXQoMCkudG9TdHJpbmcoKX07YDtcbiAgfVxuXG4gIGlmIChjb2x1bW5zICE9PSBudWxsKSByZXR1cm4gaHRsLmh0bWxgPGRpdiBzdHlsZT1cImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IG1hcmdpbi1sZWZ0OiAkeyttYXJnaW5MZWZ0fXB4OyBtaW4taGVpZ2h0OiAzM3B4OyBmb250OiAxMnB4IHNhbnMtc2VyaWY7XCI+XG4gIDxzdHlsZT5cblxuLiR7aWR9LWl0ZW0ge1xuICBicmVhay1pbnNpZGU6IGF2b2lkO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBwYWRkaW5nLWJvdHRvbTogMXB4O1xufVxuXG4uJHtpZH0tbGFiZWwge1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgbWF4LXdpZHRoOiBjYWxjKDEwMCUgLSAkeytzd2F0Y2hXaWR0aH1weCAtIDAuNWVtKTtcbn1cblxuLiR7aWR9LXN3YXRjaCB7XG4gIHdpZHRoOiAkeytzd2F0Y2hXaWR0aH1weDtcbiAgaGVpZ2h0OiAkeytzd2F0Y2hIZWlnaHR9cHg7XG4gIG1hcmdpbjogMCAwLjVlbSAwIDA7XG59XG5cbiAgPC9zdHlsZT5cbiAgPGRpdiBzdHlsZT0ke3t3aWR0aDogXCIxMDAlXCIsIGNvbHVtbnN9fT4ke2RvbWFpbi5tYXAodmFsdWUgPT4ge1xuICAgIGNvbnN0IGxhYmVsID0gYCR7Zm9ybWF0KHZhbHVlKX1gO1xuICAgIHJldHVybiBodGwuaHRtbGA8ZGl2IGNsYXNzPSR7aWR9LWl0ZW0+XG4gICAgICA8ZGl2IGNsYXNzPSR7aWR9LXN3YXRjaCBzdHlsZT0ke3tiYWNrZ3JvdW5kOiBjb2xvcih2YWx1ZSl9fT48L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3M9JHtpZH0tbGFiZWwgdGl0bGU9JHtsYWJlbH0+JHtsYWJlbH08L2Rpdj5cbiAgICA8L2Rpdj5gO1xuICB9KX1cbiAgPC9kaXY+XG48L2Rpdj5gO1xuXG4gIHJldHVybiBodGwuaHRtbGA8ZGl2IHN0eWxlPVwiZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgbWluLWhlaWdodDogMzNweDsgbWFyZ2luLWxlZnQ6ICR7K21hcmdpbkxlZnR9cHg7IGZvbnQ6IDEycHggc2Fucy1zZXJpZjtcIj5cbiAgPHN0eWxlPlxuXG4uJHtpZH0ge1xuICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgbWFyZ2luLXJpZ2h0OiAxZW07XG59XG5cbi4ke2lkfTo6YmVmb3JlIHtcbiAgY29udGVudDogXCJcIjtcbiAgd2lkdGg6ICR7K3N3YXRjaFdpZHRofXB4O1xuICBoZWlnaHQ6ICR7K3N3YXRjaEhlaWdodH1weDtcbiAgbWFyZ2luLXJpZ2h0OiAwLjVlbTtcbiAgYmFja2dyb3VuZDogdmFyKC0tY29sb3IpO1xufVxuXG4gIDwvc3R5bGU+XG4gIDxkaXY+JHtkb21haW4ubWFwKHZhbHVlID0+IGh0bC5odG1sYDxzcGFuIGNsYXNzPVwiJHtpZH1cIiBzdHlsZT1cIi0tY29sb3I6ICR7Y29sb3IodmFsdWUpfVwiPiR7Zm9ybWF0KHZhbHVlKX08L3NwYW4+YCl9PC9kaXY+YDtcbn1cblxuZnVuY3Rpb24gc3dhdGNoZXMoe2NvbG9yLCAuLi5vcHRpb25zfSkge1xuICByZXR1cm4gU3dhdGNoZXMoY29sb3IsIG9wdGlvbnMpO1xufVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblxuY2hhcnRfbWFwX2QzID0gZnVuY3Rpb24oZGF0YSwgbWFwVG9wb0pTT04sIGNvbG9yLCBjb2xvckJvcmRlciwgdHh0VGl0bGUsIGNoYXJ0X3dpZHRoLCBjaGFydF9oZWlnaHQpIHtcblxuICBjb25zdCBwcm9qZWN0aW9uID0gZDMuZ2VvTWVyY2F0b3IoKVxuICAuc2NhbGUoMTIwMClcbiAgLy8uY2VudGVyKFs0MCwgNjcuNV0pXG4gIC5jZW50ZXIoWzQwLCA2Ny4zXSlcbiAgLnRyYW5zbGF0ZShbNDAwLCAyMjBdKVxuICBjb25zdCBwYXRoID0gZDMuZ2VvUGF0aCgpLnByb2plY3Rpb24ocHJvamVjdGlvbik7XG4gIGNvbnN0IGZvcm1hdCA9IGQgPT4gYCR7ZH0lYDtcbiAgXG4gIC8vTcOkw6RyaXRlbGzDpMOkbiB0w6Row6RuIG11dXR0dWphdCBDU1Y6c3TDpCEhISEhIVxuICBjb25zdCB2YWx1ZW1hcCA9IG5ldyBNYXAoZGF0YS5tYXAoZCA9PiBbZC5pZCwgZC5tdXV0b3NdKSk7XG4gIFxuICAvL03DpMOkcml0ZWxsw6TDpG4gbWFha3VubmF0XG4gIGNvbnN0IG1hYWt1bnRhbWVzaCA9IHRvcG9qc29uLm1lc2gobWFha3VubmF0XzIwMjRfdG9wbywgbWFha3VubmF0XzIwMjRfdG9wby5vYmplY3RzLm1hYWt1bm5hdF8yMDI0LCAoYSwgYikgPT4gYSAhPT0gYik7XG4gIFxuICBjb25zdCB6b29tID0gZDMuem9vbSgpXG4gICAgICAuc2NhbGVFeHRlbnQoWzEsIDhdKVxuICAgICAgLm9uKFwiem9vbVwiLCB6b29tZWQpO1xuXG4gIGNvbnN0IHN2ZyA9IGQzLmNyZWF0ZShcInN2Z1wiKVxuICAgICAgLmF0dHIoXCJ3aWR0aFwiLCA5MDApXG4gICAgICAuYXR0cihcImhlaWdodFwiLCA2NTApXG4gICAgICAuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIDkwMCwgNjUwXSlcbiAgICAgIC5vbihcImNsaWNrXCIsIHJlc2V0KTtcbiAgICAgIFxuICBjb25zdCBnID0gc3ZnLmFwcGVuZChcImdcIilcbiAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIFwidHJhbnNsYXRlKDIwLDM1KVwiKVxuICAgICAgLmFwcGVuZCgoKSA9PiBMZWdlbmQoY29sb3IsIHt0aXRsZTogdHh0VGl0bGUsIHdpZHRoOiAyNjB9KSk7XG5cbiAgZy5hcHBlbmQoXCJnXCIpXG4gICAgLnNlbGVjdEFsbChcInBhdGhcIilcbiAgICAuZGF0YShtYXBUb3BvSlNPTilcbiAgICAuam9pbihcInBhdGhcIilcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBkID0+IGNvbG9yKHZhbHVlbWFwLmdldChkLnByb3BlcnRpZXMua3VudGEpKSkgXG4gICAgICAuYXR0cihcImRcIiwgcGF0aClcbiAgICAuYXBwZW5kKFwidGl0bGVcIilcbiAgICAgIC50ZXh0KGQgPT4gYCR7ZC5wcm9wZXJ0aWVzLm5hbWV9LFxcbigke2QucHJvcGVydGllcy5uaW1pXzJ9KSxcXG4ke3ZhbHVlbWFwLmdldChkLnByb3BlcnRpZXMua3VudGEpfWApO1xuICAgICAgXG4gIGcuYXBwZW5kKFwicGF0aFwiKVxuICAgICAgLmRhdHVtKG1hYWt1bnRhbWVzaClcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAgIC5hdHRyKFwic3Ryb2tlXCIsIGNvbG9yQm9yZGVyKVxuICAgICAgLmF0dHIoXCJzdHJva2UtbGluZWpvaW5cIiwgXCJyb3VuZFwiKVxuICAgICAgLmF0dHIoXCJkXCIsIHBhdGgpO1xuICAgICAgXG4gICBzdmcuY2FsbCh6b29tKTtcbiAgIFxuXG4gIGZ1bmN0aW9uIHJlc2V0KCkge1xuICAgIC8vIHN0YXRlcy50cmFuc2l0aW9uKCkuc3R5bGUoXCJmaWxsXCIsIG51bGwpO1xuICAgIHN2Zy50cmFuc2l0aW9uKCkuZHVyYXRpb24oNzUwKS5jYWxsKFxuICAgICAgem9vbS50cmFuc2Zvcm0sXG4gICAgICBkMy56b29tSWRlbnRpdHksXG4gICAgICBkMy56b29tVHJhbnNmb3JtKHN2Zy5ub2RlKCkpLmludmVydChbY2hhcnRfd2lkdGggLyAyLCBjaGFydF9oZWlnaHQgLyAyXSlcbiAgICApO1xuICB9XG5cbiAgZnVuY3Rpb24gem9vbWVkKGV2ZW50KSB7XG4gICAgY29uc3Qge3RyYW5zZm9ybX0gPSBldmVudDtcbiAgICBnLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgdHJhbnNmb3JtKTtcbiAgICBnLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMSAvIHRyYW5zZm9ybS5rKTtcbiAgfSAgICAgXG4gICAgICBcbiAgcmV0dXJuIHN2Zy5ub2RlKCk7XG59XG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuY2hhcnRfY2hvcmRfZDMgPSBmdW5jdGlvbihkYXRhLCB0aXRsZV90eHRfY2hvcmQsIGNoYXJ0X3dpZHRoLCBjaGFydF9oZWlnaHQpIHtcblxuICB2YXIgc3VtX3RhcmdldDtcbiAgdmFyIHN1bV9zb3VyY2U7XG4gIGxldCB2YXJpO1xuICB2YXIgc3VtX3lodDtcbiAgXG4gIGNvbnN0IG1hcmdpbiA9ICh7dG9wOiAyMCwgcmlnaHQ6IDIwLCBib3R0b206IDAsIGxlZnQ6IDUwfSk7XG4gIGNvbnN0IHdpZHRoID0gMzAwO1xuICBjb25zdCBoZWlnaHQgPSB3aWR0aDtcbiAgY29uc3QgaW5uZXJSYWRpdXMgPSBNYXRoLm1pbih3aWR0aCwgaGVpZ2h0KSAqIC4zIC0gNDA7XG4gIGNvbnN0IG91dGVyUmFkaXVzID0gaW5uZXJSYWRpdXMgKyAxNTtcbiAgXG4gIFxuICBjb25zdCBjaG9yZCA9IGQzLmNob3JkRGlyZWN0ZWQoKVxuICAgIC5wYWRBbmdsZSgwLjUgLyBpbm5lclJhZGl1cylcbiAgICAuc29ydFN1Ymdyb3VwcyhkMy5hc2NlbmRpbmcpXG4gICAgLnNvcnRDaG9yZHMoZDMuYXNjZW5kaW5nKTtcbiAgICBcbiAgY29uc3QgcmliYm9uID0gZDMucmliYm9uKClcbiAgICAucmFkaXVzKGlubmVyUmFkaXVzIC0gMSlcbiAgICAucGFkQW5nbGUoMC41IC8gaW5uZXJSYWRpdXMpO1xuICAgIFxuICBjb25zdCByZW5hbWUgPSBuYW1lID0+IG5hbWUuc3Vic3RyaW5nKG5hbWUuaW5kZXhPZihcIi5cIikgKyAxLCBuYW1lLmxhc3RJbmRleE9mKFwiLlwiKSlcbiAgY29uc3QgbmFtZXMgPSBBcnJheS5mcm9tKG5ldyBTZXQoZGF0YS5mbGF0TWFwKGQgPT4gW2Quc291cmNlLCBkLnRhcmdldF0pKSkuc29ydChkMy5hc2NlbmRpbmcpO1xuICBcbiAgZnVuY3Rpb24gbWF0cmlpc2kobmFtZXMpIHtcbiAgICBjb25zdCBpbmRleCA9IG5ldyBNYXAobmFtZXMubWFwKChuYW1lLCBpKSA9PiBbbmFtZSwgaV0pKTtcbiAgICBjb25zdCBtYXRyaXggPSBBcnJheS5mcm9tKGluZGV4LCAoKSA9PiBuZXcgQXJyYXkobmFtZXMubGVuZ3RoKS5maWxsKDApKTtcbiAgICBmb3IgKGNvbnN0IHtzb3VyY2UsIHRhcmdldCwgdmFsdWV9IG9mIGRhdGEpIG1hdHJpeFtpbmRleC5nZXQoc291cmNlKV1baW5kZXguZ2V0KHRhcmdldCldICs9IHZhbHVlO1xuICAgIHJldHVybiBtYXRyaXg7XG4gIH1cblxuIGNvbnN0IG1hdHJpeCA9IG1hdHJpaXNpKG5hbWVzKVxuICBcbiBjb25zdCBhcmMgPSBkMy5hcmMoKVxuICAgIC5pbm5lclJhZGl1cyhpbm5lclJhZGl1cylcbiAgICAub3V0ZXJSYWRpdXMob3V0ZXJSYWRpdXMpXG5cbiAgLy9Uw4RTVMOEIEFMS0FBIFBJSVJST1NcbiAgXG4gIGNvbnN0IHpvb20gPSBkMy56b29tKClcbiAgICAgIC5zY2FsZUV4dGVudChbMSwgOF0pXG4gICAgICAub24oXCJ6b29tXCIsIHpvb21lZCk7XG4gIFxuICBjb25zdCBzdmcgPSBkMy5jcmVhdGUoXCJzdmdcIilcbiAgICAgIC5hdHRyKFwidmlld0JveFwiLCBbLXdpZHRoIC8gMiwgLWhlaWdodCAvIDIuNSwgd2lkdGgsIGhlaWdodF0pO1xuXG4gIGNvbnN0IGNob3JkcyA9IGNob3JkKG1hdHJpeCk7XG4gIFxuICBjb25zdCBncm91cCA9IHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgICAuYXR0cihcImZvbnQtc2l6ZVwiLCAzKVxuICAgICAgLmF0dHIoXCJmb250LWZhbWlseVwiLCBcIkNlbnR1cnkgR290aGljXCIpXG4gICAgLnNlbGVjdEFsbChcImdcIilcbiAgICAuZGF0YShjaG9yZHMuZ3JvdXBzKVxuICAgIC5qb2luKFwiZ1wiKTtcblxuICBncm91cC5hcHBlbmQoXCJwYXRoXCIpXG4gICAgICAuYXR0cihcImZpbGxcIiwgZCA9PiB7XG4gICAgICAgICAgIHN1bV90YXJnZXQgPSBkMy5zdW0oY2hvcmRzLCBjID0+IChjLnRhcmdldC5pbmRleCA9PT0gZC5pbmRleCkgKiBjLnRhcmdldC52YWx1ZSk7XG4gICAgICAgICAgIHN1bV9zb3VyY2UgPSBkMy5zdW0oY2hvcmRzLCBjID0+IChjLnNvdXJjZS5pbmRleCA9PT0gZC5pbmRleCkgKiBjLnNvdXJjZS52YWx1ZSk7XG4gICAgICAgICAgIHN1bV95aHQgPSBzdW1fdGFyZ2V0LXN1bV9zb3VyY2U7XG4gICAgICAgICAgICBpZiAoc3VtX3lodCA+IDApIHsgXG4gICAgICAgICAgICAgIHZhcmkgPSBcIiMwMDk2NTFcIlxuICAgICAgICAgICAgICByZXR1cm4gdmFyaSBcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGVsc2UgaWYgKHN1bV95aHQgPT0gMCkgeyBcbiAgICAgICAgICAgICAgdmFyaSA9IFwiIzI4MzM2Q1wiXG4gICAgICAgICAgICAgIHJldHVybiB2YXJpIFxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSBcdHsgXG4gICAgICAgICAgICAgIHZhcmkgPSBcIiNERTIzMkZcIiBcbiAgICAgICAgICAgICAgcmV0dXJuIHZhcmkgXG4gICAgICAgICAgICB9XG4gICAgICAgIH0pXG4gICAgICAuYXR0cihcImRcIiwgYXJjKTtcblxuICBncm91cC5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgICAuZWFjaChkID0+IChkLmFuZ2xlID0gKGQuc3RhcnRBbmdsZSArIGQuZW5kQW5nbGUpIC8gMikpXG4gICAgICAuYXR0cihcImR5XCIsIFwiMC4zNWVtXCIpXG4gICAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBkID0+IGBcbiAgICAgICAgcm90YXRlKCR7KGQuYW5nbGUgKiAxODAgLyBNYXRoLlBJIC0gOTApfSlcbiAgICAgICAgdHJhbnNsYXRlKCR7b3V0ZXJSYWRpdXMgKyA2fSlcbiAgICAgICAgJHtkLmFuZ2xlID4gTWF0aC5QSSA/IFwicm90YXRlKDE4MClcIiA6IFwiXCJ9XG4gICAgICBgKVxuICAgICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBkID0+IGQuYW5nbGUgPiBNYXRoLlBJID8gXCJlbmRcIiA6IG51bGwpXG4gICAgICAvLy50ZXh0KGQgPT4gbmFtZXNbZC5pbmRleF0pXG4gICAgICAudGV4dChkID0+IChkLmluZGV4ID49IDMpID8gbmFtZXNbZC5pbmRleF0gOiBcIlwiKVxuICAgICAgLmF0dHIoXCJmaWxsXCIsIGQgPT4ge1xuICAgICAgICAgICBzdW1fdGFyZ2V0ID0gZDMuc3VtKGNob3JkcywgYyA9PiAoYy50YXJnZXQuaW5kZXggPT09IGQuaW5kZXgpICogYy50YXJnZXQudmFsdWUpO1xuICAgICAgICAgICBzdW1fc291cmNlID0gZDMuc3VtKGNob3JkcywgYyA9PiAoYy5zb3VyY2UuaW5kZXggPT09IGQuaW5kZXgpICogYy5zb3VyY2UudmFsdWUpO1xuICAgICAgICAgICBzdW1feWh0ID0gc3VtX3RhcmdldC1zdW1fc291cmNlO1xuICAgICAgICAgICAgaWYgKHN1bV95aHQgPiAwKSB7IFxuICAgICAgICAgICAgICB2YXJpID0gXCIjMDA5NjUxXCJcbiAgICAgICAgICAgICAgcmV0dXJuIHZhcmlcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGVsc2UgaWYgKHN1bV95aHQgPT0gMCkgeyBcbiAgICAgICAgICAgICAgdmFyaSA9IFwiIzI4MzM2Q1wiXG4gICAgICAgICAgICAgIHJldHVybiB2YXJpIFxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSBcdHsgXG4gICAgICAgICAgICAgIHZhcmkgPSBcIiNERTIzMkZcIiBcbiAgICAgICAgICAgICAgcmV0dXJuIHZhcmkgXG4gICAgICAgICAgICB9XG4gICAgICAgIH0pO1xuXG4gIGdyb3VwLmFwcGVuZChcInRpdGxlXCIpXG4gICAgICAudGV4dChkID0+IGAke25hbWVzW2QuaW5kZXhdfSBcblxuJHtkMy5zdW0oY2hvcmRzLCBjID0+IChjLnNvdXJjZS5pbmRleCA9PT0gZC5pbmRleCkgKiBjLnNvdXJjZS52YWx1ZSl9IGzDpGh0ZWUg4oaSXG4ke2QzLnN1bShjaG9yZHMsIGMgPT4gKGMudGFyZ2V0LmluZGV4ID09PSBkLmluZGV4KSAqIGMuc291cmNlLnZhbHVlKX0gdHVsZWUg4oaQXG4ke2QzLnN1bShjaG9yZHMsIGMgPT4gKGMudGFyZ2V0LmluZGV4ID09PSBkLmluZGV4KSAqIGMudGFyZ2V0LnZhbHVlKS0gZDMuc3VtKGNob3JkcywgYyA9PiAoYy5zb3VyY2UuaW5kZXggPT09IGQuaW5kZXgpICogYy5zb3VyY2UudmFsdWUpfSBuZXR0byA9YCk7ICBcblxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgICAgLmF0dHIoXCJmaWxsLW9wYWNpdHlcIiwgMC43NSlcbiAgICAuc2VsZWN0QWxsKFwicGF0aFwiKVxuICAgIC5kYXRhKGNob3JkcylcbiAgICAuam9pbihcInBhdGhcIilcbiAgICAgIC5zdHlsZShcIm1peC1ibGVuZC1tb2RlXCIsIFwibXVsdGlwbHlcIilcbiAgICAgICAgICAuYXR0cihcImZpbGxcIiwgZCA9PiB7XG4gICAgICAgICAgIHN1bV90YXJnZXQgPSBkMy5zdW0oY2hvcmRzLCBjID0+IChjLnRhcmdldC5pbmRleCA9PT0gZC5pbmRleCkgKiBjLnRhcmdldC52YWx1ZSk7XG4gICAgICAgICAgIHN1bV9zb3VyY2UgPSBkMy5zdW0oY2hvcmRzLCBjID0+IChjLnNvdXJjZS5pbmRleCA9PT0gZC5pbmRleCkgKiBjLnNvdXJjZS52YWx1ZSk7XG4gICAgICAgICAgIHN1bV95aHQgPSBzdW1fdGFyZ2V0LXN1bV9zb3VyY2U7XG4gICAgICAgICAgICBpZiAoc3VtX3lodCA+IDApIHsgXG4gICAgICAgICAgICAgIHZhcmkgPSBcIiMwMDk2NTFcIlxuICAgICAgICAgICAgICByZXR1cm4gdmFyaSBcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGVsc2UgaWYgKHN1bV95aHQgPT0gMCkgeyBcbiAgICAgICAgICAgICAgdmFyaSA9IFwiIzI4MzM2Q1wiXG4gICAgICAgICAgICAgIHJldHVybiB2YXJpIFxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSBcdHsgXG4gICAgICAgICAgICAgIHZhcmkgPSBcIiNERTIzMkZcIiBcbiAgICAgICAgICAgICAgcmV0dXJuIHZhcmkgXG4gICAgICAgICAgICB9XG4gICAgICAgIH0pXG4gICAgICAuYXR0cihcImRcIiwgcmliYm9uKVxuICAgIC5hcHBlbmQoXCJ0aXRsZVwiKVxuICAgICAgLnRleHQoZCA9PiBgJHtuYW1lc1tkLnNvdXJjZS5pbmRleF19IC0tPiAke25hbWVzW2QudGFyZ2V0LmluZGV4XX0gJHtkLnNvdXJjZS52YWx1ZX1gKTtcbiAgICAgIFxuICAgICAgXG4gIHN2Zy5jYWxsKHpvb20pO1xuICAgXG5cbiAgZnVuY3Rpb24gcmVzZXQoKSB7XG4gICAgLy8gc3RhdGVzLnRyYW5zaXRpb24oKS5zdHlsZShcImZpbGxcIiwgbnVsbCk7XG4gICAgc3ZnLnRyYW5zaXRpb24oKS5kdXJhdGlvbig3NTApLmNhbGwoXG4gICAgICB6b29tLnRyYW5zZm9ybSxcbiAgICAgIGQzLnpvb21JZGVudGl0eSxcbiAgICAgIGQzLnpvb21UcmFuc2Zvcm0oc3ZnLm5vZGUoKSkuaW52ZXJ0KFtjaGFydF93aWR0aCAvIDIsIGNoYXJ0X2hlaWdodCAvIDJdKVxuICAgICk7XG4gIH1cblxuICBmdW5jdGlvbiB6b29tZWQoZXZlbnQpIHtcbiAgICBjb25zdCB7dHJhbnNmb3JtfSA9IGV2ZW50O1xuICAgIHN2Zy5hdHRyKFwidHJhbnNmb3JtXCIsIHRyYW5zZm9ybSk7XG4gICAgc3ZnLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMSAvIHRyYW5zZm9ybS5rKTtcbiAgfSAgICBcblxuICByZXR1cm4gc3ZnLm5vZGUoKTtcblxuXG59XG5cbiJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
