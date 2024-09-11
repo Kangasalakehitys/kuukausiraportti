@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Juuso Heinisuo">
+<meta name="keywords" content="Kuntien kuukausiraportti, väestö, yhteistyö, avoin lähdekoodi, Tilastokeskus, tietojohtaminen">
+<meta name="description" content="Kuukausiraportti tarjoaa tietoa väestöstä, työmarkkinoista, asumisesta, rakentamisesta, taloudesta ja verotuksesta. Tietolähteinä käytetään esimerkiksi Tilastokeskuksen, Valtiokonttorin, Verottajan aineistoja, avoimilta rajapinnoilta. Tilannekuvakirjaa kehitetään yhteistyössä kuntien kanssa.">
 
-<title>muuttoliike</title>
+<title>Kuntien kuukausiraportti 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <script type="ojs-define">
 
-{"contents":[{"name":"title_txt_chord","value":"Muuttoliike_kunnat"},{"name":"migrationChordCSV","value":"./data/migr_muni.csv"},{"name":"chart_height","value":700},{"name":"chart_width","value":800}]}
+{"contents":[{"name":"title_txt_chord","value":"Muuttoliike_kunnat"},{"name":"migrationChordCSV","value":"./data/kangasala_migr_muni.csv"},{"name":"chart_height","value":700},{"name":"chart_width","value":800}]}
 
 </script>
 
@@ -119,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./Kangasala_logo_slogan_RGB_white.png" alt="" class="navbar-logo">
+    <img src="./themes/logot/kangasala_logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Hae"></div>
@@ -160,6 +163,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./kansainvalisyys.html"> 
 <span class="menu-text">Kansainvälisyys</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./verotus.html"> 
+<span class="menu-text">Verotus</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -175,7 +182,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Avainsanat</div>
+    <p>Kuntien kuukausiraportti, väestö, yhteistyö, avoin lähdekoodi, Tilastokeskus, tietojohtaminen</p>
+  </div>
+</div>
+
+</header>
 
 
 <!--- LIBRARIES -->
@@ -1190,6 +1218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="kuntien-välinen-muuttoliike" class="level1" data-background-image="./images/7.png">
 <h1 data-background-image="./images/7.png">Kuntien välinen muuttoliike</h1>
+<p>Ympyrä kuvaa kuntien välistä muuttoliikettä. Vihreällä olevat kunnat ovat muuttovoittajien ja punaisella olevat häviäjiä. Siniset viivat ympyrän keskellä kuvaavat muuttovirtojen suuruutta. Voit zoomata ympyrää hiiren rullalla. Laittamalla hiiren osoitin kuvan päälle näet muuttojen suuruudet ja liikesuunnat.</p>
 <div class="cell" data-warning="false">
 <div class="sourceCode cell-code hidden" id="cb6" data-startfrom="2" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> (<span class="cf">await</span> <span class="fu">FileAttachmentDynamic</span>(migrationChordCSV)<span class="op">.</span><span class="fu">csv</span>())<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1655,6 +1684,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2023 Kangasalan kaupunki.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Kangasalakehitys/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

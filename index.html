@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Juuso Heinisuo">
+<meta name="keywords" content="Kuntien kuukausiraportti, väestö, yhteistyö, avoin lähdekoodi, Tilastokeskus, tietojohtaminen">
+<meta name="description" content="Kuukausiraportti tarjoaa tietoa väestöstä, työmarkkinoista, asumisesta, rakentamisesta, taloudesta ja verotuksesta. Tietolähteinä käytetään esimerkiksi Tilastokeskuksen, Valtiokonttorin, Verottajan aineistoja, avoimilta rajapinnoilta. Tilannekuvakirjaa kehitetään yhteistyössä kuntien kanssa.">
 
-<title>index</title>
+<title>Kuntien kuukausiraportti 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +23,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -77,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./Kangasala_logo_slogan_RGB_white.png" alt="" class="navbar-logo">
+    <img src="./themes/logot/kangasala_logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Hae"></div>
@@ -118,6 +141,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./kansainvalisyys.html"> 
 <span class="menu-text">Kansainvälisyys</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./verotus.html"> 
+<span class="menu-text">Verotus</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -133,31 +160,57 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
 
 
 
-<!-- {{< include r/_r_funktiot.qmd >}} -->
-<!-- {{< include js/_js_libraries.qmd >}} -->
-<!-- {{< include js/_js_funktiot.qmd >}} -->
-<!-- {{< include js/_js_legend.qmd >}} -->
-<!-- {{< include js/_js_chart_chord.qmd >}} -->
-<!-- {{< include charts/_chart_1_lines.qmd >}} -->
-<!-- {{< include charts/_chart_1_lines_1_mark.qmd >}} -->
-<!-- {{< include charts/_chart_2_lines.qmd >}} -->
-<!-- {{< include charts/_chart_3_stack_bars.qmd >}} -->
-<!-- {{< include charts/_chart_4_lines.qmd >}} -->
-<!-- {{< include charts/_chart_4_stack_bars.qmd >}} -->
-<!-- {{< include charts/_chart_4_stack_bars_hori.qmd >}} -->
-<!-- {{< include tables/_tbl_basic_all.qmd >}} -->
-<!-- {background-image="./images/2.png"} -->
-<section id="section" class="level1" data-background-image="./images/etusivu.png">
-<h1 data-background-image="./images/etusivu.png">Kangasalan kaupunki - heinäkuu, 2024</h1>
-<p>Tervetuloa kuntien avoimen lähdekoodin kuukausiraporttiin.</p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Avainsanat</div>
+    <p>Kuntien kuukausiraportti, väestö, yhteistyö, avoin lähdekoodi, Tilastokeskus, tietojohtaminen</p>
+  </div>
+</div>
+
+</header>
+
+
+<section id="alkusanat" class="level1" data-background-image="./images/etusivu.png">
+<h1 data-background-image="./images/etusivu.png">Alkusanat</h1>
+<p>Kuukausiraportti tarjoaa tietoa väestöstä, työmarkkinoista, asumisesta, rakentamisesta ja taloudesta kuukausi tai neljännesvuositasolla. Tietolähteinä käytetään esimerkiksi Tilastokeskuksen ja Verohallinon tilastoaineistoa. Kuukausiraporttia kehitetään yhteistyössä kuntien kanssa.</p>
+<p>Raportti on ajettu syyskuussa{{&lt; var general.year &gt;}}</p>
+<p>Raportti on julkaistu <span class="citation" data-cites="lgpl_2_1">(<a href="#ref-lgpl_2_1" role="doc-biblioref">GNU.org 2023</a>)</span> lisenssin alla. Kuukausiraportti on html-muodossa. Malleja kuntakohtaisesta raporteista löytyy osoitteista:</p>
+<ul>
+<li><p>Kangasala: <a href="https://github.com/Kangasalakehitys/raportti/" class="uri">https://github.com/Kangasalakehitys/raportti/</a></p></li>
+<li><p>Akaa: <a href="https://github.com/Kangasalakehitys/akaa" class="uri">https://github.com/Kangasalakehitys/akaa</a></p></li>
+<li><p>Juupajoki: <a href="https://github.com/Kangasalakehitys/juupajoki" class="uri">https://github.com/Kangasalakehitys/juupajoki</a></p></li>
+<li><p>Kuhmoinen: <a href="https://github.com/Kangasalakehitys/kuhmoinen" class="uri">https://github.com/Kangasalakehitys/kuhmoinen</a></p></li>
+<li><p>Masku: <a href="https://github.com/Kangasalakehitys/masku" class="uri">https://github.com/Kangasalakehitys/masku</a></p></li>
+<li><p>Nousinen: <a href="https://github.com/Kangasalakehitys/nousiainen" class="uri">https://github.com/Kangasalakehitys/nousiainen</a></p></li>
+<li><p>Pälkäne: <a href="https://github.com/Kangasalakehitys/palkane" class="uri">https://github.com/Kangasalakehitys/palkane</a></p></li>
+<li><p>Parkano: <a href="https://github.com/Kangasalakehitys/parkano" class="uri">https://github.com/Kangasalakehitys/parkano</a></p></li>
+<li><p>Urjala: <a href="https://github.com/Kangasalakehitys/urjala" class="uri">https://github.com/Kangasalakehitys/urjala</a></p></li>
+<li><p>Ylöjärvi: <a href="https://github.com/Kangasalakehitys/ylojarvi" class="uri">https://github.com/Kangasalakehitys/ylojarvi</a></p></li>
+</ul>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Lähteet</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-lgpl_2_1" class="csl-entry" role="listitem">
+GNU.org. 2023. <em>LGPL 2.1 lisenssi</em>. GNU.org. <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html">https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -579,6 +632,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2023 Kangasalan kaupunki.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Kangasalakehitys/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
