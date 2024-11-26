@@ -104,9 +104,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
 <script type="ojs-define">
 
-{"contents":[{"name":"tyollisyys_domain_max","value":17.6},{"name":"tyollisyys_domain_min","value":0},{"name":"tyollisyys_domain_med","value":8.7},{"name":"tyollisyys_title_txt_map","value":"Työttömien työnhakijoiden %-osuus työvoimasta (%)"},{"name":"tyollisyysProMapCSV","value":"./data/kangasala_tyollisyys_pro_map.csv"},{"name":"tyollisyys_chart_height","value":700},{"name":"tyollisyys_chart_width","value":800}]}
+{"contents":[{"name":"tyollisyys_domain_max","value":16.6},{"name":"tyollisyys_domain_min","value":2.5},{"name":"tyollisyys_domain_med","value":9},{"name":"tyollisyys_title_txt_map","value":"Työttömien työnhakijoiden %-osuus työvoimasta (%)"},{"name":"tyollisyysProMapCSV","value":"./data/kangasala_tyollisyys_pro_map.csv"},{"name":"tyollisyys_chart_height","value":700},{"name":"tyollisyys_chart_width","value":800}]}
 
 </script>
 
@@ -1279,23 +1297,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="työttömien-työnhakijoiden--osuus-työvoimasta-koko-maassa-1">Työttömien työnhakijoiden %-osuus työvoimasta koko maassa</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="iqpbqmqutb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iqpbqmqutb table {
+<div id="niwlwqowcr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#niwlwqowcr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iqpbqmqutb thead, #iqpbqmqutb tbody, #iqpbqmqutb tfoot, #iqpbqmqutb tr, #iqpbqmqutb td, #iqpbqmqutb th {
+#niwlwqowcr thead, #niwlwqowcr tbody, #niwlwqowcr tfoot, #niwlwqowcr tr, #niwlwqowcr td, #niwlwqowcr th {
   border-style: none;
 }
 
-#iqpbqmqutb p {
+#niwlwqowcr p {
   margin: 0;
   padding: 0;
 }
 
-#iqpbqmqutb .gt_table {
+#niwlwqowcr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1321,12 +1339,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_caption {
+#niwlwqowcr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iqpbqmqutb .gt_title {
+#niwlwqowcr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1338,7 +1356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#iqpbqmqutb .gt_subtitle {
+#niwlwqowcr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1350,7 +1368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#iqpbqmqutb .gt_heading {
+#niwlwqowcr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1362,13 +1380,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_bottom_border {
+#niwlwqowcr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_col_headings {
+#niwlwqowcr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1383,7 +1401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_col_heading {
+#niwlwqowcr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1403,7 +1421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#iqpbqmqutb .gt_column_spanner_outer {
+#niwlwqowcr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1415,15 +1433,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#iqpbqmqutb .gt_column_spanner_outer:first-child {
+#niwlwqowcr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iqpbqmqutb .gt_column_spanner_outer:last-child {
+#niwlwqowcr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iqpbqmqutb .gt_column_spanner {
+#niwlwqowcr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1435,11 +1453,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#iqpbqmqutb .gt_spanner_row {
+#niwlwqowcr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iqpbqmqutb .gt_group_heading {
+#niwlwqowcr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1465,7 +1483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#iqpbqmqutb .gt_empty_group_heading {
+#niwlwqowcr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1480,15 +1498,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#iqpbqmqutb .gt_from_md > :first-child {
+#niwlwqowcr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iqpbqmqutb .gt_from_md > :last-child {
+#niwlwqowcr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iqpbqmqutb .gt_row {
+#niwlwqowcr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1507,7 +1525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#iqpbqmqutb .gt_stub {
+#niwlwqowcr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1520,7 +1538,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iqpbqmqutb .gt_stub_row_group {
+#niwlwqowcr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1534,15 +1552,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#iqpbqmqutb .gt_row_group_first td {
+#niwlwqowcr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iqpbqmqutb .gt_row_group_first th {
+#niwlwqowcr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iqpbqmqutb .gt_summary_row {
+#niwlwqowcr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1552,16 +1570,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iqpbqmqutb .gt_first_summary_row {
+#niwlwqowcr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_first_summary_row.thick {
+#niwlwqowcr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iqpbqmqutb .gt_last_summary_row {
+#niwlwqowcr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1571,7 +1589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_grand_summary_row {
+#niwlwqowcr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1581,7 +1599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iqpbqmqutb .gt_first_grand_summary_row {
+#niwlwqowcr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1591,7 +1609,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_last_grand_summary_row_top {
+#niwlwqowcr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1601,11 +1619,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_striped {
+#niwlwqowcr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iqpbqmqutb .gt_table_body {
+#niwlwqowcr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1614,7 +1632,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_footnotes {
+#niwlwqowcr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1628,7 +1646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_footnote {
+#niwlwqowcr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1637,7 +1655,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iqpbqmqutb .gt_sourcenotes {
+#niwlwqowcr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1651,7 +1669,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iqpbqmqutb .gt_sourcenote {
+#niwlwqowcr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1659,72 +1677,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iqpbqmqutb .gt_left {
+#niwlwqowcr .gt_left {
   text-align: left;
 }
 
-#iqpbqmqutb .gt_center {
+#niwlwqowcr .gt_center {
   text-align: center;
 }
 
-#iqpbqmqutb .gt_right {
+#niwlwqowcr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iqpbqmqutb .gt_font_normal {
+#niwlwqowcr .gt_font_normal {
   font-weight: normal;
 }
 
-#iqpbqmqutb .gt_font_bold {
+#niwlwqowcr .gt_font_bold {
   font-weight: bold;
 }
 
-#iqpbqmqutb .gt_font_italic {
+#niwlwqowcr .gt_font_italic {
   font-style: italic;
 }
 
-#iqpbqmqutb .gt_super {
+#niwlwqowcr .gt_super {
   font-size: 65%;
 }
 
-#iqpbqmqutb .gt_footnote_marks {
+#niwlwqowcr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iqpbqmqutb .gt_asterisk {
+#niwlwqowcr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iqpbqmqutb .gt_indent_1 {
+#niwlwqowcr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iqpbqmqutb .gt_indent_2 {
+#niwlwqowcr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iqpbqmqutb .gt_indent_3 {
+#niwlwqowcr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iqpbqmqutb .gt_indent_4 {
+#niwlwqowcr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iqpbqmqutb .gt_indent_5 {
+#niwlwqowcr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iqpbqmqutb .katex-display {
+#niwlwqowcr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iqpbqmqutb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#niwlwqowcr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1741,303 +1759,303 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">1</td>
-<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Sottunga</td>
-<td class="gt_row gt_right" headers="2024M10">0.0</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Sija">2</td>
 <td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
 <td class="gt_row gt_left" headers="Kunta">Luoto</td>
 <td class="gt_row gt_right" headers="2024M10">2.5</td>
 </tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Sija">2</td>
+<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Brändö</td>
+<td class="gt_row gt_right" headers="2024M10">2.7</td>
+</tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">3</td>
-<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Pedersören kunta</td>
-<td class="gt_row gt_right" headers="2024M10">2.5</td>
+<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Saltvik</td>
+<td class="gt_row gt_right" headers="2024M10">2.7</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">4</td>
-<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Jomala</td>
-<td class="gt_row gt_right" headers="2024M10">2.7</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Närpiö</td>
+<td class="gt_row gt_right" headers="2024M10">2.8</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">5</td>
 <td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Närpiö</td>
+<td class="gt_row gt_left" headers="Kunta">Pedersören kunta</td>
 <td class="gt_row gt_right" headers="2024M10">2.8</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">6</td>
 <td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Saltvik</td>
+<td class="gt_row gt_left" headers="Kunta">Jomala</td>
 <td class="gt_row gt_right" headers="2024M10">2.9</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">7</td>
-<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Lemland</td>
-<td class="gt_row gt_right" headers="2024M10">3.0</td>
+<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Evijärvi</td>
+<td class="gt_row gt_right" headers="2024M10">3.2</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">8</td>
 <td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Brändö</td>
+<td class="gt_row gt_left" headers="Kunta">Föglö</td>
 <td class="gt_row gt_right" headers="2024M10">3.2</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">9</td>
 <td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Föglö</td>
-<td class="gt_row gt_right" headers="2024M10">3.2</td>
+<td class="gt_row gt_left" headers="Kunta">Lemland</td>
+<td class="gt_row gt_right" headers="2024M10">3.3</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">10</td>
 <td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
 <td class="gt_row gt_left" headers="Kunta">Maalahti</td>
-<td class="gt_row gt_right" headers="2024M10">3.4</td>
+<td class="gt_row gt_right" headers="2024M10">3.3</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">11</td>
-<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Vårdö</td>
-<td class="gt_row gt_right" headers="2024M10">3.4</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Mustasaari</td>
+<td class="gt_row gt_right" headers="2024M10">3.6</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">12</td>
-<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Evijärvi</td>
-<td class="gt_row gt_right" headers="2024M10">3.5</td>
+<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Geta</td>
+<td class="gt_row gt_right" headers="2024M10">3.7</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">13</td>
-<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Mustasaari</td>
-<td class="gt_row gt_right" headers="2024M10">3.7</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Sija">14</td>
-<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Geta</td>
-<td class="gt_row gt_right" headers="2024M10">4.1</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Sija">15</td>
-<td class="gt_row gt_left" headers="Maakunta">Keski-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Lestijärvi</td>
-<td class="gt_row gt_right" headers="2024M10">4.2</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Sija">16</td>
-<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Hammarland</td>
-<td class="gt_row gt_right" headers="2024M10">4.3</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Sija">17</td>
-<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Sund</td>
-<td class="gt_row gt_right" headers="2024M10">4.3</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Sija">18</td>
 <td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
 <td class="gt_row gt_left" headers="Kunta">Finström</td>
 <td class="gt_row gt_right" headers="2024M10">4.4</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Sija">19</td>
-<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Kruunupyy</td>
-<td class="gt_row gt_right" headers="2024M10">4.4</td>
-</tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="Sija">20</td>
+<td class="gt_row gt_right" headers="Sija">14</td>
 <td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
 <td class="gt_row gt_left" headers="Kunta">Rusko</td>
 <td class="gt_row gt_right" headers="2024M10">4.5</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="Sija">21</td>
-<td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
-<td class="gt_row gt_left" headers="Kunta">Masku</td>
+<td class="gt_row gt_right" headers="Sija">15</td>
+<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Sund</td>
+<td class="gt_row gt_right" headers="2024M10">4.5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Sija">16</td>
+<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Kuortane</td>
+<td class="gt_row gt_right" headers="2024M10">4.6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Sija">17</td>
+<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Eckerö</td>
 <td class="gt_row gt_right" headers="2024M10">4.7</td>
 </tr>
 <tr class="even">
+<td class="gt_row gt_right" headers="Sija">18</td>
+<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Hammarland</td>
+<td class="gt_row gt_right" headers="2024M10">4.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Sija">19</td>
+<td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
+<td class="gt_row gt_left" headers="Kunta">Masku</td>
+<td class="gt_row gt_right" headers="2024M10">4.8</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Sija">20</td>
+<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Vårdö</td>
+<td class="gt_row gt_right" headers="2024M10">4.8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Sija">21</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Kruunupyy</td>
+<td class="gt_row gt_right" headers="2024M10">4.9</td>
+</tr>
+<tr class="even">
 <td class="gt_row gt_right" headers="Sija">22</td>
-<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Kuortane</td>
+<td class="gt_row gt_left" headers="Maakunta">Keski-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Lestijärvi</td>
 <td class="gt_row gt_right" headers="2024M10">4.9</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">23</td>
 <td class="gt_row gt_left" headers="Maakunta">Uusimaa</td>
 <td class="gt_row gt_left" headers="Kunta">Inkoo</td>
-<td class="gt_row gt_right" headers="2024M10">5.0</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Sija">24</td>
-<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Uusikaarlepyy</td>
-<td class="gt_row gt_right" headers="2024M10">5.1</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Sija">25</td>
-<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Korsnäs</td>
 <td class="gt_row gt_right" headers="2024M10">5.2</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="Sija">26</td>
-<td class="gt_row gt_left" headers="Maakunta">Pohjois-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Reisjärvi</td>
-<td class="gt_row gt_right" headers="2024M10">5.3</td>
+<td class="gt_row gt_right" headers="Sija">24</td>
+<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Isojoki</td>
+<td class="gt_row gt_right" headers="2024M10">5.4</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="Sija">27</td>
+<td class="gt_row gt_right" headers="Sija">25</td>
 <td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
 <td class="gt_row gt_left" headers="Kunta">Soini</td>
 <td class="gt_row gt_right" headers="2024M10">5.4</td>
 </tr>
 <tr class="even">
+<td class="gt_row gt_right" headers="Sija">26</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Uusikaarlepyy</td>
+<td class="gt_row gt_right" headers="2024M10">5.4</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Sija">27</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Korsnäs</td>
+<td class="gt_row gt_right" headers="2024M10">5.5</td>
+</tr>
+<tr class="even">
 <td class="gt_row gt_right" headers="Sija">28</td>
-<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Alajärvi</td>
+<td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
+<td class="gt_row gt_left" headers="Kunta">Nousiainen</td>
 <td class="gt_row gt_right" headers="2024M10">5.5</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">29</td>
 <td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
-<td class="gt_row gt_left" headers="Kunta">Nousiainen</td>
+<td class="gt_row gt_left" headers="Kunta">Parainen</td>
 <td class="gt_row gt_right" headers="2024M10">5.5</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">30</td>
-<td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
-<td class="gt_row gt_left" headers="Kunta">Paimio</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjois-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Reisjärvi</td>
 <td class="gt_row gt_right" headers="2024M10">5.5</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">31</td>
-<td class="gt_row gt_left" headers="Maakunta">Uusimaa</td>
-<td class="gt_row gt_left" headers="Kunta">Siuntio</td>
-<td class="gt_row gt_right" headers="2024M10">5.5</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="Sija">32</td>
 <td class="gt_row gt_left" headers="Maakunta">Keski-Pohjanmaa</td>
 <td class="gt_row gt_left" headers="Kunta">Veteli</td>
 <td class="gt_row gt_right" headers="2024M10">5.5</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Sija">33</td>
+<tr class="even">
+<td class="gt_row gt_right" headers="Sija">32</td>
 <td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
 <td class="gt_row gt_left" headers="Kunta">Vöyri</td>
 <td class="gt_row gt_right" headers="2024M10">5.5</td>
 </tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Sija">33</td>
+<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Alajärvi</td>
+<td class="gt_row gt_right" headers="2024M10">5.6</td>
+</tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">34</td>
-<td class="gt_row gt_left" headers="Maakunta">Ahvenanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Eckerö</td>
+<td class="gt_row gt_left" headers="Maakunta">Uusimaa</td>
+<td class="gt_row gt_left" headers="Kunta">Siuntio</td>
 <td class="gt_row gt_right" headers="2024M10">5.6</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">35</td>
-<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Kristiinankaupunki</td>
-<td class="gt_row gt_right" headers="2024M10">5.6</td>
+<td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
+<td class="gt_row gt_left" headers="Kunta">Paimio</td>
+<td class="gt_row gt_right" headers="2024M10">5.7</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">36</td>
 <td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
 <td class="gt_row gt_left" headers="Kunta">Lappajärvi</td>
-<td class="gt_row gt_right" headers="2024M10">5.6</td>
+<td class="gt_row gt_right" headers="2024M10">5.8</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">37</td>
 <td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Ilmajoki</td>
-<td class="gt_row gt_right" headers="2024M10">5.7</td>
+<td class="gt_row gt_left" headers="Kunta">Vimpeli</td>
+<td class="gt_row gt_right" headers="2024M10">5.8</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">38</td>
 <td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Lapua</td>
-<td class="gt_row gt_right" headers="2024M10">5.7</td>
+<td class="gt_row gt_left" headers="Kunta">Ilmajoki</td>
+<td class="gt_row gt_right" headers="2024M10">5.9</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">39</td>
-<td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
-<td class="gt_row gt_left" headers="Kunta">Lieto</td>
-<td class="gt_row gt_right" headers="2024M10">5.7</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Kristiinankaupunki</td>
+<td class="gt_row gt_right" headers="2024M10">5.9</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">40</td>
 <td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
-<td class="gt_row gt_left" headers="Kunta">Parainen</td>
-<td class="gt_row gt_right" headers="2024M10">5.7</td>
+<td class="gt_row gt_left" headers="Kunta">Lieto</td>
+<td class="gt_row gt_right" headers="2024M10">5.9</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">41</td>
 <td class="gt_row gt_left" headers="Maakunta">Lappi</td>
 <td class="gt_row gt_left" headers="Kunta">Sodankylä</td>
-<td class="gt_row gt_right" headers="2024M10">5.7</td>
+<td class="gt_row gt_right" headers="2024M10">5.9</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">42</td>
-<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Vimpeli</td>
-<td class="gt_row gt_right" headers="2024M10">5.7</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjois-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Liminka</td>
+<td class="gt_row gt_right" headers="2024M10">6.2</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">43</td>
-<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Isojoki</td>
-<td class="gt_row gt_right" headers="2024M10">5.8</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjois-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Merijärvi</td>
+<td class="gt_row gt_right" headers="2024M10">6.2</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">44</td>
-<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Laihia</td>
-<td class="gt_row gt_right" headers="2024M10">5.8</td>
+<td class="gt_row gt_left" headers="Maakunta">Satakunta</td>
+<td class="gt_row gt_left" headers="Kunta">Eurajoki</td>
+<td class="gt_row gt_right" headers="2024M10">6.3</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">45</td>
-<td class="gt_row gt_left" headers="Maakunta">Satakunta</td>
-<td class="gt_row gt_left" headers="Kunta">Eurajoki</td>
-<td class="gt_row gt_right" headers="2024M10">6.0</td>
+<td class="gt_row gt_left" headers="Maakunta">Lappi</td>
+<td class="gt_row gt_left" headers="Kunta">Utsjoki</td>
+<td class="gt_row gt_right" headers="2024M10">6.3</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">46</td>
 <td class="gt_row gt_left" headers="Maakunta">Pirkanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Punkalaidun</td>
-<td class="gt_row gt_right" headers="2024M10">6.1</td>
+<td class="gt_row gt_left" headers="Kunta">Juupajoki</td>
+<td class="gt_row gt_right" headers="2024M10">6.5</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">47</td>
-<td class="gt_row gt_left" headers="Maakunta">Keski-Pohjanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Kaustinen</td>
-<td class="gt_row gt_right" headers="2024M10">6.2</td>
+<td class="gt_row gt_left" headers="Maakunta">Varsinais-Suomi</td>
+<td class="gt_row gt_left" headers="Kunta">Kaarina</td>
+<td class="gt_row gt_right" headers="2024M10">6.5</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">48</td>
-<td class="gt_row gt_left" headers="Maakunta">Kanta-Häme</td>
-<td class="gt_row gt_left" headers="Kunta">Loppi</td>
-<td class="gt_row gt_right" headers="2024M10">6.2</td>
+<td class="gt_row gt_left" headers="Maakunta">Keski-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Kaustinen</td>
+<td class="gt_row gt_right" headers="2024M10">6.5</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Sija">49</td>
-<td class="gt_row gt_left" headers="Maakunta">Pirkanmaa</td>
-<td class="gt_row gt_left" headers="Kunta">Pälkäne</td>
-<td class="gt_row gt_right" headers="2024M10">6.2</td>
+<td class="gt_row gt_left" headers="Maakunta">Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Laihia</td>
+<td class="gt_row gt_right" headers="2024M10">6.5</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Sija">50</td>
-<td class="gt_row gt_left" headers="Maakunta">Kainuu</td>
-<td class="gt_row gt_left" headers="Kunta">Sotkamo</td>
-<td class="gt_row gt_right" headers="2024M10">6.2</td>
+<td class="gt_row gt_left" headers="Maakunta">Etelä-Pohjanmaa</td>
+<td class="gt_row gt_left" headers="Kunta">Lapua</td>
+<td class="gt_row gt_right" headers="2024M10">6.5</td>
 </tr>
 </tbody>
 </table>
@@ -2047,10 +2065,1733 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="vertailu-koko-maan-ja-maakunnan-osalta" class="level3">
 <h3 class="anchored" data-anchor-id="vertailu-koko-maan-ja-maakunnan-osalta">Vertailu koko maan ja maakunnan osalta</h3>
-<p>Kangasala on sijalla <strong>129</strong>, tarkasteltaessa työttömien työnhakijoiden %-osuutta työvoimasta. Viimeisin ennakkotietolukema on <strong>8.1</strong>. Maakuntavertailussa (Pirkanmaa) Kangasala on sijalla <strong>9</strong>.</p>
-<!-- {{< include _tyottomat.qmd >}} -->
-<!-- {{< include _tyottomat_pro.qmd >}} -->
-<!-- {{< include _tyottomat_alle_25.qmd >}} -->
+<p>Kangasala on sijalla <strong>113</strong>, tarkasteltaessa työttömien työnhakijoiden %-osuutta työvoimasta. Viimeisin ennakkotietolukema on <strong>8.2</strong>. Maakuntavertailussa (Pirkanmaa) Kangasala on sijalla <strong>8</strong>.</p>
+</section>
+</section>
+<section id="työttömät-työnhakijat" class="level2">
+<h2 class="anchored" data-anchor-id="työttömät-työnhakijat">Työttömät työnhakijat</h2>
+<section id="työttömät-työnhakijat-laskentapäivänä" class="level3">
+<h3 class="anchored" data-anchor-id="työttömät-työnhakijat-laskentapäivänä">Työttömät työnhakijat laskentapäivänä</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-496fb5c7f16e9a3368bd" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-496fb5c7f16e9a3368bd">{"x":{"visdat":{"14e4d513f78":["function () ","plotlyVisDat"]},"cur_data":"14e4d513f78","attrs":{"14e4d513f78":{"x":{},"y":{},"mode":"lines","line":{"color":"#009651","width":6},"name":"<b>Työttömät työnhakijat laskentapäivänä (lkm.)<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":50,"l":50,"t":50,"r":50,"pad":5},"autosize":true,"legend":{"orientation":"h","x":0,"y":-0.5,"font":{"size":22}},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","showlegend":true,"xaxis":{"domain":[0,1],"automargin":true,"autotick":false,"dtick":3,"title":{"text":"<b><\/b>","font":{"size":22},"standoff":25},"tickangle":-45,"tickprefix":"<b>","ticksuffix":"<\/b><br>","showgrid":false,"color":"#575757","tickfont":{"size":22},"type":"category","categoryorder":"array","categoryarray":["2022M11","2022M12","2023M01","2023M02","2023M03","2023M04","2023M05","2023M06","2023M07","2023M08","2023M09","2023M10","2023M11","2023M12","2024M01","2024M02","2024M03","2024M04","2024M05","2024M06","2024M07","2024M08","2024M09","2024M10"]},"yaxis":{"domain":[0,1],"automargin":true,"griddash":"dot","gridwidth":1,"tickformat":"d","title":{"text":"<b>Lkm<\/b>","font":{"size":22},"standoff":25},"tickprefix":"<b>","ticksuffix":"<\/b><br>","color":"#575757","tickfont":{"size":22}},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"toImageButtonOptions":{"format":"png","filename":"Tyottomat_tyonhakijat_laskentapaivana_lkm","height":700,"width":800,"scale":1}},"data":[{"x":["2022M11","2022M12","2023M01","2023M02","2023M03","2023M04","2023M05","2023M06","2023M07","2023M08","2023M09","2023M10","2023M11","2023M12","2024M01","2024M02","2024M03","2024M04","2024M05","2024M06","2024M07","2024M08","2024M09","2024M10"],"y":[933,1039,1048,1090,1059,1012,972,1116,1189,1073,1083,1101,1132,1360,1330,1348,1328,1273,1241,1422,1460,1332,1318,1327],"mode":"lines","line":{"color":"#009651","width":6},"name":"<b>Työttömät työnhakijat laskentapäivänä (lkm.)<\/b>","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Tilastokeskuksen työssäkäyntitilaston mukaan työttömiä työnhakijoita oli <strong>2024M10</strong> yhteensä <strong>1327</strong> <em>(lukema 2024M09: 1318).</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="jpvhrotinv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jpvhrotinv table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jpvhrotinv thead, #jpvhrotinv tbody, #jpvhrotinv tfoot, #jpvhrotinv tr, #jpvhrotinv td, #jpvhrotinv th {
+  border-style: none;
+}
+
+#jpvhrotinv p {
+  margin: 0;
+  padding: 0;
+}
+
+#jpvhrotinv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 90%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jpvhrotinv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jpvhrotinv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jpvhrotinv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jpvhrotinv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jpvhrotinv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jpvhrotinv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jpvhrotinv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jpvhrotinv .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jpvhrotinv .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jpvhrotinv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jpvhrotinv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jpvhrotinv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jpvhrotinv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jpvhrotinv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jpvhrotinv .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jpvhrotinv .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jpvhrotinv .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jpvhrotinv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jpvhrotinv .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jpvhrotinv .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jpvhrotinv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jpvhrotinv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jpvhrotinv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jpvhrotinv .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jpvhrotinv .gt_left {
+  text-align: left;
+}
+
+#jpvhrotinv .gt_center {
+  text-align: center;
+}
+
+#jpvhrotinv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jpvhrotinv .gt_font_normal {
+  font-weight: normal;
+}
+
+#jpvhrotinv .gt_font_bold {
+  font-weight: bold;
+}
+
+#jpvhrotinv .gt_font_italic {
+  font-style: italic;
+}
+
+#jpvhrotinv .gt_super {
+  font-size: 65%;
+}
+
+#jpvhrotinv .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jpvhrotinv .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jpvhrotinv .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jpvhrotinv .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jpvhrotinv .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jpvhrotinv .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jpvhrotinv .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jpvhrotinv .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jpvhrotinv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="Kuukausi" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Kuukausi</th>
+<th id="Työttömät työnhakijat laskentapäivänä (lkm.)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Työttömät työnhakijat laskentapäivänä (lkm.)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2022M11</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">933</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2022M12</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1039</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M01</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1048</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M02</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1090</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M03</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1059</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M04</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1012</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M05</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">972</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M06</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1116</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M07</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1189</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M08</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1073</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M09</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1083</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M10</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1101</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M11</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1132</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M12</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1360</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M01</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1330</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M02</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1348</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M03</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1328</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M04</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1273</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M05</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1241</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M06</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1422</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M07</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1460</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M08</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1332</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M09</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1318</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M10</td>
+<td class="gt_row gt_right" headers="Työttömät työnhakijat laskentapäivänä (lkm.)">1327</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="työttömien-työnhakijoiden--osuus-työvoimasta" class="level1">
+<h1>Työttömien työnhakijoiden %-osuus työvoimasta</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-0d95294332e105ae5eb9" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-0d95294332e105ae5eb9">{"x":{"visdat":{"14e4686941dd":["function () ","plotlyVisDat"]},"cur_data":"14e4686941dd","attrs":{"14e4686941dd":{"x":{},"y":{},"mode":"lines","line":{"color":"#009651","width":6},"name":"<b>Työttömien työnhakijoiden %-osuus työvoimasta (%)<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":50,"l":50,"t":50,"r":50,"pad":5},"autosize":true,"legend":{"orientation":"h","x":0,"y":-0.5,"font":{"size":22}},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","showlegend":true,"xaxis":{"domain":[0,1],"automargin":true,"autotick":false,"dtick":3,"title":{"text":"<b><\/b>","font":{"size":22},"standoff":25},"tickangle":-45,"tickprefix":"<b>","ticksuffix":"<\/b><br>","showgrid":false,"color":"#575757","tickfont":{"size":22},"type":"category","categoryorder":"array","categoryarray":["2022M11","2022M12","2023M01","2023M02","2023M03","2023M04","2023M05","2023M06","2023M07","2023M08","2023M09","2023M10","2023M11","2023M12","2024M01","2024M02","2024M03","2024M04","2024M05","2024M06","2024M07","2024M08","2024M09","2024M10"]},"yaxis":{"domain":[0,1],"automargin":true,"griddash":"dot","gridwidth":1,"tickformat":"d","title":{"text":"<b>%<\/b>","font":{"size":22},"standoff":25},"tickprefix":"<b>","ticksuffix":"<\/b><br>","color":"#575757","tickfont":{"size":22}},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"toImageButtonOptions":{"format":"png","filename":"Tyottomien_tyonhakijoiden_osuus_tyovoimasta_pro","height":700,"width":800,"scale":1}},"data":[{"x":["2022M11","2022M12","2023M01","2023M02","2023M03","2023M04","2023M05","2023M06","2023M07","2023M08","2023M09","2023M10","2023M11","2023M12","2024M01","2024M02","2024M03","2024M04","2024M05","2024M06","2024M07","2024M08","2024M09","2024M10"],"y":[6,6.7000000000000002,6.5999999999999996,6.9000000000000004,6.7000000000000002,6.4000000000000004,6.0999999999999996,7,7.5,6.7000000000000002,6.7999999999999998,6.9000000000000004,7.0999999999999996,8.5999999999999996,8.1999999999999993,8.3000000000000007,8.1999999999999993,7.9000000000000004,7.7000000000000002,8.8000000000000007,9,8.1999999999999993,8.0999999999999996,8.1999999999999993],"mode":"lines","line":{"color":"#009651","width":6},"name":"<b>Työttömien työnhakijoiden %-osuus työvoimasta (%)<\/b>","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<section id="työttömien-työnhakijoiden--osuus-työvoimasta-1" class="level3">
+<h3 class="anchored" data-anchor-id="työttömien-työnhakijoiden--osuus-työvoimasta-1">Työttömien työnhakijoiden %-osuus työvoimasta (%)</h3>
+<p>Työttömien työnhakijoiden prosenttiosuus työvoimasta oli <strong>2024M10</strong> yhteensä <strong>8.2</strong> % <em>(lukema 2024M09: 8.1 %).</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="jdsbfozoil" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jdsbfozoil table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jdsbfozoil thead, #jdsbfozoil tbody, #jdsbfozoil tfoot, #jdsbfozoil tr, #jdsbfozoil td, #jdsbfozoil th {
+  border-style: none;
+}
+
+#jdsbfozoil p {
+  margin: 0;
+  padding: 0;
+}
+
+#jdsbfozoil .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 90%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jdsbfozoil .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jdsbfozoil .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jdsbfozoil .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jdsbfozoil .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jdsbfozoil .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jdsbfozoil .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jdsbfozoil .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jdsbfozoil .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jdsbfozoil .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jdsbfozoil .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jdsbfozoil .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jdsbfozoil .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jdsbfozoil .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jdsbfozoil .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jdsbfozoil .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jdsbfozoil .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jdsbfozoil .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jdsbfozoil .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jdsbfozoil .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jdsbfozoil .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jdsbfozoil .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jdsbfozoil .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jdsbfozoil .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jdsbfozoil .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jdsbfozoil .gt_left {
+  text-align: left;
+}
+
+#jdsbfozoil .gt_center {
+  text-align: center;
+}
+
+#jdsbfozoil .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jdsbfozoil .gt_font_normal {
+  font-weight: normal;
+}
+
+#jdsbfozoil .gt_font_bold {
+  font-weight: bold;
+}
+
+#jdsbfozoil .gt_font_italic {
+  font-style: italic;
+}
+
+#jdsbfozoil .gt_super {
+  font-size: 65%;
+}
+
+#jdsbfozoil .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jdsbfozoil .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jdsbfozoil .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jdsbfozoil .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jdsbfozoil .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jdsbfozoil .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jdsbfozoil .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jdsbfozoil .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jdsbfozoil div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="Kuukausi" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Kuukausi</th>
+<th id="Työttömien työnhakijoiden %-osuus työvoimasta (%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Työttömien työnhakijoiden %-osuus työvoimasta (%)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2022M11</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2022M12</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M01</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.6</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M02</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M03</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.7</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M04</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.4</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M05</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M06</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">7.0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M07</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">7.5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M08</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M09</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.8</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M10</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">6.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M11</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">7.1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M12</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">8.6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M01</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">8.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M02</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">8.3</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M03</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">8.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M04</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">7.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M05</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">7.7</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M06</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">8.8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M07</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">9.0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M08</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">8.2</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M09</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">8.1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M10</td>
+<td class="gt_row gt_right" headers="Työttömien työnhakijoiden %-osuus työvoimasta (%)">8.2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="alle-25-v.-työttömät-työnhakijat" class="level2">
+<h2 class="anchored" data-anchor-id="alle-25-v.-työttömät-työnhakijat">Alle 25-v. työttömät työnhakijat</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-9bee086b32511ae25a04" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9bee086b32511ae25a04">{"x":{"visdat":{"14e42f91148f":["function () ","plotlyVisDat"]},"cur_data":"14e42f91148f","attrs":{"14e42f91148f":{"x":{},"y":{},"mode":"lines","line":{"color":"#009651","width":6},"name":"<b>Alle 25-v. työttömät työnhakijat (lkm.)<\/b>","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":50,"l":50,"t":50,"r":50,"pad":5},"autosize":true,"legend":{"orientation":"h","x":0,"y":-0.5,"font":{"size":22}},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)","showlegend":true,"xaxis":{"domain":[0,1],"automargin":true,"autotick":false,"dtick":3,"title":{"text":"<b><\/b>","font":{"size":22},"standoff":25},"tickangle":-45,"tickprefix":"<b>","ticksuffix":"<\/b><br>","showgrid":false,"color":"#575757","tickfont":{"size":22},"type":"category","categoryorder":"array","categoryarray":["2022M11","2022M12","2023M01","2023M02","2023M03","2023M04","2023M05","2023M06","2023M07","2023M08","2023M09","2023M10","2023M11","2023M12","2024M01","2024M02","2024M03","2024M04","2024M05","2024M06","2024M07","2024M08","2024M09","2024M10"]},"yaxis":{"domain":[0,1],"automargin":true,"griddash":"dot","gridwidth":1,"tickformat":"d","title":{"text":"<b>Lkm<\/b>","font":{"size":22},"standoff":25},"tickprefix":"<b>","ticksuffix":"<\/b><br>","color":"#575757","tickfont":{"size":22}},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displaylogo":false,"toImageButtonOptions":{"format":"png","filename":"Alle_25_tyottomat_tyonhakijat_lkm","height":700,"width":800,"scale":1}},"data":[{"x":["2022M11","2022M12","2023M01","2023M02","2023M03","2023M04","2023M05","2023M06","2023M07","2023M08","2023M09","2023M10","2023M11","2023M12","2024M01","2024M02","2024M03","2024M04","2024M05","2024M06","2024M07","2024M08","2024M09","2024M10"],"y":[76,92,101,98,106,86,75,99,114,91,83,76,82,129,131,126,126,121,118,179,185,162,163,151],"mode":"lines","line":{"color":"#009651","width":6},"name":"<b>Alle 25-v. työttömät työnhakijat (lkm.)<\/b>","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>:::</p>
+<section id="alle-25-v.-työttömät-työnhakijat-lkm." class="level3">
+<h3 class="anchored" data-anchor-id="alle-25-v.-työttömät-työnhakijat-lkm.">Alle 25-v. työttömät työnhakijat (lkm.)</h3>
+<p>Alle 25-vuotiaita työttömiä oli <strong>2024M10</strong> yhteensä <strong>151</strong> <em>(lukema 2024M09: 163).</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="srceglhhqy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#srceglhhqy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#srceglhhqy thead, #srceglhhqy tbody, #srceglhhqy tfoot, #srceglhhqy tr, #srceglhhqy td, #srceglhhqy th {
+  border-style: none;
+}
+
+#srceglhhqy p {
+  margin: 0;
+  padding: 0;
+}
+
+#srceglhhqy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 90%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#srceglhhqy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#srceglhhqy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#srceglhhqy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#srceglhhqy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#srceglhhqy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#srceglhhqy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#srceglhhqy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#srceglhhqy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#srceglhhqy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#srceglhhqy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#srceglhhqy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#srceglhhqy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#srceglhhqy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#srceglhhqy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srceglhhqy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#srceglhhqy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#srceglhhqy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#srceglhhqy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srceglhhqy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#srceglhhqy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srceglhhqy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#srceglhhqy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srceglhhqy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#srceglhhqy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srceglhhqy .gt_left {
+  text-align: left;
+}
+
+#srceglhhqy .gt_center {
+  text-align: center;
+}
+
+#srceglhhqy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#srceglhhqy .gt_font_normal {
+  font-weight: normal;
+}
+
+#srceglhhqy .gt_font_bold {
+  font-weight: bold;
+}
+
+#srceglhhqy .gt_font_italic {
+  font-style: italic;
+}
+
+#srceglhhqy .gt_super {
+  font-size: 65%;
+}
+
+#srceglhhqy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#srceglhhqy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#srceglhhqy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#srceglhhqy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#srceglhhqy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#srceglhhqy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#srceglhhqy .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#srceglhhqy .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#srceglhhqy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="Kuukausi" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Kuukausi</th>
+<th id="Alle 25-v. työttömät työnhakijat (lkm.)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Alle 25-v. työttömät työnhakijat (lkm.)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2022M11</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">76</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2022M12</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">92</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M01</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">101</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M02</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">98</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M03</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">106</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M04</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">86</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M05</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">75</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M06</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">99</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M07</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">114</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M08</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">91</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M09</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">83</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M10</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">76</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2023M11</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">82</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2023M12</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">129</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M01</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">131</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M02</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">126</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M03</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">126</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M04</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">121</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M05</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">118</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M06</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">179</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M07</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">185</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M08</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">162</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Kuukausi">2024M09</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">163</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Kuukausi">2024M10</td>
+<td class="gt_row gt_right" headers="Alle 25-v. työttömät työnhakijat (lkm.)">151</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 
 
 </section>
