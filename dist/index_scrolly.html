@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.2">
+<title>Esipuhe | Tilastokirja</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/kangasala-style.0f830c5d.css">
+<link rel="preload" as="style" href="./_npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/kangasala-style.0f830c5d.css">
+<link rel="stylesheet" type="text/css" href="./_npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="modulepreload" href="./_observablehq/client.745ecbb5.js">
+<link rel="modulepreload" href="./_observablehq/runtime.f168f711.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.63717d9f.js">
+<link rel="modulepreload" href="./_npm/leaflet@1.9.4/82e0844d.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/a7907588.js">
+<link rel="modulepreload" href="./_node/d3-time-format@4.1.0/index.4b8e4965.js">
+<link rel="modulepreload" href="./_node/scrollama@3.2.0/index.c0d5483e.js">
+<link rel="modulepreload" href="./_import/pages/vaesto/vaesto.503c7623.js">
+<link rel="modulepreload" href="./_import/pages/vaesto/pyramidi.baa7043e.js">
+<link rel="modulepreload" href="./_import/components/line_chart.2e6819a1.js">
+<link rel="modulepreload" href="./_import/components/pyramid.8012c7c2.js">
+<link rel="modulepreload" href="./_import/components/leaflet_map.6a022ee9.js">
+<link rel="modulepreload" href="./_import/variables/variables.37667553.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.16/8ed9d92c.js">
+<link rel="modulepreload" href="./_node/d3@7.9.0/index.53f82e1f.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e95f898e.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/d44feff9.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/5830b12a.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/84d7b8e9.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/2c0cdfa2.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/626bedc4.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/00c41b5d.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/b5f7cdc6.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/b22c5864.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/6f15f633.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/35880c2a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e1ff060.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/5851d7ef.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/dcd02767.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/f1db2593.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/034b7bcb.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/4bb53638.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/bbafde58.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/aa5b35a8.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/32c7fec2.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/567840a0.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/cf9b720b.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/5dcd62f4.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/f8e03c56.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/5bc129e1.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/19c92b44.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/f31b5398.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/8debb4ba.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/4b0cc581.js">
+<link rel="modulepreload" href="./_node/d3-time@3.1.0/index.ae6ab93d.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/c68fbd73.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/a62ae5ce.js">
+<link rel="modulepreload" href="./_node/d3-array@3.2.4/index.b70e7922.js">
+<link rel="modulepreload" href="./_node/d3-axis@3.0.0/index.34ded868.js">
+<link rel="modulepreload" href="./_node/d3-brush@3.0.0/index.0d1ab9e9.js">
+<link rel="modulepreload" href="./_node/d3-chord@3.0.1/index.eb7a3f59.js">
+<link rel="modulepreload" href="./_node/d3-color@3.1.0/index.e8c126ff.js">
+<link rel="modulepreload" href="./_node/d3-contour@4.0.2/index.c2c2e765.js">
+<link rel="modulepreload" href="./_node/d3-delaunay@6.0.4/index.46144837.js">
+<link rel="modulepreload" href="./_node/d3-dispatch@3.0.1/index.be49ca5f.js">
+<link rel="modulepreload" href="./_node/d3-drag@3.0.0/index.b110a7c7.js">
+<link rel="modulepreload" href="./_node/d3-dsv@3.0.1/index.48418e2e.js">
+<link rel="modulepreload" href="./_node/d3-ease@3.0.1/index.09153f73.js">
+<link rel="modulepreload" href="./_node/d3-fetch@3.0.1/index.089dc2e0.js">
+<link rel="modulepreload" href="./_node/d3-force@3.0.0/index.a53c353f.js">
+<link rel="modulepreload" href="./_node/d3-format@3.1.0/index.913a01e3.js">
+<link rel="modulepreload" href="./_node/d3-geo@3.1.1/index.94773a7e.js">
+<link rel="modulepreload" href="./_node/d3-hierarchy@3.1.2/index.7d9b63a7.js">
+<link rel="modulepreload" href="./_node/d3-interpolate@3.0.1/index.3b07c751.js">
+<link rel="modulepreload" href="./_node/d3-path@3.1.0/index.c2b3c473.js">
+<link rel="modulepreload" href="./_node/d3-polygon@3.0.1/index.32c3d834.js">
+<link rel="modulepreload" href="./_node/d3-quadtree@3.0.1/index.e9fed2eb.js">
+<link rel="modulepreload" href="./_node/d3-random@3.0.1/index.fd2cc361.js">
+<link rel="modulepreload" href="./_node/d3-scale@4.0.2/index.9802f328.js">
+<link rel="modulepreload" href="./_node/d3-scale-chromatic@3.1.0/index.05a6a5dd.js">
+<link rel="modulepreload" href="./_node/d3-selection@3.0.0/index.31e0394d.js">
+<link rel="modulepreload" href="./_node/d3-shape@3.2.0/index.688fc497.js">
+<link rel="modulepreload" href="./_node/d3-timer@3.0.1/index.5ac82948.js">
+<link rel="modulepreload" href="./_node/d3-transition@3.0.1/index.2448c0da.js">
+<link rel="modulepreload" href="./_node/d3-zoom@3.0.0/index.6b0a6cc1.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/5eed35fd.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/e67acb27.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/1ee6c50d.js">
+<link rel="modulepreload" href="./_node/internmap@2.0.3/index.4106013c.js">
+<link rel="modulepreload" href="./_node/delaunator@5.0.1/index.70ae1478.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/8ac9039b.js">
+<link rel="modulepreload" href="./_node/robust-predicates@3.0.2/index.bdc459cc.js">
+<link rel="icon" href="./_file/etusivu.b4375a44.svg" type="image/svg" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.745ecbb5.js";
+import {registerFile} from "./_observablehq/stdlib.63717d9f.js";
+
+registerFile("./data/report/report.csv", {"name":"./data/report/report.csv","mimeType":"text/csv","path":"./_file/data/report/report.e9d80cce.csv","lastModified":1739447467592,"size":8659});
+registerFile("./data/stat/avainluvut/avainluvut_142h.json", {"name":"./data/stat/avainluvut/avainluvut_142h.json","mimeType":"application/json","path":"./_file/data/stat/avainluvut/avainluvut_142h.c5171ebc.json","lastModified":1739364643962,"size":6938});
+registerFile("./data/stat/avainluvut/avainluvut_142h_laaja1.json", {"name":"./data/stat/avainluvut/avainluvut_142h_laaja1.json","mimeType":"application/json","path":"./_file/data/stat/avainluvut/avainluvut_142h_laaja1.3dcd59fb.json","lastModified":1741171391778,"size":21603});
+registerFile("./data/stat/vaesto/vaenn_14wx.json", {"name":"./data/stat/vaesto/vaenn_14wx.json","mimeType":"application/json","path":"./_file/data/stat/vaesto/vaenn_14wx.89684632.json","lastModified":1739800430774,"size":1261361});
+
+define({id: "baadf4ec", inputs: ["FileAttachment"], outputs: ["L","d3","utcFormat","scrollama","avain_142h","avain_142h_tbl","vaenn_14wx","all_vaenn_14wx","lineChart_1","lineChart_multi","lineChart_multi_avg","pyramidPlot","leafletMap","KUNTA_ID","COLOR_1","COLOR_2","COLOR_3","COLOR_4","COLOR_5","COLOR_6","COLOR_7","COLOR_8","COLOR_9","COLOR_10","COLOR_11","COLOR_12","COLOR_13","COLOR_14","COLOR_15","texts","main","scrolly","figure","article","step","scroller","handleResize","handleStepEnter","init"], body: async (FileAttachment) => {
+const [L, d3, {utcFormat}, {default: scrollama}, {avain_142h, avain_142h_tbl}, {vaenn_14wx, all_vaenn_14wx}, {lineChart_1, lineChart_multi, lineChart_multi_avg}, {pyramidPlot}, {leafletMap}, {KUNTA_ID, COLOR_1, COLOR_2, COLOR_3, COLOR_4, COLOR_5, COLOR_6, COLOR_7, COLOR_8, COLOR_9, COLOR_10, COLOR_11, COLOR_12, COLOR_13, COLOR_14, COLOR_15}] = await Promise.all([import("./_npm/leaflet@1.9.4/82e0844d.js"), import("./_npm/d3@7.9.0/a7907588.js"), import("./_node/d3-time-format@4.1.0/index.4b8e4965.js"), import("./_node/scrollama@3.2.0/index.c0d5483e.js"), import("./_import/pages/vaesto/vaesto.503c7623.js"), import("./_import/pages/vaesto/pyramidi.baa7043e.js"), import("./_import/components/line_chart.2e6819a1.js"), import("./_import/components/pyramid.8012c7c2.js"), import("./_import/components/leaflet_map.6a022ee9.js"), import("./_import/variables/variables.37667553.js")]);
+//Leaflet style
+//Module imports
+//Data import
+//Väestökehitys
+//Väestöpyramidi
+//Chart import
+//Variable import
+
+//Texts
+const texts = (await FileAttachment("./data/report/report.csv")
+              .csv({typed: true}));
+
+	// using d3 for convenience
+		var main = d3.select("main");
+		var scrolly = main.select("#scrolly");
+		var figure = scrolly.select("#figure");
+		var article = scrolly.select("article");
+		var step = article.selectAll(".step");
+
+		// initialize the scrollama
+		var scroller = scrollama();
+
+		// generic window resize listener event
+		function handleResize() {
+			// 1. update height of step elements
+			var stepH = Math.floor(window.innerHeight * 1.5); /* 75 */
+			step.style("height", stepH + "px");
+
+			var figureHeight = window.innerHeight / 1.2;
+			var figureMarginTop = (window.innerHeight - figureHeight) / 2.4;
+
+			figure
+				.style("height", figureHeight + "px")
+				.style("top", figureMarginTop + "px");
+
+			// 3. tell scrollama to update new element dimensions
+			scroller.resize();
+		}
+
+		// scrollama event handlers
+		function handleStepEnter(response) {
+			console.log("response",response);
+			// response = { element, direction, index }
+
+			// add color to current step only
+			step.classed("is-active", function (d, i) {
+				return i === response.index;
+			});
+
+      //Handle image change
+      const image_name = response.element.dataset.image;
+
+			// update graphic based on step
+			figure.select("p").text(response.index + 1);
+      // figure.select("p").style("background", response.element.dataset.color);
+      // figure.select("p").style("background","url('" + image_name + "') no-repeat");
+
+      figure.style("background","url('" + image_name + "') no-repeat");
+      figure.style("background-position","center");
+      figure.style("background-size","cover");
+
+
+      
+
+		}
+
+
+		function init() {
+
+			// 1. force a resize on load to ensure proper dimensions are sent to scrollama
+			handleResize();
+
+			// 2. setup the scroller passing options
+			// 		this will also initialize trigger observations
+			// 3. bind scrollama event handlers (this can be chained like below)
+      // <p>${await FileAttachment( "./images/haralanharju.jpg" ).image()}</p>
+			scroller
+				.setup({
+					step: "#scrolly article .step",
+					offset: 0.33,
+					debug: false
+				})
+				.onStepEnter(handleStepEnter);
+		}
+
+		// kick things off
+		init();
+
+//Leafletmap DIV
+//const div = display(document.createElement("div"));
+//div.style = "height: 600px;";
+
+return {L,d3,utcFormat,scrollama,avain_142h,avain_142h_tbl,vaenn_14wx,all_vaenn_14wx,lineChart_1,lineChart_multi,lineChart_multi_avg,pyramidPlot,leafletMap,KUNTA_ID,COLOR_1,COLOR_2,COLOR_3,COLOR_4,COLOR_5,COLOR_6,COLOR_7,COLOR_8,COLOR_9,COLOR_10,COLOR_11,COLOR_12,COLOR_13,COLOR_14,COLOR_15,texts,main,scrolly,figure,article,step,scroller,handleResize,handleStepEnter,init};
+}});
+
+define({id: "958987a8", inputs: ["texts","utcFormat","avain_142h"], outputs: ["txt_1","formatYear4","title_label","subTitle_label","captionTitle_label","xColumn_label","yColumn_label"], body: (texts,utcFormat,avain_142h) => {
+//Filter correct text
+const txt_1 = texts.filter((element) => {
+                  return element.cat_1_fi === "Väestö"
+                });
+
+//Timeformat
+const formatYear4 = utcFormat("%Y");
+
+//Chart labels
+const title_label = txt_1[0].cat_2_fi
+const subTitle_label = ""
+const captionTitle_label = "Kuva 1. " + avain_142h[0].label + "  (Lähde: " + avain_142h[0].source + ", päivitetty: " + avain_142h[0].updated.slice(0, 10) + ")"
+const xColumn_label = "Vuosi"
+const yColumn_label = "Lkm"
+
+
+return {txt_1,formatYear4,title_label,subTitle_label,captionTitle_label,xColumn_label,yColumn_label};
+}});
+
+define({id: "8ffca712", mode: "inline", inputs: ["resize","lineChart_1","avain_142h","title_label","subTitle_label","captionTitle_label","xColumn_label","yColumn_label","COLOR_1","display"], body: async (resize,lineChart_1,avain_142h,title_label,subTitle_label,captionTitle_label,xColumn_label,yColumn_label,COLOR_1,display) => {
+display(await(
+resize((width) => 
+                lineChart_1(avain_142h, title_label, subTitle_label, captionTitle_label, xColumn_label,yColumn_label, COLOR_1)
+            )
+))
+}});
+
+define({id: "216bc469", mode: "inline", inputs: ["resize","pyramidPlot","all_vaenn_14wx","title_label","subTitle_label","captionTitle_label","xColumn_label","yColumn_label","COLOR_1","COLOR_2","COLOR_3","COLOR_4","COLOR_5","COLOR_6","COLOR_7","COLOR_8","COLOR_9","COLOR_10","COLOR_11","COLOR_12","COLOR_13","COLOR_14","COLOR_15","display"], body: async (resize,pyramidPlot,all_vaenn_14wx,title_label,subTitle_label,captionTitle_label,xColumn_label,yColumn_label,COLOR_1,COLOR_2,COLOR_3,COLOR_4,COLOR_5,COLOR_6,COLOR_7,COLOR_8,COLOR_9,COLOR_10,COLOR_11,COLOR_12,COLOR_13,COLOR_14,COLOR_15,display) => {
+display(await(
+resize((width) => pyramidPlot(all_vaenn_14wx, title_label, subTitle_label, captionTitle_label, xColumn_label,yColumn_label, COLOR_1, COLOR_2, COLOR_3, COLOR_4, COLOR_5, COLOR_6, COLOR_7, COLOR_8, COLOR_9, COLOR_10, COLOR_11, COLOR_12, COLOR_13, COLOR_14, COLOR_15))
+))
+}});
+
+</script>
+</head>
+<body>
+<div id="observablehq-center">
+<header id="observablehq-header">
+ <a href="./"><img src="./_file/images/home.715a8f10.png" alt="Etusivu"></a> |<a href="./pages/alue/alue.html"><img src="./_file/images/map.6774530f.png" alt="Alue"></a> |<a href="./pages/asuminen/rakentaminen.html"><img src="./_file/images/building.b563b5af.png" alt="Asuminen ja rakentaminen"></a> |<a href="./pages/syntyneet/syntyneet.html"><img src="./_file/images/birth.4e0bbe9d.png" alt="Syntyneet"></a> |<a href="./pages/tyopaikat/tyopaikat.html"><img src="./_file/images/employment.ef948eb3.png" alt="Työpaikat"></a> |<a href="./pages/vaalit/vaalit.html"><img src="./_file/images/election.cd9fcb20.png" alt="Vaalit"></a> |<a href="./pages/vaesto/vaesto.html"><img src="./_file/images/population.5f8bd7f6.png" alt="Vaalit"></a> |<a href="./pages/yritykset/yritykset.html"><img src="./_file/images/cogwheels.fde2e1f4.png" alt="Yritykset"></a>
+</header>
+<main id="observablehq-main" class="observablehq">
+<div class="observablehq observablehq--block"><!--:baadf4ec:--></div>
+<div class="observablehq observablehq--block"><!--:958987a8:--></div>
+<div class="grid grid-cols-2">
+  <div>
+  <h1>Esipuhe</h1><p>Tekstiä...</p></div>
+  <div class="card"><observablehq-loading></observablehq-loading><!--:8ffca712:--></div>
+</div>
+        <section id="scrolly">
+        <div id="figure">
+        </div>
+        <article>
+          <div class="step" data-step="1" data-color="red" data-image="https://www.kangasala.fi/wp-content/uploads/2025/02/kangasalan-vuoden-2024-rakennushanke-omakotitalo-tikka-681x602.jpg">
+            <p><b>Väestön kehitys</b><br>
+            Tähän jotain tekstiä....<br><observablehq-loading></observablehq-loading><!--:216bc469:--> 
+            </p>
+          </div>
+          <div class="step" data-step="2" data-color="green" data-image="https://www.kangasala.fi/wp-content/uploads/2025/02/kortteli1523-jatkuva-haku-681x490.jpg">
+            <p></p>
+          </div>
+          <div class="step" data-step="3" data-color="blue" data-image="https://www.kangasala.fi/wp-content/uploads/2025/02/pixapay_parking-spot-825371_1280_edited-1-681x444.jpg">
+            <p>STEP 3</p>
+          </div>
+          <div class="step" data-step="4" data-color="orange" data-image="https://www.kangasala.fi/wp-content/uploads/2025/02/yo_kuva_isabella_rossi-681x383.png">
+            <p>STEP 4</p>
+          </div>
+        </article>
+      </section>
+      <section id="outro"></section>
+</main>
+</div>
+</body>
+</html>
