@@ -1,0 +1,43 @@
+source,target,value
+Asia,Asia,68.497762
+Europe,Europe,44.246425
+Latin America and the Caribbean,Northern America,25.535633
+Asia,Europe,23.203976
+Africa,Africa,20.917565
+Asia,Northern America,17.549235
+Latin America and the Caribbean,Latin America and the Caribbean,11.297173
+Africa,Europe,11.024274
+Europe,Asia,7.16963
+Europe,Northern America,6.869872
+Latin America and the Caribbean,Europe,5.395924
+Africa,Asia,4.720103
+Other,Asia,4.176425
+Other,Northern America,4.053153
+Asia,Oceania,4.050511
+Africa,Northern America,3.268757
+Europe,Oceania,2.983395
+Other,Africa,2.515243
+Europe,Latin America and the Caribbean,1.355886
+Other,Europe,1.338129
+Northern America,Latin America and the Caribbean,1.293053
+Asia,Africa,1.207631
+Oceania,Oceania,1.107706
+Northern America,Europe,1.100304
+Northern America,Northern America,1.08852
+Europe,Africa,0.648455
+Africa,Oceania,0.587673
+Northern America,Asia,0.538199
+Latin America and the Caribbean,Asia,0.414658
+Asia,Latin America and the Caribbean,0.402369
+Oceania,Europe,0.397036
+Other,Latin America and the Caribbean,0.391721
+Oceania,Northern America,0.343625
+Northern America,Oceania,0.254319
+Latin America and the Caribbean,Oceania,0.214569
+Other,Oceania,0.18248
+Oceania,Asia,0.101725
+Northern America,Africa,0.053563
+Africa,Latin America and the Caribbean,0.048791
+Latin America and the Caribbean,Africa,0.032524
+Oceania,Africa,0.014483
+Oceania,Latin America and the Caribbean,0.00563
