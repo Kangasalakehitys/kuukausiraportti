@@ -11,6 +11,8 @@ library(httr)
 library(rjstat)
 library(reshape2)
 
+
+
 source("C:/Users/kanga/Documents/Observable/testi/src/variables/variables.R")
 
 vuosi <- custom_vars(3)
@@ -61,35 +63,33 @@ valitut_asuntokunnat_ika <- c(
   "75-"
 )
 
-# PXWEB-data- 
+# PXWEB-data-
 pxweb_query_list <- 
-  list("Alue"=valitut_kunnat,
-       "Vuosineljännes"="*",
-       "Talotyyppi"=valitut_talotyypit,
-       "Asuntokunnan koko"=valitut_asuntokunnat,
-       "Asuntokunnan vanhimman ikä"=valitut_asuntokunnat_ika,
-       "Tiedot"= valitut_tiedot)
+  list("Alue" = valitut_kunnat,
+       "Vuosineljännes" = "*",
+       "Talotyyppi" = valitut_talotyypit,
+       "Asuntokunnan koko" = valitut_asuntokunnat,
+       "Asuntokunnan vanhimman ikä" = valitut_asuntokunnat_ika,
+       "Tiedot" = valitut_tiedot)
 
 # Download data ennakkorakenne
 px_statfin_asas_pxt_13ui <- 
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
+data_1 <- px_statfin_asas_pxt_13ui
 
-save(px_statfin_asas_pxt_13ui, file = "statfin_asas_pxt_13ui.Rdata")
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "statfin_asas_pxt_13ui.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
 
-rm(stat_url,px_statfin_asas_pxt_13ui)
-load("statfin_asas_pxt_13ui.Rdata")
-
-#MUUTA OTSIKOT
-title_txt = "Asuntokunnat"
-subtitle_txt = ""
-title_x = "<b></b>"
-title_y = "<b>Lkm</b>"
-title_format = "d"
-lahde_otsikko = "Lähde:"
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
 
 # Convert to data.frame väestö
-px_asas_pxt_13ui <- as_tibble(as.data.frame(px_statfin_asas_pxt_13ui, column.name.type = "text", variable.value.type = "text"))
+data <- as_tibble(as.data.frame(data_1, column.name.type = "text", variable.value.type = "text"))
 
-cat(toJSON(px_asas_pxt_13ui, pretty = TRUE))
+cat(toJSON(data, pretty = TRUE))

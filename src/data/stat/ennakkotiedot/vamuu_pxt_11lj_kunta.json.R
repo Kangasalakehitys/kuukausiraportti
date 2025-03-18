@@ -24,8 +24,6 @@ title_y <- "<b>Lkm</b>"
 title_format <- "d"
 lahde_otsikko <- "Lähde:"
 
-
-
 #URLIT
 stat_url <-
 "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/vamuu/statfin_vamuu_pxt_11lj.px"
@@ -43,9 +41,17 @@ px_statfin_vamuu_pxt_11lj <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
-save(px_statfin_vamuu_pxt_11lj, file = "statfin_vamuu_pxt_11lj.Rdata")
-rm(stat_url, px_statfin_vamuu_pxt_11lj)
-load("statfin_vamuu_pxt_11lj.Rdata")
+data_1 <- px_statfin_vamuu_pxt_11lj
+
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "statfin_vamuu_pxt_11lj.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
+
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
 
 stat_url <-
 "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/vaerak/statfin_vaerak_pxt_11re.px"
@@ -62,14 +68,22 @@ px_statfin_vaerak_pxt_11re <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
-save(px_statfin_vaerak_pxt_11re, file = "statfin_vaerak_pxt_11re.Rdata")
-rm(stat_url,px_statfin_vaerak_pxt_11re)
-load("statfin_vaerak_pxt_11re.Rdata")
+data_2 <- px_statfin_vaerak_pxt_11re
+
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_2 <- "statfin_vaerak_pxt_11re.Rdata"
+directory <- paste(data_folder, file_name_2, sep = "")
+
+save(data_2, file = directory)
+rm(stat_url, data_2)
+load(directory)
+
+# Convert to data.frame ennakkorakenne
+px_data_erakenne <- as_tibble(as.data.frame(data_1, column.name.type = "text", variable.value.type = "text"))
 
 # Convert to data.frame väestö
-px_data_vaesto <- as_tibble(as.data.frame(px_statfin_vaerak_pxt_11re, column.name.type = "text", variable.value.type = "text"))
-# Convert to data.frame ennakkorakenne
-px_data_erakenne <- as_tibble(as.data.frame(px_statfin_vamuu_pxt_11lj, column.name.type = "text", variable.value.type = "text"))
+px_data_vaesto <- as_tibble(as.data.frame(data_2, column.name.type = "text", variable.value.type = "text"))
 
 #Rename variables väestö
 px_data_vaesto <- px_data_vaesto %>% 
@@ -77,7 +91,6 @@ px_data_vaesto <- px_data_vaesto %>%
          "alue" = "Alue")
 
 px_data_vaesto$cat <- "Väestö"
-
 
 #Uudelleen nimetään sarakkeet
 px_data_erakenne <- px_data_erakenne %>% 

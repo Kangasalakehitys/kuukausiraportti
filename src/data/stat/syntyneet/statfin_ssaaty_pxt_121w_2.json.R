@@ -39,11 +39,17 @@ px_statfin_ssaaty_pxt_121w <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
+data_1 <- px_statfin_ssaaty_pxt_121w
 
-save(px_statfin_ssaaty_pxt_121w, file = "statfin_ssaaty_pxt_121w.Rdata")
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "statfin_ssaaty_pxt_121w.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
 
-rm(stat_url,px_statfin_ssaaty_pxt_121w)
-load("statfin_ssaaty_pxt_121w.Rdata")
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
 
 
 stat_url <-
@@ -60,18 +66,21 @@ px_statfin_vamuu_pxt_11lk <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
+data_2 <- px_statfin_vamuu_pxt_11lk
 
-save(px_statfin_vamuu_pxt_11lk, file = "statfin_vamuu_pxt_11lk.Rdata")
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_2 <- "statfin_vamuu_pxt_11lk.Rdata"
+directory <- paste(data_folder, file_name_2, sep = "")
 
-rm(stat_url,px_statfin_vamuu_pxt_11lk)
-load("statfin_vamuu_pxt_11lk.Rdata")
+save(data_2, file = directory)
+rm(stat_url, data_2)
+load(directory)
 
 
+px_data_muutokset <- as_tibble(as.data.frame(data_1, column.name.type = "text", variable.value.type = "text"))
 
-# Convert to data.frame väestö
-px_data_muutokset <- as_tibble(as.data.frame(px_statfin_ssaaty_pxt_121w, column.name.type = "text", variable.value.type = "text"))
-# Convert to data.frame väestö
-px_data_muutokset_ennakko <- as_tibble(as.data.frame(px_statfin_vamuu_pxt_11lk, column.name.type = "text", variable.value.type = "text"))
+px_data_muutokset_ennakko <- as_tibble(as.data.frame(data_2, column.name.type = "text", variable.value.type = "text"))
 
 
 #Rename variables väestö

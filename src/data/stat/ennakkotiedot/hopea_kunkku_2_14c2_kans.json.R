@@ -85,9 +85,17 @@ jsonRespText<-content(px_data,as="text")
 
 px_kunkku_2_14c2 <- fromJSONstat(jsonRespText, naming = "label", use_factors = FALSE, silent = FALSE)
 
-save(px_kunkku_2_14c2, file = "kunkku_2_14c2.Rdata")
-rm(stat_url, px_kunkku_2_14c2)
-load("kunkku_2_14c2.Rdata")
+data_1 <- px_kunkku_2_14c2
+
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "kunkku_2_14c2.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
+
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
 
 #-------------------DATA 2 ------------------
 stat_url = "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/vaerak/statfin_vaerak_pxt_11rm.px"
@@ -106,15 +114,20 @@ px_statfin_vaerak_pxt_11rm <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
+data_2 <- px_statfin_vaerak_pxt_11rm
 
-save(px_statfin_vaerak_pxt_11rm, file = "statfin_vaerak_pxt_11rm.Rdata")
-rm(stat_url,px_data_statfin_vaerak_pxt_11rm)
-load("statfin_vaerak_pxt_11rm.Rdata")
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_2 <- "statfin_vaerak_pxt_11rm.Rdata"
+directory <- paste(data_folder, file_name_2, sep = "")
+
+save(data_2, file = directory)
+rm(stat_url, data_2)
+load(directory)
 
 
 # Convert to data.frame väestö
-px_data_kunkku_2_14c2 <- as_tibble(as.data.frame(px_kunkku_2_14c2, column.name.type = "text", variable.value.type = "text"))
-
+px_data_kunkku_2_14c2 <- as_tibble(as.data.frame(data_1, column.name.type = "text", variable.value.type = "text"))
 px_data_kunkku_2_14c2_filter <- px_data_kunkku_2_14c2
 
 #Käännetään rivit sarakkeiksi
@@ -124,7 +137,7 @@ px_data_kunkku_2_14c2_filter_w <- px_data_kunkku_2_14c2_filter %>%
     values_from = value
   )
 
-px_data_statfin_vaerak_pxt_11rm <- as_tibble(as.data.frame(px_statfin_vaerak_pxt_11rm, column.name.type = "text", variable.value.type = "text"))
+px_data_statfin_vaerak_pxt_11rm <- as_tibble(as.data.frame(data_2, column.name.type = "text", variable.value.type = "text"))
 
 #Käännetään rivit sarakkeiksi
 px_data_statfin_vaerak_pxt_11rm_w <- px_data_statfin_vaerak_pxt_11rm %>% 

@@ -89,9 +89,17 @@ jsonRespText<-content(px_data,as="text")
 
 px_kunkku_2_14c2_3lk <- fromJSONstat(jsonRespText, naming = "label", use_factors = FALSE, silent = FALSE)
 
-save(px_kunkku_2_14c2_3lk, file = "kunkku_2_14c2_3lk.Rdata")
-rm(stat_url, px_kunkku_2_14c2_3lk)
-load("kunkku_2_14c2_3lk.Rdata")
+data_1 <- px_kunkku_2_14c2_3lk
+
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "kunkku_2_14c2_3lk.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
+
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
 
 #-------------------DATA 2 ------------------
 stat_url = "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/vaerak/statfin_vaerak_pxt_11re.px"
@@ -116,17 +124,24 @@ px_statfin_vaerak_pxt_11re_lk <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
-save(px_statfin_vaerak_pxt_11re_lk, file = "statfin_vaerak_pxt_11re_lk.Rdata")
-rm(stat_url,px_statfin_vaerak_pxt_11re_lk)
-load("statfin_vaerak_pxt_11re_lk.Rdata")
+data_2 <- px_statfin_vaerak_pxt_11re_lk
+
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_2 <- "statfin_vaerak_pxt_11re_lk.Rdata"
+directory <- paste(data_folder, file_name_2, sep = "")
+
+save(data_2, file = directory)
+rm(stat_url, data_2)
+load(directory)
 
 #-------------------DATA COMBINE ------------------
 df_0 <- as_tibble(
                   as.data.frame(
-                                px_statfin_vaerak_pxt_11re_lk,
+                                data_2,
                                 column.name.type = "text",
                                 variable.value.type = "text"))
-df_1 <- px_kunkku_2_14c2_3lk
+df_1 <- data_1
 
 df_0 <- df_0 %>%
   rename("ika" = "Ikä",

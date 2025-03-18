@@ -424,11 +424,18 @@ jsonRespText<-content(px_data,as="text")
 
 px_vaesto_kuukausi_vamuu_pxt_119e <- fromJSONstat(jsonRespText, naming = "label", use_factors = FALSE, silent = FALSE)
 
-save(px_vaesto_kuukausi_vamuu_pxt_119e, file = "vaesto_kuukausi_vamuu_pxt_119e.Rdata")
+data_1 <- px_vaesto_kuukausi_vamuu_pxt_119e
 
-rm(stat_url,px_vaesto_kuukausi_vamuu_pxt_119e)
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "vaesto_kuukausi_vamuu_pxt_119e.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
 
-load("vaesto_kuukausi_vamuu_pxt_119e.Rdata")
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
+
 
 #***************************DATA 2***************************
 #URLIT
@@ -493,18 +500,25 @@ px_statfin_muutl_pxt_12w7 <-
             query = pxweb_query_list)
 
 
-save(px_statfin_muutl_pxt_12w7, file = "statfin_muutl_pxt_12w7.Rdata")
 
-rm(stat_url,px_statfin_muutl_pxt_12w7)
-load("statfin_muutl_pxt_12w7.Rdata")
+data_2 <- px_statfin_muutl_pxt_12w7
+
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_2 <- "statfin_muutl_pxt_12w7.Rdata"
+directory <- paste(data_folder, file_name_2, sep = "")
+
+save(data_2, file = directory)
+rm(stat_url, data_2)
+load(directory)
 
 
 #***************************DATA HANDLING 1 and 2 ***************************
 
 # Convert to data.frame väestö
-px_data_vaesto_kuukausi_vamuu_pxt_119e <- as_tibble(as.data.frame(px_vaesto_kuukausi_vamuu_pxt_119e, column.name.type = "text", variable.value.type = "text"))
+px_data_vaesto_kuukausi_vamuu_pxt_119e <- as_tibble(as.data.frame(data_1, column.name.type = "text", variable.value.type = "text"))
 
-px_data_vaesto_kuukausi_vamuu_pxt_119e_filter <- filter(px_data_vaesto_kuukausi_vamuu_pxt_119e, Alue != "KOKO MAA" & Tiedot=="Kuntien välinen nettomuutto")
+px_data_vaesto_kuukausi_vamuu_pxt_119e_filter <- filter(data_1, Alue != "KOKO MAA" & Tiedot=="Kuntien välinen nettomuutto")
 
 #Muutetaan sarakkeen nimiä
 px_data_vaesto_kuukausi_vamuu_pxt_119e_filter <- px_data_vaesto_kuukausi_vamuu_pxt_119e_filter %>% 
@@ -513,7 +527,7 @@ px_data_vaesto_kuukausi_vamuu_pxt_119e_filter <- px_data_vaesto_kuukausi_vamuu_p
 df_data_vaesto_kuukausi_vamuu_pxt_119e_filter <- subset(px_data_vaesto_kuukausi_vamuu_pxt_119e_filter, select=c("Alue", "Kuukausi","Kuntien välinen nettomuutto"))
 
 # Convert to data.frame väestö
-px_data_statfin_muutl_pxt_12w7 <- as_tibble(as.data.frame(px_statfin_muutl_pxt_12w7, column.name.type = "text", variable.value.type = "text"))
+px_data_statfin_muutl_pxt_12w7 <- as_tibble(as.data.frame(data_2, column.name.type = "text", variable.value.type = "text"))
 px_data_statfin_muutl_pxt_12w7_filter <- filter(px_data_statfin_muutl_pxt_12w7, Alue != "KOKO MAA")
 df_data_statfin_muutl_pxt_12w7 <- subset(px_data_statfin_muutl_pxt_12w7_filter, select=c("Alue", "Kuukausi","Kuntien välinen nettomuutto"))
 

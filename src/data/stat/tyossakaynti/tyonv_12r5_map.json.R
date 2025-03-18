@@ -375,11 +375,18 @@ px_statfin_tyonv_pxt_12r5_map <-
             query = pxweb_query_list)
 
 
-save(px_statfin_tyonv_pxt_12r5_map, file = "statfin_tyonv_pxt_12r5_map.Rdata")
+data_1 <- px_statfin_tyonv_pxt_12r5_map
 
-rm(stat_url,px_statfin_tyonv_pxt_12r5_map)
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "statfin_tyonv_pxt_12r5_map.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
 
-load("statfin_tyonv_pxt_12r5_map.Rdata")
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
+
 
 #Uudelleen nimetään sarakkeet
 kuntaid_maakuntaid <- kuntaid_maakuntaid %>% 
@@ -387,7 +394,7 @@ kuntaid_maakuntaid <- kuntaid_maakuntaid %>%
 
 
 # Convert to data.frame väestö
-px_data_tem <- as_tibble(as.data.frame(px_statfin_tyonv_pxt_12r5_map, column.name.type = "text", variable.value.type = "text"))
+px_data_tem <- as_tibble(as.data.frame(data_1, column.name.type = "text", variable.value.type = "text"))
 
 # Suodatetaan koko maa pois ja haetaan uusimmat arvot
 px_data_tem <- filter(px_data_tem, Kuukausi == valittu_kk)

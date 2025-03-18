@@ -95,11 +95,19 @@ jsonRespText<-content(px_data,as="text")
 
 px_vaesto_kuukausi_vamuu_pxt_119e_kunta <- fromJSONstat(jsonRespText, naming = "label", use_factors = FALSE, silent = FALSE)
 
-save(px_vaesto_kuukausi_vamuu_pxt_119e_kunta, file = "vaesto_kuukausi_vamuu_pxt_119e_kunta.Rdata")
-rm(stat_url, px_vaesto_kuukausi_vamuu_pxt_119e_kunta)
-load("vaesto_kuukausi_vamuu_pxt_119e_kunta.Rdata")
+data_1 <- px_vaesto_kuukausi_vamuu_pxt_119e_kunta
 
-px_vaesto_kuukausi_vamuu_pxt_119e_kunta <- as_tibble(as.data.frame(px_vaesto_kuukausi_vamuu_pxt_119e_kunta, column.name.type = "text", variable.value.type = "text"))
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "vaesto_kuukausi_vamuu_pxt_119e_kunta.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
+
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
+
+
 
 # #-------------------DATA 2 ------------------
 stat_url = "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/synt/statfin_synt_pxt_12dy.px"
@@ -136,13 +144,22 @@ px_statfin_synt_pxt_12dy <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
+data_2 <- px_statfin_synt_pxt_12dy
 
-save(px_statfin_synt_pxt_12dy, file = "statfin_synt_pxt_12dy.Rdata")
-rm(stat_url,px_statfin_synt_pxt_12dy7)
-load("statfin_synt_pxt_12dy.Rdata")
+
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_2 <- "statfin_synt_pxt_12dy.Rdata"
+directory <- paste(data_folder, file_name_2, sep = "")
+
+save(data_2, file = directory)
+rm(stat_url, data_2)
+load(directory)
+
+px_vaesto_kuukausi_vamuu_pxt_119e_kunta <- as_tibble(as.data.frame(data_1, column.name.type = "text", variable.value.type = "text"))
 
 # # Convert to data.frame väestö
-px_data_px_statfin_synt_pxt_12dy <- as_tibble(as.data.frame(px_statfin_synt_pxt_12dy, column.name.type = "text", variable.value.type = "text"))
+px_data_px_statfin_synt_pxt_12dy <- as_tibble(as.data.frame(data_2, column.name.type = "text", variable.value.type = "text"))
 
 
 px_data_px_statfin_synt_pxt_12dy_sub <- subset(px_data_px_statfin_synt_pxt_12dy, select=c("Vuosi","Maahanmuutto Suomeen", "Maahanmuutto Suomeen Pohjoismaista", "Maahanmuutto Suomeen EU-maista", "Nettomaahanmuutto"))

@@ -22,7 +22,14 @@ px_statfin_vaerak_pxt_11re_all <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
+data_1 <- px_statfin_vaerak_pxt_11re_all
 
-save(px_statfin_vaerak_pxt_11re_all, file = "statfin_vaerak_pxt_11re_all.Rdata")
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "statfin_vaerak_pxt_11re_all.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
 
-rm(stat_url,px_statfin_vaerak_pxt_11re_all)
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)

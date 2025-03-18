@@ -61,9 +61,17 @@ px_statfin_vamuu_pxt_11lj_all <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
-save(px_statfin_vamuu_pxt_11lj_all, file = "statfin_vamuu_pxt_11lj_all.Rdata")
-rm(stat_url, px_statfin_vamuu_pxt_11lj_all)
-load("statfin_vamuu_pxt_11lj_all.Rdata")
+data_1 <- px_statfin_vamuu_pxt_11lj_all
+
+work_dir <- getwd()
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_1 <- "statfin_vamuu_pxt_11lj_all.Rdata"
+directory <- paste(data_folder, file_name_1, sep = "")
+
+save(data_1, file = directory)
+rm(stat_url, data_1)
+load(directory)
 
 stat_url <-
 "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/vaerak/statfin_vaerak_pxt_11re.px"
@@ -81,20 +89,30 @@ px_statfin_vaerak_pxt_11re_all <-
   pxweb_get(url = stat_url,
             query = pxweb_query_list)
 
-save(px_statfin_vaerak_pxt_11re_all, file = "statfin_vaerak_pxt_11re_all.Rdata")
-rm(stat_url,px_statfin_vaerak_pxt_11re_all)
-load("statfin_vaerak_pxt_11re_all.Rdata")
+
+data_2 <- px_statfin_vaerak_pxt_11re_all
+
+folder <- "/src/data/rdata/"
+data_folder <- paste(work_dir, folder, sep = "")
+file_name_2 <- "statfin_vaerak_pxt_11re_all"
+directory <- paste(data_folder, file_name_2, sep = "")
+
+save(data_2, file = directory)
+rm(stat_url, data_2)
+load(directory)
+
+# Convert to data.frame ennakkorakenne
+px_data_erakenne <- as_tibble(as.data.frame(
+                                            data_1,
+                                            column.name.type = "text",
+                                            variable.value.type = "text"))
+
 
 # Convert to data.frame väestö
 px_data_vaesto <- as_tibble(as.data.frame(
-                                          px_statfin_vaerak_pxt_11re_all,
+                                          data_2,
                                           column.name.type = "text",
                                           variable.value.type = "text"))
-# Convert to data.frame ennakkorakenne
-px_data_erakenne <- as_tibble(as.data.frame(
-                                            px_statfin_vamuu_pxt_11lj_all,
-                                            column.name.type = "text",
-                                            variable.value.type = "text"))
 
 # Suodatetaan koko maa pois ja haetaan uusimmat arvot
 px_data_vaesto_last_year <-
