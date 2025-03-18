@@ -1,2 +1,0 @@
-# kuukausiraportti
-Kuntien avoin kuukausiraportti

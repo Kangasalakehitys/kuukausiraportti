@@ -1,0 +1,43 @@
+id,cat_1_fi,cat_2_fi,cat_1_en,cat_2_en,rec_index,two_layout,three_layout,chart,table,title_fi,title_en,text_fi,text_en,description_fi,description_en,url
+1,Esipuhe,Alkusanat,Esipuhe,Alkusanat,1,No,No,No,No,Alkusanat,Alkusanat,"Kangasalan kaupungin tilastollinen vuosikirja julkaistiin ensimmäisen kerran vuonna xxxx. Tämä xx vuosikerta ilmestyy sähköisenä julkaisuna. Tilastollisessa vuosikirjassa 2023–2024 kuvataan Tamperetta ja tamperelaisia tilastojen valossa. Kangasalan kaupungin vuoden 2024 tilastokirja tarjoaa tilastotietoa väestöstä, työmarkkinoista, asumisesta ja taloudesta. Tilastokirja täydentää toimintakertomuksessa annettua informaatiota. Kirjassa esitetyt tuoreimmat tilastot ovat vuosilta 2023–2024. Useimmissa taulukoissa tiedot ovat vähintään viimeiseltä viisivuotiskaudelta tai 2000-luvulta. Joidenkin ilmiöiden osalta myös pidemmät aikasarjat ovat perusteltuja. Vertailua tehdään kaupunkiseudun ja sen kuntien lisäksi Suomen suurimpiin kaupunkeihin ja suurimpiin seutukuntiin.",null,null,null,null
+2,Esipuhe,Alkusanat,Esipuhe,Alkusanat,2,No,No,No,No,Alkusanat,Alkusanat,Kirjassa esitetyt tuoreimmat tilastot ovat vuosilta 2023–2024. Useimmissa taulukoissa tiedot ovat vähintään viimeiseltä viisivuotiskaudelta tai 2000-luvulta. Joidenkin ilmiöiden osalta myös pidemmät aikasarjat ovat perusteltuja. Vertailua tehdään kaupunkiseudun ja sen kuntien lisäksi Suomen suurimpiin kaupunkeihin ja suurimpiin seutukuntiin.,null,null,null,null
+3,Alue,Maantieteellinen sijainti,Area,Land area,2,No,No,Yes,No,Maantieteellinen sijainti,Land area,null,null,"Väestöllä tarkoitetaan alueella vakinaisesti asuvaa väestöä. Ne henkilöt joilla väestötietojärjestelmän mukaan oli kotipaikka Suomessa vuoden lopussa, kuuluvat väestöön kansalaisuudestaan riippumatta. Lähde: Väestörakenne, Tilastokeskus.","Väestöllä tarkoitetaan alueella vakinaisesti asuvaa väestöä. Ne henkilöt joilla väestötietojärjestelmän mukaan oli kotipaikka Suomessa vuoden lopussa, kuuluvat väestöön kansalaisuudestaan riippumatta. Lähde: Väestörakenne, Tilastokeskus.",https://pxdata.stat.fi:443/PxWeb/api/v1/fi/Kuntien_avainluvut/uusin/142h.px
+4,Alue,Kaupungin alue,null,null,1,No,No,No,No,Kaupungin alue,null,"Kangasala sijaitsee hämeessä Pirkanmaan maakunnassa Tampereen keskusseudulla. Lännessä kaupunki rajoittuu Tampereen kaupunkiin ja Lempäälän kuntaan, etelässä Valkeakosken kaupunkiin ja Pälkäneen kuntaan, idässä Kuhmoisten kuntaan ja pohjoisessa Oriveden kaupunkiin.",,null,null,null
+5,Alue,Hyväksytyt kaavat,null,null,1,No,No,No,No,Hyväksytyt kaavat,null,null,null,null,null,null
+6,Alue,Kaavoitettu maa-alue yhteensä,null,null,1,No,No,No,No,Kaavoitettu maa-alue yhteensä,null,null,null,null,null,null
+7,Alue,Kaupungin omistama maa,null,null,1,No,No,No,No,Kaupungin omistama maa,null,null,null,null,null,null
+8,Alue,Muiden kuin kaupungin omistama maa,null,null,1,No,No,No,No,Muiden kuin kaupungin omistama maa,null,null,null,null,null,null
+9,Alue,Kaupungin omistama maa- ja metsätalousmaa,null,null,1,No,No,No,No,Kaupungin omistama maa- ja metsätalousmaa,null,null,null,null,null,null
+10,Vaalit,Valtiolliset vaalit,null,null,1,No,No,No,No,Valtiolliset vaalit,,null,null,null,null,null
+11,Vaalit,Kuntavaalit,null,null,1,No,No,No,No,Kuntavaalit,null,null,null,null,null,null
+12,Ilmasto ja ympäristö,,null,null,1,No,No,No,No,0,null,null,null,null,null,null
+13,Väestö,Väestön kehitys,Area,Population,1,Yes,No,Yes,No,Väestön kehitys,Population,null,null,"Väestöllä tarkoitetaan alueella vakinaisesti asuvaa väestöä. Ne henkilöt joilla väestötietojärjestelmän mukaan oli kotipaikka Suomessa vuoden lopussa, kuuluvat väestöön kansalaisuudestaan riippumatta. Lähde: Väestörakenne, Tilastokeskus.","Väestöllä tarkoitetaan alueella vakinaisesti asuvaa väestöä. Ne henkilöt joilla väestötietojärjestelmän mukaan oli kotipaikka Suomessa vuoden lopussa, kuuluvat väestöön kansalaisuudestaan riippumatta. Lähde: Väestörakenne, Tilastokeskus.",https://pxdata.stat.fi:443/PxWeb/api/v1/fi/Kuntien_avainluvut/uusin/142h.px
+14,Väestö,Väestö sukupuolen mukaan,null,null,1,No,No,No,No,Väestö sukupuolen mukaan,null,null,null,null,null,null
+15,Väestö,Väestökehitys tilastoalueittain,null,null,1,No,No,No,No,Väestökehitys tilastoalueittain,null,null,null,null,null,null
+16,Väestö,Väestökehitys pienalueittain,null,null,1,No,No,No,No,Väestökehitys pienalueittain,null,null,null,null,null,null
+17,Väestö,"Väestö, iän, sukupuolen ja siviilisäädyn mukaan",null,null,1,No,No,No,No,"Väestö, iän, sukupuolen ja siviilisäädyn mukaan",null,null,null,null,null,null
+18,Väestö,Väestö iän ja sukupuolen mukaan,null,null,1,No,No,No,No,Väestö iän ja sukupuolen mukaan,null,null,null,null,null,null
+19,Väestö,Väestö ikäryhmittäin ja osa-alueittain,null,null,1,No,No,No,No,Väestö ikäryhmittäin ja osa-alueittain,null,null,null,null,null,null
+20,Väestö,Väestö kansalaisuuden mukaan,null,null,1,No,No,No,No,Väestö kansalaisuuden mukaan,null,null,null,null,null,null
+21,Väestö,Väestö pääasiallisen toiminnan mukaan,null,null,1,No,No,No,No,Väestö pääasiallisen toiminnan mukaan,null,null,null,null,null,null
+22,Väestö,Asuntokunnat henkilöluvun mukaan,null,null,1,No,No,No,No,Asuntokunnat henkilöluvun mukaan,null,null,null,null,null,null
+23,Väestö,Perheet perhetyypin mukaan,null,null,1,No,No,No,No,Perheet perhetyypin mukaan,null,null,null,null,null,null
+24,Työpaikat ja työvoima,Työpaikat toimialoittain,null,null,1,No,No,No,No,Työpaikat toimialoittain,null,null,null,null,null,https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/tyokay/statfin_tyokay_pxt_115h.px
+25,Työpaikat ja työvoima,Aloittaneet ja lopettaneet yritykset,null,null,2,No,No,No,No,Aloittaneet ja lopettaneet yritykset,null,null,null,null,null,https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/aly/statfin_aly_pxt_11yq.px
+26,Työpaikat ja työvoima,Työllinen työvoima toimialan mukaan,null,null,3,No,No,No,No,Työllinen työvoima toimialan mukaan,null,null,null,null,null,null
+27,Työpaikat ja työvoima,Suurimmat työnantajat,null,null,1,No,No,No,No,Suurimmat työnantajat,null,null,null,null,null,null
+28,Työpaikat ja työvoima,Työpaikkaomavaraisuus,null,null,1,No,No,No,No,Työpaikkaomavaraisuus,null,null,null,null,null,https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/tyokay/statfin_tyokay_pxt_125s.px
+29,Työpaikat ja työvoima,Pendelöinti,null,null,1,No,No,No,No,Pendelöinti,null,null,null,null,null,https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/tyokay/statfin_tyokay_pxt_115p.px
+30,Työpaikat ja työvoima,Työpaikat sijainnin mukaan,null,null,1,No,No,No,No,Työpaikat sijainnin mukaan,null,null,null,null,null,null
+31,Työpaikat ja työvoima,Työttömät työnhakijat ja työttömyysaste,null,null,1,No,No,No,No,Työttömät työnhakijat ja työttömyysaste,null,null,null,null,null,https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/tyokay/statfin_tyokay_pxt_115x.px
+32,Työpaikat ja työvoima,Pitkäaikaistyöttömyys,null,null,1,No,No,No,No,Pitkäaikaistyöttömyys,null,null,null,null,null,null
+33,Työpaikat ja työvoima,Alle 25-vuotiaat työttömät,null,null,1,No,No,No,No,Alle 25-vuotiaat työttömät,null,null,null,null,null,null
+34,Rakentaminen ja asuminen,Valmistuneet asunnot huoneluvun mukaan,null,null,1,No,No,No,No,Valmistuneet asunnot huoneluvun mukaan,null,null,null,null,null,null
+35,Rakentaminen ja asuminen,Valmistuneet asunnot talotyypin mukaan,null,null,1,No,No,No,No,Valmistuneet asunnot talotyypin mukaan,null,null,null,null,null,null
+36,Rakentaminen ja asuminen,Valmistuneet valtion osalainoittamat asunnot rahoituksen mukaan,null,null,1,No,No,No,No,Valmistuneet valtion osalainoittamat asunnot rahoituksen mukaan,null,null,null,null,null,null
+37,Rakentaminen ja asuminen,Asuntolainoitettujen vuokratalojen vuokra,null,null,1,No,No,No,No,Asuntolainoitettujen vuokratalojen vuokra,null,null,null,null,null,null
+38,Rakentaminen ja asuminen,Myönnetyt rakennusluvat,null,null,1,No,No,No,No,Myönnetyt rakennusluvat,null,null,null,null,null,null
+39,Rakentaminen ja asuminen,Valmistuneet rakennukset,null,null,1,No,No,No,No,Valmistuneet rakennukset,null,null,null,null,null,null
+40,Rakentaminen ja asuminen,Kesämökit,null,null,1,No,No,No,No,Kesämökit,null,null,null,null,null,null
+41,Rakentaminen ja asuminen,Vanhojen asuntojen velattomat neliöhinnat,null,null,1,No,No,No,No,Vanhojen asuntojen velattomat neliöhinnat,null,null,null,null,null,null
+42,Rakentaminen ja asuminen,Asuntojen reaalihintaindeksi,null,null,1,No,No,No,No,Asuntojen reaalihintaindeksi,null,null,null,null,null,null
