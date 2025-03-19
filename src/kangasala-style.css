@@ -1,0 +1,408 @@
+@import url("observablehq:default.css");
+@import url("observablehq:theme-air.css");
+:root {
+    --sans-serif: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    --syntax-keyword: #d73a49;
+    --syntax-entity: #6f42c1;
+    --syntax-constant: #005cc5;
+    --syntax-string: #032f62;
+    --syntax-variable: #e36209;
+    --syntax-comment: var(--theme-foreground-muted);
+    --syntax-entity-tag: #22863a;
+    --syntax-storage-modifier-import: #24292e;
+    --syntax-markup-heading: #005cc5;
+    --syntax-markup-list: #735c0f;
+    --syntax-markup-italic: #24292e;
+    --syntax-markup-bold: #24292e;
+    --syntax-markup-inserted: #22863a;
+    --syntax-markup-inserted-background: #f0fff4;
+    --syntax-markup-deleted: #b31d28;
+    --syntax-markup-deleted-background: #ffeef0;
+    --theme-foreground: #1b1e23;
+    --theme-foreground-focus: #3b5fc0;
+    --theme-background-a: #ffffff;
+    --theme-background-b: color-mix(in srgb, var(--theme-foreground) 4%, var(--theme-background-a));
+    --theme-background: var(--theme-background-a);
+    --theme-background-alt: var(--theme-background-b);
+    --theme-foreground-alt: color-mix(in srgb, var(--theme-foreground) 90%, var(--theme-background-a));
+    --theme-foreground-muted: color-mix(in srgb, var(--theme-foreground) 60%, var(--theme-background-a));
+    --theme-foreground-faint: color-mix(in srgb, var(--theme-foreground) 50%, var(--theme-background-a));
+    --theme-foreground-fainter: color-mix(in srgb, var(--theme-foreground) 30%, var(--theme-background-a));
+    --theme-foreground-faintest: color-mix(in srgb, var(--theme-foreground) 14%, var(--theme-background-a));
+    --theme-blue: #28336C;
+    --theme-green: #009651;
+    --theme-red: #DE232F;
+    --theme-yellow: #FCB316;
+    --font-big: 700 32px/1 var(--sans-serif);
+    --font-small: 14px var(--sans-serif);
+    color-scheme: light;
+  }
+  body {
+    font: 23px/1.5 var(--serif);
+    margin: 0;
+  }
+  
+  .card {
+    background: #ffffff;
+    /* border: solid 1px var(--theme-foreground-faintest); */
+    border: solid 1px;
+    /*border-color: rgb(214, 214, 214);*/
+    border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(224, 224, 224) rgb(255, 255, 255); /* red top, green right, blue bottom and yellow left */
+    border-radius: 0rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    font: 23px var(--sans-serif);
+    position: relative;
+    top: 20px;
+  }
+  
+  .grid>.card,
+  .card figure {
+    margin: 0;
+  }
+  
+  .card h2,
+  .card h3 {
+    font-size: inherit;
+  }
+  
+  .card h2 {
+    font-weight: bold;
+    font-size: 23px;
+  }
+  
+  .card h3 {
+    font-weight: 400;
+    color: var(--theme-foreground-muted);
+  }
+  
+  .card h2~svg,
+  .card h3~svg,
+  .card h2~p,
+  .card h3~p {
+    margin-top: 1rem;
+  }
+  
+  
+  .observablehq-root {
+    container-type: inline-size;
+  }
+  
+  .grid {
+    margin: 1rem 0;
+    display: grid;
+    gap: 1rem;
+  /*   grid-auto-rows: 1fr; */
+  }
+  
+  .grid svg {
+    overflow: visible;
+  }
+  
+  .grid figure {
+    margin: 0;
+  }
+  
+  .grid>*>p:first-child {
+    margin-top: 0;
+  }
+  
+  .grid>*>p:last-child {
+    margin-bottom: 0;
+  }
+  
+  @container (min-width: 640px) {
+  
+    .grid-cols-2,
+    .grid-cols-4 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .grid-cols-2 .grid-colspan-2,
+    .grid-cols-2 .grid-colspan-3,
+    .grid-cols-2 .grid-colspan-4,
+    .grid-cols-4 .grid-colspan-2,
+    .grid-cols-4 .grid-colspan-3,
+    .grid-cols-4 .grid-colspan-4 {
+      grid-column: span 2;
+    }
+  }
+  
+  @container (min-width: 720px) {
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  
+    .grid-cols-3 .grid-colspan-2 {
+      grid-column: span 2;
+    }
+  
+    .grid-cols-3 .grid-colspan-3 {
+      grid-column: span 3;
+    }
+  }
+  
+  @container (min-width: 1080px) {
+    .grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  
+    .grid-cols-4 .grid-colspan-3 {
+      grid-column: span 3;
+    }
+  
+    .grid-cols-4 .grid-colspan-4 {
+      grid-column: span 4;
+    }
+  }
+  
+  .grid-rowspan-2 {
+    grid-row: span 2;
+  }
+  
+  .grid-rowspan-3 {
+    grid-row: span 3;
+  }
+  
+  .grid-rowspan-4 {
+    grid-row: span 4;
+  }
+  
+  .note,
+  .tip,
+  .warning,
+  .caution {
+    border-left: solid 1px;
+    border-radius: 0 4px 4px 0;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+    max-width: 640px;
+  }
+  
+  .note::before,
+  .tip::before,
+  .warning::before,
+  .caution::before {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .note {
+    border-left-color: var(--theme-foreground-fainter);
+    background-color: var(--theme-background-alt);
+  }
+  
+  .note::before {
+    content: "Note";
+    color: var(--theme-foreground-muted);
+  }
+  
+  .tip {
+    border-left-color: var(--theme-green);
+    background-color: color-mix(in srgb, var(--theme-green), var(--theme-background) 90%);
+  }
+  
+  .tip::before {
+    content: "Tip";
+    color: var(--theme-green);
+  }
+  
+  .warning {
+    border-left-color: var(--theme-yellow);
+    background-color: color-mix(in srgb, var(--theme-yellow), var(--theme-background) 90%);
+  }
+  
+  .warning::before {
+    content: "Warning";
+    color: var(--theme-yellow);
+  }
+  
+  .caution {
+    border-left-color: var(--theme-red);
+    background-color: color-mix(in srgb, var(--theme-red), var(--theme-background) 90%);
+  }
+  
+  .caution::before {
+    content: "Caution";
+    color: var(--theme-red);
+  }
+  
+  .note[label]::before,
+  .tip[label]::before,
+  .warning[label]::before,
+  .caution[label]::before {
+    content: attr(label);
+  }
+  
+  .note> :first-child,
+  .tip> :first-child,
+  .warning> :first-child,
+  .caution> :first-child {
+    margin-top: 0;
+  }
+  
+  .note> :last-child,
+  .tip> :last-child,
+  .warning> :last-child,
+  .caution> :last-child {
+    margin-bottom: 0;
+  }
+    
+  .big {
+    font: var(--font-big);
+  }
+  
+  .small {
+    font: var(--font-small);
+  }
+  
+  .red {
+    color: var(--theme-red);
+  }
+  
+  .yellow {
+    color: var(--theme-yellow);
+  }
+  
+  .green {
+    color: var(--theme-green);
+  }
+  
+  .blue {
+    color: var(--theme-blue);
+  }
+  
+  .muted {
+    color: var(--theme-foreground-muted);
+  }
+  body {
+    font-family: var(--sans-serif);
+  }
+
+
+/* Scrollama */
+
+#scrolly {
+  position: relative;
+  padding: 1rem;
+}
+article {
+  position: relative;
+  padding: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+#figure {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 0;
+  background-color: #009651; 
+  border-radius: 15px;
+  /* The image used */
+  background-image: url("https://www.kangasala.fi/wp-content/uploads/2025/02/lamminrahkan-uusi-asuinalue_2024-681x510.jpg");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+#figure p {
+  text-align: start;
+  /*padding: 1rem;*/
+  position: absolute;
+  top: 10%; /*50*/
+  left: 45%;/*50*/
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: #fff;
+  width: 100%;
+  background-size: cover;
+  background-color: #000296;
+  border-radius: 15px;
+}
+.step {
+  margin: 0 auto 2rem auto;
+  color: #000000;
+  /*background-color: rgba(255, 255, 255, 0.3);*/
+  border-radius: 15px;
+  font-size: 23px;
+}
+.step:last-child {
+  margin-bottom: 0;
+  border-radius: 15px;
+  font-size: 23px;
+}
+.step.is-active p {
+  background-color: rgba(255, 255, 255);
+  color: #000000;
+  border-radius: 15px;
+  font-size: 23px;
+}
+.step p {
+  text-align: start;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: rgba(192, 192, 192, 0.8);
+  border-radius: 15px;
+  font-size: 23px;
+}
+/*Leaflet */
+#map { 
+  height: 180px;
+}
+/* round the edges on maps */
+.leaflet-container {
+  border-radius: 15px;
+ }
+
+.info { 
+  padding: 6px 8px; 
+  font: 14px/16px;
+  background: rgba(255,255,255,0.1); 
+  border-radius: 5px;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+.info h4 { 
+  margin: 0 0 5px; 
+  color: #000000; 
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+.legend { 
+  text-align: left; 
+  line-height: 18px; 
+  color: #555; 
+} 
+.legend i { 
+  width: 18px; 
+  height: 18px; 
+  float: left; 
+  margin-right: 8px; 
+  opacity: 0.7; 
+}
+text { 
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-size: 8;
+}
+.tick {
+  font: 11px/12px;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;;
+}
+#observablehq-search {
+  position: relative;
+}
+#observablehq-search:before {
+  content: 'Hae';
+}
+
