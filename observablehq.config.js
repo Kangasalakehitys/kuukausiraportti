@@ -19,8 +19,6 @@ export default {
     // {
     //   name: "Muuttoliike", path: "/pages/muuttoliike/muuttoliike",
     // },
-    {
-      name: "Asuminen ja rakentaminen", path: "/pages/asuminen/rakentaminen",
       // open: true,
       // pages: [
       //   {name: "Asuinolot", path: "/pages/asuminen/asuinolot"},
@@ -28,30 +26,7 @@ export default {
       //   {name: "Vanhojen asuntojen €/m2", path: "/pages/asuminen/vanhat_neliohinta"},
       //   {name: "Kesämökit", path: "/pages/asuminen/kesamokit"},
       // ]
-    },
-    {
-      name: "Syntyneet", path: "/pages/syntyneet/syntyneet",
-    },
-    {
-      name: "Työllisyys", path: "/pages/tyopaikat/tyopaikat",
-      // open: true,
-      // pages: [
-      //   {name: "Toimialat", path: "/pages/tyopaikat/toimiala"},
-      //   {name: "Työvoima", path: "/pages/tyopaikat/tyovoima"},
-      //   {name: "Työpaikkaomavaraisuus", path: "/pages/tyopaikat/omavaraisuus"},
-      //   {name: "Työnvälitystilasto (TEM)", path: "/pages/tyopaikat/tyopaikka_tyoton"},
-      //   {name: "Kohtaanto (TEM)", path: "/pages/tyopaikat/tyopaikka_tyoton_toimiala"}
-      // ]
-    },
-    {
-      name: "Vaalit", path: "/pages/vaalit/vaalit",
-    },
-    {
-      name: "Väestö", path: "/pages/vaesto/vaesto",
-    },
-    {
-      name: "Yritykset", path: "/pages/yritykset/yritykset",
-    },
+
   ],
 
   // Content to add to the head of the page, e.g. for a favicon:
