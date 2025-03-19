@@ -1,0 +1,512 @@
+lng,lat,id,tmsNumber,name,kunta,vuosi,nimi,namn,name_2,suunta_1,suunta_2
+24.637997,60.220898,20002,20002,vt1 Espoo Hirvisuo,049,2023,Espoo,Esbo,Espoo,Turku,Helsinki
+24.680272,60.210344,20004,20004,vt1 Espoo Kasavuori,235,2023,Kauniainen,Grankulla,Kauniainen,Turku,Helsinki
+24.710207,60.200669,20006,20006,vt1 Espoo Kuurinniitty,235,2023,Kauniainen,Grankulla,Kauniainen,Turku,Helsinki
+24.695188,60.205637,20007,20007,vt1 Espoo Tuomarila,235,2023,Kauniainen,Grankulla,Kauniainen,Turku,Helsinki
+24.749333,60.205067,20009,20009,vt1 Espoo Stensgård,235,2023,Kauniainen,Grankulla,Kauniainen,Turku,Helsinki
+24.785277,60.206768,20010,20010,vt1 Espoo Turveradantie,049,2023,Espoo,Esbo,Espoo,Turku,Helsinki
+24.776775,60.205988,20011,20011,vt1 Espoo Sinimäki,049,2023,Espoo,Esbo,Espoo,Turku,Helsinki
+24.811301,60.208135,20016,20016,vt1 Espoo Säterinmetsä 2 Hki,049,2023,Espoo,Esbo,Espoo,,Helsinki
+24.803387,60.208264,20017,20017,vt1 Espoo Espoonsilta,049,2023,Espoo,Esbo,Espoo,Turku,Helsinki
+24.826427,60.208922,20018,20018,vt1 Espoo Ruukinranta,049,2023,Espoo,Esbo,Espoo,Turku,Helsinki
+24.814737,60.383362,20024,20024,vt3 Mäyränkallio,543,2023,Nurmijärvi,Nurmijärvi,Nurmijärvi,Hämeenlinna,Helsinki
+24.814253,60.393297,20025,20025,vt3 Yli-Hemmi,543,2023,Nurmijärvi,Nurmijärvi,Nurmijärvi,Hämeenlinna,Helsinki
+24.844291,60.451756,20026,20026,vt3 Nurmijärvi Hki,543,2023,Nurmijärvi,Nurmijärvi,Nurmijärvi,,Helsinki
+24.992731,60.185775,20028,20028,st170 Kulosaari LML,091,2023,Helsinki,Helsingfors,Helsinki,Itäkeskus,Helsinki
+26.343977,61.150644,20301,20301,kt46 Kouvola Uimila Flex,286,2023,Kouvola,Kouvola,Kouvola,Heinola,Kouvola
+27.823605,61.899062,20603,20603,vt14 Juva Flex3,178,2023,Juva,Juva,Juva,,
+25.508104,65.020043,21201,21201,vt4 Oulu Intiö LML,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.716369,65.108883,21202,21202,Vt20 Oulu Honkimaa Flex,564,2023,Oulu,Uleåborg,Oulu,Kuusamo,Oulu
+25.505512,65.007569,21203,21203,Vt4 Oulu Kontinkangas Flex,564,2023,Oulu,Uleåborg,Oulu,Oulu,
+23.754484,67.311012,21401,21401,st943 Kolari T Flex,273,2023,Kolari,Kolari,Kolari,Ruotsi,Suomi
+24.259109,67.455527,21402,21402,Kt80 Kolari Ylläsjärvi Flex,273,2023,Kolari,Kolari,Kolari,Sodankylä,Kolari
+25.689529,60.417002,23001,1,vt7 Rita,638,2023,Porvoo,Borgå,Porvoo,Kotka,Helsinki
+24.664459,60.153502,23003,3,kt51 Kivenlahti,049,2023,Espoo,Esbo,Espoo,Kirkkonummi,Helsinki
+24.849501,60.3,23004,4,vt3 Kivistö,092,2023,Vantaa,Vanda,Vantaa,Hämeenlinna,Helsinki
+24.808791,60.354656,23005,5,vt3 Klaukkalantie,092,2023,Vantaa,Vanda,Vantaa,Hämeenlinna,Helsinki
+24.746882,60.211601,23006,6,st102 Hiidenkallio,235,2023,Kauniainen,Grankulla,Kauniainen,Karamalmi,Matinkylä
+25.093679,60.285738,23007,7,vt4 Vantaa Honkanummi,092,2023,Vantaa,Vanda,Vantaa,Lahti,Helsinki
+25.115766,60.362098,23008,8,vt4 Vantaa Leppäkorpi,092,2023,Vantaa,Vanda,Vantaa,Lahti,Helsinki
+24.997117,60.320603,23009,9,kt45 Vantaa Ilola,092,2023,Vantaa,Vanda,Vantaa,Tuusula,Helsinki
+24.807454,60.189783,23010,10,st101 Espoo Laajalahti,049,2023,Espoo,Esbo,Espoo,Itäkeskus,Tapiola
+25.082548,60.219097,23011,11,st101 Helsinki Vartiokylä,091,2023,Helsinki,Helsingfors,Helsinki,Itäkeskus,Tapiola
+24.633121,60.214649,23012,12,kt50 Espoo Muurala,049,2023,Espoo,Esbo,Espoo,Vantaa,Kirkkonummi
+24.862004,60.288139,23013,13,vt3 Vantaa Martinkyläntie,092,2023,Vantaa,Vanda,Vantaa,Hämeenlinna,Helsinki
+26.302983,60.699375,23014,14,vt6 Lapinjärvi Kimonkylä,407,2023,Lapinjärvi,Lappträsk,Lapinjärvi,Kouvola,Porvoo
+26.173444,60.615872,23015,15,vt6 Lapinjärvi,407,2023,Lapinjärvi,Lappträsk,Lapinjärvi,Kouvola,Porvoo
+24.737301,60.163857,23098,98,kt51 Espoo Piispansilta,049,2023,Espoo,Esbo,Espoo,Kirkkonummi,Helsinki
+25.13824,60.482986,23099,99,vt4 Järvenpää Isokytö,186,2023,Järvenpää,Träskända,Järvenpää,Lahti,Helsinki
+24.848744,60.164977,23101,101,kt51 Hanasaari,091,2023,Helsinki,Helsingfors,Helsinki,Espoo,Helsinki
+24.639432,60.156229,23102,102,kt51 Soukka,049,2023,Espoo,Esbo,Espoo,Kirkkonummi,Helsinki
+24.843448,60.206155,23103,103,vt1 Espoo Huopalahti,091,2023,Helsinki,Helsingfors,Helsinki,Turku,Helsinki
+24.347814,60.294137,23104,104,vt1 Palojärvi,927,2023,Vihti,Vichtis,Vihti,Turku,Helsinki
+24.134285,60.370633,23105,105,st110 Hiidenvesi,444,2023,Lohja,Lojo,Lohja,Turku,Helsinki
+24.338949,60.323471,23106,106,vt2 Huhmari,927,2023,Vihti,Vichtis,Vihti,Pori,Helsinki
+24.874943,60.269691,23107,107,vt3 Kaivoksela,092,2023,Vantaa,Vanda,Vantaa,Hämeenlinna,Helsinki
+24.85174,60.496427,23108,108,vt3 Karhunkorpi,543,2023,Nurmijärvi,Nurmijärvi,Nurmijärvi,Hämeenlinna,Helsinki
+25.06756,60.254734,23109,109,vt4 Jakomäki,091,2023,Helsinki,Helsingfors,Helsinki,Lahti,Helsinki
+25.23404,60.591375,23110,110,vt4 Mäntsälä Hakkari,505,2023,Mäntsälä,Mäntsälä,Mäntsälä,Lahti,Helsinki
+26.049543,60.557843,23111,111,vt6 Loviisa Liljendal,434,2023,Loviisa,Lovisa,Loviisa,Kouvola,Helsinki
+25.528011,60.355937,23112,112,vt7 Treksilä,638,2023,Porvoo,Borgå,Porvoo,Kotka,Helsinki
+24.019133,60.203684,23114,114,vt25 Virkkala,444,2023,Lohja,Lojo,Lohja,Hyvinkää,Hanko
+25.581225,60.413602,23115,115,kt55 Saksala,638,2023,Porvoo,Borgå,Porvoo,Mäntsälä,Porvoo
+24.816295,60.213364,23116,116,st101 Leppävaara,049,2023,Espoo,Esbo,Espoo,Itäkeskus,Tapiola
+24.873178,60.202989,23117,117,vt1 Munkkiniemi,091,2023,Helsinki,Helsingfors,Helsinki,Turku,Helsinki
+24.82517,60.171482,23118,118,st101 Espoo Keilaniemi,049,2023,Espoo,Esbo,Espoo,Itäkeskus,Länsiväylä
+25.166377,60.261902,23119,119,vt7 Helsinki Itäsalmi,091,2023,Helsinki,Helsingfors,Helsinki,Porvoo,Helsinki
+26.02344,60.55198,23121,121,yt11888 Liljendal2,434,2023,Loviisa,Lovisa,Loviisa,Kouvola,Porvoo
+24.150133,60.573588,23122,122,vt2 Karkkila,224,2023,Karkkila,Högfors,Karkkila,Pori,Helsinki
+24.830899,60.251886,23123,123,st120 Pähkinärinne,049,2023,Espoo,Esbo,Espoo,Vihti,Helsinki
+23.513729,59.999169,23124,124,vt25 Dragsvik,710,2023,Raasepori,Raseborg,Raasepori,Hyvinkää,Hanko
+24.60793,60.203588,23125,125,kt50 Bemböle,049,2023,Espoo,Esbo,Espoo,Vantaa,Kirkkonummi
+24.84139,60.230059,23126,126,st101 Konala,091,2023,Helsinki,Helsingfors,Helsinki,Hyvinkää,Helsinki
+24.987002,60.434238,23127,127,kt45 Tuusula Rusutjärvi,858,2023,Tuusula,Tusby,Tuusula,Hyvinkää,Hanko
+24.866723,60.296236,23128,128,kt50 Voutila,092,2023,Vantaa,Vanda,Vantaa,Vantaa,Espoo
+24.527557,60.458688,23129,129,vt25 Selki,927,2023,Vihti,Vichtis,Vihti,Hyvinkää,Hanko
+25.0923,60.617152,23130,130,vt25 Keravanjärvi,505,2023,Mäntsälä,Mäntsälä,Mäntsälä,Mäntsälä,Hyvinkää
+24.954101,60.256725,23131,131,kt45 Helsinki Tuomarinkartano,091,2023,Helsinki,Helsingfors,Helsinki,Tuusula,Helsinki
+24.833017,60.58102,23133,133,vt25 Noppo,106,2023,Hyvinkää,Hyvinge,Hyvinkää,Mäntsälä,Hanko
+24.075244,60.060438,23134,134,kt51 Inkoo,149,2023,Inkoo,Ingå,Ingå,Karjaa,Kirkkonummi
+25.735009,60.453244,23135,135,st170 Ilola,638,2023,Porvoo,Borgå,Porvoo,Koskenkylä,Porvoo
+25.191554,60.545894,23136,136,st140 Arola,505,2023,Mäntsälä,Mäntsälä,Mäntsälä,Mäntsälä,Helsinki
+24.825444,60.326456,23137,137,vt3 Vantaa Keimola,092,2023,Vantaa,Vanda,Vantaa,Hämeenlinna,Helsinki
+24.745301,60.305288,23138,138,st120 Odilampi,049,2023,Espoo,Esbo,Espoo,Vihti,Helsinki
+24.596879,60.228092,23139,139,vt1 Nupuri,049,2023,Espoo,Esbo,Espoo,Turku,Helsinki
+24.707691,60.246276,23140,140,kt50 Järvenperä,049,2023,Espoo,Esbo,Espoo,Vantaa,Espoo
+25.411283,60.31517,23141,141,vt7 Box,753,2023,Sipoo,Sibbo,Sipoo,Porvoo,Helsinki
+25.448445,60.736118,23142,142,vt4 Levanto,505,2023,Mäntsälä,Mäntsälä,Mäntsälä,Lahti,Helsinki
+24.552767,60.141217,23143,143,kt51 Sundsberg,257,2023,Kirkkonummi,Kyrkslätt,Kirkkonummi,Kirkkonummi,Helsinki
+24.794647,60.207796,23144,144,vt1 Friisinmäki,049,2023,Espoo,Esbo,Espoo,Turku,Helsinki
+24.879279,60.234542,23145,145,st101 Kannelmäki,091,2023,Helsinki,Helsingfors,Helsinki,Itäkeskus,Tapiola
+24.919151,60.239547,23146,146,st101 Länsi-Pakila,091,2023,Helsinki,Helsingfors,Helsinki,Itäkeskus,Tapiola
+24.93714,60.241903,23147,147,st101 Pakila,091,2023,Helsinki,Helsingfors,Helsinki,Itäkeskus,Tapiola
+24.98135,60.241568,23148,148,st101 Pukinmäki,091,2023,Helsinki,Helsingfors,Helsinki,Itäkeskus,Tapiola
+25.029364,60.241347,23149,149,st101 Malmi,091,2023,Helsinki,Helsingfors,Helsinki,Itäkeskus,Tapiola
+24.973822,60.290314,23150,150,kt50 Vantaanportti,092,2023,Vantaa,Vanda,Vantaa,Vantaa,Espoo
+24.878373,60.224261,23151,151,st120 Pitäjänmäki,091,2023,Helsinki,Helsingfors,Helsinki,Vantaa,Helsinki
+24.907502,60.226466,23152,152,vt3 Pirkkola,091,2023,Helsinki,Helsingfors,Helsinki,Hämeenlinna,Helsinki
+24.945214,60.224056,23153,153,kt45 Oulunkylä,091,2023,Helsinki,Helsingfors,Helsinki,Tuusula,Helsinki
+24.987709,60.222722,23154,154,vt4 Viikinmäki,091,2023,Helsinki,Helsingfors,Helsinki,Lahti,Helsinki
+24.492014,60.127648,23156,156,kt51 Jorvas,257,2023,Kirkkonummi,Kyrkslätt,Kirkkonummi,Kirkkonummi,Helsinki
+25.99756,60.487317,23158,158,st170 Hagaböle,434,2023,Loviisa,Lovisa,Loviisa,Loviisa,Porvoo
+24.814647,60.277164,23159,159,kt50 Petikko,092,2023,Vantaa,Vanda,Vantaa,Vantaa,Espoo
+25.046636,60.280753,23160,160,kt50 Heidehof,092,2023,Vantaa,Vanda,Vantaa,Vantaa,Espoo
+24.755706,60.175982,23162,162,st102 Olarinluoma,049,2023,Espoo,Esbo,Espoo,Matinkylä,Länsiväylä
+24.746484,60.190826,23163,163,st102 Kokinkylä,235,2023,Kauniainen,Grankulla,Kauniainen,Turunväylä,Länsiväylä
+24.901549,60.211965,23164,164,vt3 Kivihaka,091,2023,Helsinki,Helsingfors,Helsinki,Hämeenlinna,Helsinki
+24.877246,60.259821,23165,165,vt3 Hakuninmaa,091,2023,Helsinki,Helsingfors,Helsinki,Hämeenlinna,Helsinki
+24.740568,60.203158,23167,167,vt1 Espoo Sepänkylä,235,2023,Kauniainen,Grankulla,Kauniainen,Turku,Helsinki
+24.776689,60.273615,23168,168,kt50 Askisto,092,2023,Vantaa,Vanda,Vantaa,Vantaa,Espoo
+24.942674,60.295655,23169,169,kt50 Pakkala,092,2023,Vantaa,Vanda,Vantaa,Vantaa,Espoo
+25.245947,60.274724,23172,172,vt7 Helsinki Bäcknäs,091,2023,Helsinki,Helsingfors,Helsinki,Porvoo,Helsinki
+24.661165,60.21556,23175,175,vt1 Espoo Lommila,049,2023,Espoo,Esbo,Espoo,Turku,Helsinki
+25.317951,60.280371,23176,176,vt7 Sipoo Sipoonlahti,753,2023,Sipoo,Sibbo,Sipoo,Porvoo,Helsinki
+25.341034,60.288833,23177,177,vt7 Sipoo Kallback,753,2023,Sipoo,Sibbo,Sipoo,Porvoo,Helsinki
+25.450135,60.322813,23178,178,vt7 Sipoo Kulloo,638,2023,Porvoo,Borgå,Porvoo,Porvoo,Helsinki
+25.111558,60.254263,23179,179,vt7 Fazerila,092,2023,Vantaa,Vanda,Vantaa,Porvoo,Helsinki
+25.098913,60.271928,23182,182,kt50 Hakunila,092,2023,Vantaa,Vanda,Vantaa,Vantaa,Espoo
+24.714709,60.252145,23183,183,kt50 Järvenperä2,049,2023,Espoo,Esbo,Espoo,Vantaa,Espoo
+25.749595,60.42567,23184,184,vt7 Porvoo Uusikrouvi,638,2023,Porvoo,Borgå,Porvoo,Kotka,Helsinki
+25.840384,60.455621,23185,185,vt7 Porvoo Lohijärvi,638,2023,Porvoo,Borgå,Porvoo,Kotka,Helsinki
+25.913508,60.490404,23186,186,vt7 Loviisa Gammelbyviken,434,2023,Loviisa,Lovisa,Loviisa,Kotka,Espoo
+26.118634,60.473096,23187,187,vt7 Loviisa Kärrbacka,434,2023,Loviisa,Lovisa,Loviisa,Kotka,Porvoo
+26.212552,60.465378,23188,188,vt7 Loviisa,434,2023,Loviisa,Lovisa,Loviisa,Kotka,Porvoo
+26.278494,60.479183,23189,189,vt7 Loviisa Itä,434,2023,Loviisa,Lovisa,Loviisa,Kotka,Porvoo
+25.598321,60.380907,23190,190,vt7 Porvoo Ernestas,638,2023,Porvoo,Borgå,Porvoo,Kotka,Helsinki
+24.50065,60.257719,23191,191,vt1 Kolmiranta,257,2023,Kirkkonummi,Kyrkslätt,Kirkkonummi,Turku,Helsinki
+24.416719,60.287221,23192,192,vt1 Veikkola,257,2023,Kirkkonummi,Kyrkslätt,Kirkkonummi,Turku,Helsinki
+24.253194,60.302294,23193,193,vt1 Hevoskallio,927,2023,Vihti,Vichtis,Vihti,Lohja,Helsinki
+24.158551,60.28803,23194,194,vt1 Lehmijärvi,444,2023,Lohja,Lojo,Lohja,Lohja,Helsinki
+25.153666,60.241105,23195,195,st103 Satamatie,091,2023,Helsinki,Helsingfors,Helsinki,Helsinki,Vantaa
+25.158891,60.220754,23196,196,Niinisaarentie,091,2023,Helsinki,Helsingfors,Helsinki,Porvoo,Espoo
+24.908478,60.208329,23197,197,st100 Kivihaan tunneli,091,2023,Helsinki,Helsingfors,Helsinki,Helsinki,Turku
+25.631168,60.404355,23198,198,vt7 Porvoo,638,2023,Porvoo,Borgå,Porvoo,Kotka,Helsinki
+23.357739,60.368037,23201,201,st110 Muurla Salo,734,2023,Salo,Salo,Salo,Turku,Helsinki
+23.42946,61.58514,23203,203,vt3 Hämeenkyrö,108,2023,Hämeenkyrö,Tavastkyro,Hämeenkyrö,Vaasa,Tampere
+22.975875,61.912381,23204,204,vt3 Ikaalinen,143,2023,Ikaalinen,Ikalis,Ikaalinen,Vaasa,Tampere
+22.159199,60.503039,23205,205,vt8 Raisio,680,2023,Raisio,Reso,Raisio,Vaasa,Turku
+21.586275,60.986934,23206,206,vt8 Pyhäranta,631,2023,Pyhäranta,Pyhäranta,Pyhäranta,Vaasa,Turku
+21.809442,61.544747,23207,207,vt8 Pori,609,2023,Pori,Björneborg,Pori,Vaasa,Turku
+22.468601,60.593513,23208,208,vt9 Aura,423,2023,Lieto,Lundo,Lieto,Tampere,Turku
+22.923377,60.614918,23209,209,vt10 Marttila,480,2023,Marttila,S:t Mårtens  ,Marttila,Hämeenlinna,Turku
+22.838086,61.315328,23210,210,vt12 Vammala,790,2023,Sastamala,Sastamala,Sastamala,Tampere,Rauma
+21.728834,61.112461,23211,211,vt12 Lappi tl,684,2023,Rauma,Raumo,Rauma,Tampere,Rauma
+21.987405,61.366166,23221,221,vt2 Nakkila,531,2023,Nakkila,Nakkila,Nakkila,Pori,Helsinki
+21.627913,61.170103,23223,223,vt8 Eurajoki,051,2023,Eurajoki,Euraåminne,Eurajoki,Vaasa,Turku
+22.347332,61.466795,23224,224,vt11 Kullaa,886,2023,Ulvila,Ulvsby,Ulvila,Pori,Tampere
+22.245398,61.789045,23226,226,vt23 Kankaanpää,214,2023,Kankaanpää,Kankaanpää,Kankaanpää,Virrat,Pori
+22.516331,60.446988,23227,227,vt1 Kaarina Kirismäki,202,2023,Kaarina,S:t Karins,Kaarina,Turku,Helsinki
+22.426255,60.497675,23230,230,vt10 Lieto,423,2023,Lieto,Lundo,Lieto,Hämeenlinna,Turku
+22.085889,60.469166,23231,231,kt40 Vanto,680,2023,Raisio,Reso,Raisio,Piikkiö,Naantali
+21.821122,61.45647,23232,232,vt2 Porin lentokent,609,2023,Pori,Björneborg,Pori,Pori,Helsinki
+22.217791,60.494327,23233,233,kt40 Hauninen,680,2023,Raisio,Reso,Raisio,Piikkiö,Naantali
+22.316174,60.489531,23234,234,kt40 Oriketo,853,2023,Turku,Åbo,Turku,Piikkiö,Naantali
+22.304526,60.446488,23235,235,vt1 Turku Kupittaa,853,2023,Turku,Åbo,Turku,Turku,Helsinki
+22.334731,60.424922,23237,237,vt1 Turku Kurkela länsi,853,2023,Turku,Åbo,Turku,Turku,Helsinki
+22.364204,60.421987,23238,238,vt1 Kaarina Kurkela itä,202,2023,Kaarina,S:t Karins,Kaarina,Turku,Helsinki
+22.402097,60.424022,23239,239,vt1 Kaarina,202,2023,Kaarina,S:t Karins,Kaarina,Turku,Helsinki
+22.475811,60.440193,23240,240,vt1 Kaarina Piikkiö,202,2023,Kaarina,S:t Karins,Kaarina,Turku,Helsinki
+22.656045,60.430131,23242,242,vt1 Paimio Paimionjoki,577,2023,Paimio,Pemar,Paimio,Turku,Helsinki
+22.68301,60.423384,23243,243,vt1 Paimio Valkoja,577,2023,Paimio,Pemar,Paimio,Turku,Helsinki
+22.745452,60.425558,23244,244,vt1 Paimio Vista,577,2023,Paimio,Pemar,Paimio,Turku,Helsinki
+22.969131,60.435067,23245,245,vt1 Salo Hajala,734,2023,Salo,Salo,Salo,Turku,Helsinki
+23.148232,60.418888,23247,247,vt1 Salo Isokylä länsi,734,2023,Salo,Salo,Salo,Turku,Helsinki
+23.292028,60.38888,23248,248,vt1 Salo Muurla,734,2023,Salo,Salo,Salo,Turku,Helsinki
+22.186943,60.477609,23249,249,vt8 Ihala,680,2023,Raisio,Reso,Raisio,Vaasa,Turku
+22.090035,60.583131,23250,250,vt8 Masku,538,2023,Nousiainen,Nousis,Nousiainen,Vaasa,Turku
+22.142869,60.47133,23251,251,kt40 Krookila,680,2023,Raisio,Reso,Raisio,Piikkiö,Naantali
+22.18283,60.460639,23252,252,st185 Artukainen,680,2023,Raisio,Reso,Raisio,Naantali,Turku
+22.043474,60.193727,23255,255,st180 Parainen Simonby,445,2023,Parainen,Pargas,Pargas,Nauvo,Parainen
+22.202798,60.463565,23257,257,yt1851 Turku Härkämäki,853,2023,Turku,Åbo,Turku,Suikkila,Artukainen
+27.128804,60.572097,23302,302,vt7 Hamina Lankamalmi,075,2023,Hamina,Fredrikshamn,Hamina,Vaalimaa,Kotka
+27.14252,60.579562,23303,303,vt7 Hamina Ruissalo,075,2023,Hamina,Fredrikshamn,Hamina,Vaalimaa,Kotka
+27.16234,60.590888,23304,304,vt7 Hamina Husula,075,2023,Hamina,Fredrikshamn,Hamina,Vaalimaa,Kotka
+27.255259,60.595672,23305,305,vt7 Hamina Kolsila itä,075,2023,Hamina,Fredrikshamn,Hamina,Vaalimaa,Kotka
+28.520228,60.95499,23306,306,vt13 Lappeenranta Nuijamaa Uusi,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Viipuri,Lappeenranta
+27.676303,60.608743,23307,307,vt7 Virolahti Virojoki,935,2023,Virolahti,Vederlax,Virolahti,Vaalimaa,Hamina
+27.475294,60.596463,23308,308,vt7 Virolahti Ravijoki,935,2023,Virolahti,Vederlax,Virolahti,Vaalimaa,Hamina
+27.825572,60.605247,23309,309,vt7 Virolahti Vaalimaa,935,2023,Virolahti,Vederlax,Virolahti,Vaalimaa,Hamina
+27.796472,60.613172,23310,310,vt7 Virolahti Vaalimaan tunneli itä,935,2023,Virolahti,Vederlax,Virolahti,Vaalimaa,Hamina
+28.510239,60.960868,23311,311,vt13 Lappeenranta Nuijamaa tulli,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Viipuri,Lappeenranta
+23.765753,61.408751,23401,401,vt3 Lempäälä Sääksjärvi,418,2023,Lempäälä,Lempäälä,Lempäälä,Tampere,Hämeenlinna
+24.057586,61.149148,23402,402,st130 Jutikkala,908,2023,Valkeakoski,Valkeakoski,Valkeakoski,Tampere,Hämeenlinna
+23.288468,60.967187,23403,403,vt2 Humppila,103,2023,Humppila,Humppila,Humppila,Pori,Helsinki
+24.071581,61.549823,23404,404,vt9 Kangasala Suinula,211,2023,Kangasala,Kangasala,Kangasala,Jyväskylä,Tampere
+24.666447,61.047286,23405,405,vt10 Hämeenlinna,109,2023,Hämeenlinna,Tavastehus,Hämeenlinna,Lammi,Turku
+23.368056,61.503859,23406,406,vt11 Nokia Linnavuori,536,2023,Nokia,Nokia,Nokia,Pori,Tampere
+25.282269,61.00463,23407,407,vt12 Hollola,098,2023,Hollola,Hollola,Hollola,Lahti,Tampere
+24.976368,60.793106,23408,408,kt54 Hausjärvi,086,2023,Hausjärvi,Hausjärvi,Hausjärvi,Hollola,Riihimäki
+24.027612,62.01343,23409,409,kt66 Ruovesi,702,2023,Ruovesi,Ruovesi,Ruovesi,Virrat,Ruovesi
+23.607493,61.54414,23421,421,kt65 Ylöjärvi,980,2023,Ylöjärvi,Ylöjärvi,Ylöjärvi,Hämeenkyrö,Tampere
+23.738401,61.241797,23422,422,st190 Viiala,020,2023,Akaa,Ackas,Akaa,Tampere,Urjala
+25.613012,60.907742,23424,424,vt4 Renkomäki,098,2023,Hollola,Hollola,Hollola,Jyväskylä,Helsinki
+23.787928,60.825646,23425,425,vt10 Tammela,834,2023,Tammela,Tammela,Tammela,Hämeenlinna,Turku
+24.685769,61.159476,23426,426,vt12 Hämeenlinna Hauho,109,2023,Hämeenlinna,Tavastehus,Hämeenlinna,Lahti,Tampere
+24.393024,60.731605,23428,428,kt54 Loppi,433,2023,Loppi,Loppi,Loppi,Riihimäki,Forssa
+24.736828,60.709512,23429,429,vt3 Riihimäki Herajoki,694,2023,Riihimäki,Riihimäki,Riihimäki,Hämeenlinna,Helsinki
+25.637911,61.126882,23430,430,vt24 Asikkala,016,2023,Asikkala,Asikkala,Asikkala,Jämsä,Lahti
+23.977413,61.478619,23431,431,vt12 Kangasala Suorama,211,2023,Kangasala,Kangasala,Kangasala,Lahti,Tampere
+24.597507,60.854666,23432,432,vt3 Janakkala,165,2023,Janakkala,Janakkala,Janakkala,Hämeenlinna,Helsinki
+23.955748,61.28564,23433,433,st130 Pispantie,908,2023,Valkeakoski,Valkeakoski,Valkeakoski,Tampere,Hämeenlinna
+23.808471,61.463652,23435,435,vt9 Tampere Karkunvuori,837,2023,Tampere,Tammerfors,Tampere,Jyväskylä,Turku
+23.586782,61.478807,23436,436,yt13782 Nokia Rajasalmi,536,2023,Nokia,Nokia,Nokia,Nokia,Tampere
+24.412691,61.015127,23437,437,vt3 Hlinna Mo3,109,2023,Hämeenlinna,Tavastehus,Hämeenlinna,Tampere,Helsinki
+23.697679,61.508408,23438,438,vt12 Tre Paasikiventie,837,2023,Tampere,Tammerfors,Tampere,Lahti,Rauma
+23.821503,61.504163,23439,439,vt12 Tre Teiskontie,837,2023,Tampere,Tammerfors,Tampere,Lahti,Rauma
+23.837494,61.2527,23440,440,vt3 Lempäälä Lippo,418,2023,Lempäälä,Lempäälä,Lempäälä,Tampere,Hämeenlinna
+25.750283,61.037244,23441,441,st140 Hollola,098,2023,Hollola,Hollola,Hollola,Heinola,Lahti
+26.041199,61.336375,23442,442,vt4 Heinola Lusi,111,2023,Heinola,Heinola,Heinola,Jyväskylä,Lahti
+23.647575,61.115503,23445,445,vt9 Kylmäkoski,887,2023,Urjala,Urjala,Urjala,Tampere,Turku
+25.59501,60.981177,23446,446,Lahti Kärpäsenmäki,398,2023,Lahti,Lahtis,Lahti,Hollola,Lahti
+25.69798,60.973187,23447,447,Lahti Joutjärvi,398,2023,Lahti,Lahtis,Lahti,Hollala,Lahti
+24.70895,61.73148,23448,448,vt9 Orivesi Talviainen,562,2023,Orivesi,Orivesi,Orivesi,Jyväskylä,Tampere
+23.74535,61.460262,23449,449,vt3 Tre Sarankulma,837,2023,Tampere,Tammerfors,Tampere,Vaasa,Hämeenlinna
+23.56775,61.519701,23450,450,vt3 Tampere Myllypuro,837,2023,Tampere,Tammerfors,Tampere,Vaasa,Hämeenlinna
+23.939764,61.528153,23451,451,vt9 Tre Aitovuori,837,2023,Tampere,Tammerfors,Tampere,Jyväskylä,Turku
+23.724675,61.503156,23452,452,Vt12 Tre Onkiniemi,837,2023,Tampere,Tammerfors,Tampere,Lahti,Rauma
+23.739676,61.502302,23453,453,Tampere Mustalahti,837,2023,Tampere,Tammerfors,Tampere,Tampere,Nokia
+23.654093,61.517417,23455,455,kt65 Tre Epilänharju,837,2023,Tampere,Tammerfors,Tampere,Ylöjärvi,Tampere
+23.679207,61.511616,23456,456,kt65 Tre Lielahti,837,2023,Tampere,Tammerfors,Tampere,Ylöjärvi,Tampere
+23.785048,61.50648,23457,457,vt12 Tre Petsamo,837,2023,Tampere,Tammerfors,Tampere,Lahti,Rauma
+23.852788,61.504198,23458,458,vt12 Tampere Ruotula,837,2023,Tampere,Tammerfors,Tampere,Lahti,Tampere
+23.636382,61.45259,23460,460,vt3 Pirkkala Huovi,604,2023,Pirkkala,Birkala,Pirkkala,Vaasa,Hämeenlinna
+25.905938,61.09851,23461,461,vt4 Vierumäki,111,2023,Heinola,Heinola,Heinola,Jyväskylä,Lahti
+23.588359,61.477796,23462,462,vt3 Nokia Rajasalmi,536,2023,Nokia,Nokia,Nokia,Vaasa,Hämeenlinna
+23.617727,61.459451,23463,463,vt3 Pirkkala Sankila,604,2023,Pirkkala,Birkala,Pirkkala,Vaasa,Hämeenlinna
+24.458373,60.990539,23465,465,vt3 Hämeenlinna E,109,2023,Hämeenlinna,Tavastehus,Hämeenlinna,Tampere,Helsinki
+24.450819,61.000574,23466,466,vt3 Hämeenlinna P,109,2023,Hämeenlinna,Tavastehus,Hämeenlinna,Tampere,Helsinki
+25.62992,60.954571,23468,468,vt12 Lahti Patomäki,398,2023,Lahti,Lahtis,Lahti,Kouvola,Tampere
+25.664579,60.955907,23469,469,vt12 Lahti Liipola,398,2023,Lahti,Lahtis,Lahti,Kouvola,Tampere
+25.708902,60.964905,23470,470,vt4 Lahti Lotila,398,2023,Lahti,Lahtis,Lahti,Jyväskylä,Helsinki
+23.759727,61.439193,23471,471,vt3 Tampere Multisilta,837,2023,Tampere,Tammerfors,Tampere,Vaasa,Hämeenlinna
+26.764592,60.497151,23501,501,st170 Pyhtää Siltakylä,624,2023,Pyhtää,Pyttis,Pyhtää,Kotka,Loviisa
+26.179252,60.913273,23502,502,vt12 Iitti Mankala,142,2023,Iitti,Itis,Iitti,Kouvola,Lahti
+27.40631,60.848624,23503,503,vt26 Kouvola Loveslampi,286,2023,Kouvola,Kouvola,Kouvola,Luumäki,Hamina
+27.835291,60.596836,23504,504,vt7 Vaalimaa rekkaparkki1,935,2023,Virolahti,Vederlax,Virolahti,Vaalimaa,Helsinki
+27.851074,60.601271,23505,505,vt7 Vaalimaa rekkaparkki2,935,2023,Virolahti,Vederlax,Virolahti,Vaalimaa,Helsinki
+27.349145,60.565741,23506,506,vt7 Hamina Lelu,075,2023,Hamina,Fredrikshamn,Hamina,Vaalimaa,Kotka
+26.484791,60.77637,23521,521,vt6 Kouvola Elimäki,286,2023,Kouvola,Kouvola,Kouvola,Kouvola,Helsinki
+27.664768,60.934604,23522,522,vt6 Luumäki kko,441,2023,Luumäki,Luumäki,Luumäki,Lappeenranta,Kouvola
+29.306611,61.408419,23524,524,vt6 Rautjärvi Änkilä,689,2023,Rautjärvi,Rautjärvi,Rautjärvi,Joensuu,Imatra
+27.38452,61.319175,23526,526,vt13 Mikkeli Suomenniemi,491,2023,Mikkeli,S:t Michel,Mikkeli,Lappeenranta,Mikkeli
+27.05936,61.074383,23527,527,vt15 Kouvola Tuohikotti,286,2023,Kouvola,Kouvola,Kouvola,Mikkeli,Kouvola
+28.654392,61.382702,23528,528,kt62 Ruokolahti Kotaniemi,700,2023,Ruokolahti,Ruokolax,Ruokolahti,Imatra,Mikkeli
+26.819139,60.886205,23529,529,vt6 Kouvola Utti,286,2023,Kouvola,Kouvola,Kouvola,Lappeenranta,Kouvola
+26.9219,60.623619,23530,530,vt15 Kotka Juurikorpi,285,2023,Kotka,Kotka,Kotka,Kouvola,Kotka
+28.856509,61.229893,23531,531,vt6 Imatra Rönkkä,153,2023,Imatra,Imatra,Imatra,Joensuu,Lappeenranta
+28.833624,61.127607,23532,532,kt62 Imatra raja2,153,2023,Imatra,Imatra,Imatra,Venäjä,Imatra
+28.364389,61.036816,23533,533,vt13 Lappeenranta Karhusjärvi,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Viipuri,Lappeenranta
+28.404704,61.101493,23534,534,vt6 Lappeenranta Muukko,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Imatra,Lappeenranta
+28.818879,61.13534,23535,535,kt62 Imatra raja1,153,2023,Imatra,Imatra,Imatra,Venäjä,Imatra
+28.492213,60.977438,23547,547,vt13 Lappeenranta Nuijamaa MP5,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Viipuri,Lappeenranta
+27.634758,60.572017,23550,550,st170 Virolahti Vaahterikonsuo,935,2023,Virolahti,Vederlax,Virolahti,Vaalimaa,Hamina
+28.060646,61.028375,23556,556,vt6 Lappeenranta Selkäharju,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Lappeenranta,Kouvola
+28.160704,61.041208,23558,558,vt6 Lappeenranta Mattila,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Lappeenranta,Kouvola
+28.198946,61.042912,23559,559,vt6 Lappeenranta Reijola,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Imatra,Lappeenranta
+28.246022,61.051124,23560,560,vt6 Lappeenranta Karhuvuori,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Imatra,Lappeenranta
+28.282199,61.061776,23561,561,vt6 Lappeenranta Hartikkala,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Imatra,Lappeenranta
+28.309848,61.071791,23562,562,vt6 Lappeenranta Mälkiä,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Imatra,Lappeenranta
+28.49518,61.120376,23563,563,vt6 Lappeenranta Joutseno,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Imatra,Lappeenranta
+28.679108,61.165909,23564,564,vt6 Lappeenranta Korvenkangas,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Imatra,Lappeenranta
+26.995934,60.550655,23572,572,vt7 Kotka Salminlahti,285,2023,Kotka,Kotka,Kotka,Hamina,Kotka
+27.086762,60.569312,23573,573,vt7 Hamina Summa,075,2023,Hamina,Fredrikshamn,Hamina,Vaalimaa,Kotka
+26.90234,60.505233,23574,574,vt7 Kotka Kyminlinna,285,2023,Kotka,Kotka,Kotka,Hamina,Porvoo
+26.54646,60.486397,23575,575,vt7 Pyhtää2,624,2023,Pyhtää,Pyttis,Pyhtää,Kotka,Porvoo
+26.926898,60.514416,23576,576,vt7 Kotka Karhula,285,2023,Kotka,Kotka,Kotka,Hamina,Porvoo
+26.954217,60.526567,23577,577,vt7 Kotka Otsola,285,2023,Kotka,Kotka,Kotka,Hamina,Porvoo
+26.460474,60.490154,23578,578,vt7 Pyhtää Ahvenkoski Itä,624,2023,Pyhtää,Pyttis,Pyhtää,Kotka,Porvoo
+26.701676,60.500132,23579,579,vt7 Pyhtää Siltakylä2,624,2023,Pyhtää,Pyttis,Pyhtää,Kotka,Porvoo
+26.811021,60.501077,23580,580,vt7 Pyhtää Mokra,624,2023,Pyhtää,Pyttis,Pyhtää,Kotka,Porvoo
+27.869444,60.606657,23581,581,"vt7 Virolahti Vaalimaa, raja",935,2023,Virolahti,Vederlax,Virolahti,Viipuri,Hamina
+28.503726,60.964523,23582,582,vt13 Lappeenranta Nuijamaa,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Viipuri,Lappeenranta
+26.855128,60.497487,23583,583,vt7 Kotka Petäjäsuo,285,2023,Kotka,Kotka,Kotka,Kotka,Porvoo
+26.681621,60.49029,23584,584,st170 Pyhtää,624,2023,Pyhtää,Pyttis,Pyhtää,Kotka,Loviisa
+26.921393,60.463908,23586,586,vt15 Kotka Kotkansaari,285,2023,Kotka,Kotka,Kotka,Kouvola,Kotka
+27.387624,60.913277,23587,587,vt6 Luumäki Somerharju,441,2023,Luumäki,Luumäki,Luumäki,Lappeenranta,Kouvola
+26.429675,60.880548,23590,590,"vt12 Iitti, Tillola",142,2023,Iitti,Itis,Iitti,Kouvola,Lahti
+26.788494,60.817549,23591,591,vt15 Kouvola Havukka,286,2023,Kouvola,Kouvola,Kouvola,Kouvola,Kotka
+26.999613,60.904803,23592,592,vt6 Kouvola Metso,286,2023,Kouvola,Kouvola,Kouvola,Lappeenranta,Kouvola
+27.979948,60.765028,23593,593,st387 Lappeenranta Ylämaa,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Vaalimaa,Lappeenranta
+26.541592,60.841068,23594,594,vt6 Kouvola Hevossuo,286,2023,Kouvola,Kouvola,Kouvola,Kouvola,Helsinki
+26.639312,60.872762,23595,595,vt6 Kouvola Puhjo,286,2023,Kouvola,Kouvola,Kouvola,Lappeenranta,Helsinki
+26.754927,60.88464,23596,596,vt6 Kouvola Käyrälampi,286,2023,Kouvola,Kouvola,Kouvola,Lappeenranta,Kouvola
+28.508712,60.959035,23597,597,vt13 Lappeenranta Nuijamaa rask,405,2023,Lappeenranta,Villmanstrand,Lappeenranta,Viipuri,Lappeenranta
+27.869182,60.606425,23598,598,"vt7 Virolahti, Vaalimaa rask",935,2023,Virolahti,Vederlax,Virolahti,Viipuri,Hamina
+26.883346,60.50124,23599,599,vt7 Kotka Leppäsaari,285,2023,Kotka,Kotka,Kotka,Hamina,Porvoo
+26.75034,61.47962,23602,602,vt5 Mäntyharju Toivola,507,2023,Mäntyharju,Mäntyharju,Mäntyharju,Mikkeli,Heinola
+27.838071,62.138214,23603,603,vt5 Joroinen Tienhaara,171,2023,Joroinen,Jorois,Joroinen,Kuopio,Mikkeli
+27.25169,61.556588,23604,604,vt13 Mikkeli Ristiina,491,2023,Mikkeli,S:t Michel,Mikkeli,Lappeenranta,Mikkeli
+27.823353,61.898902,23605,605,vt14 Juva1,178,2023,Juva,Juva,Juva,Savonlinna,Juva
+28.950363,61.871715,23606,606,vt14 Savonlinna Nojanmaa,740,2023,Savonlinna,Nyslott,Savonlinna,Punkaharju,Juva
+27.247958,62.122853,23607,607,kt72 Pieksämäki Virtasalmi,593,2023,Pieksämäki,Pieksämäki,Pieksämäki,Pieksämäki,Mikkeli
+26.499139,62.093642,23622,622,vt13 Kangasniemi Synsiö,213,2023,Kangasniemi,Kangasniemi,Kangasniemi,Mikkeli,Jyväskylä
+25.9794,61.492351,23623,623,vt4 Hartola,081,2023,Hartola,Gustav Adolfs  ,Hartola,Jyväskylä,Lahti
+27.598326,61.795714,23627,627,vt5 Juva Nuutilanmäki,178,2023,Juva,Juva,Juva, , 
+26.065516,61.274775,23628,628,vt4 Murhamäki,111,2023,Heinola,Heinola,Heinola,Jyväskylä,Lahti
+27.402817,62.290789,23629,629,vt23 Pieksämäki Siikamäki,593,2023,Pieksämäki,Pieksämäki,Pieksämäki,Varkaus,Jyväskylä
+26.386836,61.39936,23630,630,vt5 Pertunmaa Kuortti,588,2023,Pertunmaa,Pertunmaa,Pertunmaa,Mikkeli,Heinola
+27.86515,62.276534,23631,631,vt5 Joroinen Kuvansi,171,2023,Joroinen,Jorois,Joroinen,Kuopio,Mikkeli
+28.854191,61.879312,23632,632,vt14 Savonlinna Hevonpäänniemi,740,2023,Savonlinna,Nyslott,Savonlinna,Savonlinna,Juva
+27.249481,61.677505,23633,633,vt5 Mikkeli Pitkäjärvi,491,2023,Mikkeli,S:t Michel,Mikkeli,Kuopio,Heinola
+29.104469,62.684077,23701,701,vt9 Liperi Viinijärvi,426,2023,Liperi,Libelits,Liperi,Joensuu,Kuopio
+29.607403,62.05345,23704,704,kt71 Kitee Väärämäki,260,2023,Kitee,Kides,Kitee,Kitee,Savonlinna
+30.050097,63.303887,23705,705,kt73 Lieksa Mähkö,422,2023,Lieksa,Lieksa,Lieksa,Nurmes,Joensuu
+29.260483,62.606588,23723,723,vt23 Liperi Kompero,426,2023,Liperi,Libelits,Liperi,Joensuu,Varkaus
+30.622457,62.171684,23724,724,vt9 Tohmajärvi Niirala,848,2023,Tohmajärvi,Tohmajärvi,Tohmajärvi,Venäjä,Joensuu
+29.230376,63.291359,23725,725,vt6 Juuka Lonkaa,176,2023,Juuka,Juga,Juuka,Kajaani,Joensuu
+29.582287,62.625341,23726,726,vt9 Liperi Ylämylly,426,2023,Liperi,Libelits,Liperi,Joensuu,Kuopio
+29.78608,62.660065,23727,727,vt6 Kontiolahti Lehmo,276,2023,Kontiolahti,Kontiolax,Kontiolahti,Kajaani,Joensuu
+30.525608,62.17786,23729,729,vt9 Tohmajärvi Kaurila,848,2023,Tohmajärvi,Tohmajärvi,Tohmajärvi,Joensuu,Venäjä
+29.711943,62.62456,23730,730,vt9 Joensuu Noljakka,167,2023,Joensuu,Joensuu,Joensuu,Joensuu,Kuopio
+29.862889,62.530771,23731,731,vt6 Joensuu Reijola,167,2023,Joensuu,Joensuu,Joensuu,Joensuu,Imatra
+29.873465,61.974061,23732,732,vt6 Kitee Kousa,260,2023,Kitee,Kides,Kitee,Joensuu,Imatra
+29.780506,62.614368,23733,733,vt6 Joensuu,167,2023,Joensuu,Joensuu,Joensuu,Kajaani,Imatra
+27.681544,62.520063,23801,801,vt5 Leppävirta Oikearanta,420,2023,Leppävirta,Leppävirta,Leppävirta,Kuopio,Mikkeli
+27.647471,63.103916,23803,803,vt5 Siilinjärvi Pyyjärvi,749,2023,Siilinjärvi,Siilinjärvi,Siilinjärvi,Iisalmi,Kuopio
+28.33583,62.870994,23804,804,vt9 Tuusniemi Tuusjärvi,857,2023,Tuusniemi,Tuusniemi,Tuusniemi,Joensuu,Kuopio
+28.574839,63.367592,23805,805,kt75 Rautavaara Luostanlinna,687,2023,Rautavaara,Rautavaara,Rautavaara,Nurmes,Kuopio
+26.715213,63.194671,23806,806,kt77 Pielavesi Kopsankylä,595,2023,Pielavesi,Pielavesi,Pielavesi,Siilinjärvi,Viitasaari
+26.432573,63.674695,23807,807,vt27 Kiuruvesi Hamarinvuori,263,2023,Kiuruvesi,Kiuruvesi,Kiuruvesi,Iisalmi,Kalajoki
+27.416714,62.676118,23821,821,vt9 Suonenjoki Kutunjärvi,778,2023,Suonenjoki,Suonenjoki,Suonenjoki,Kuopio,Jyväskylä
+26.986018,63.749188,23822,822,kt88 Vieremä,925,2023,Vieremä,Vieremä,Vieremä,Iisalmi,Raahe
+28.059585,63.159412,23824,824,kt75 Nilsiä Suholanmäki,297,2023,Kuopio,Kuopio,Kuopio,Nurmes,Siilinjärvi
+27.603342,62.809001,23825,825,vt5 Kuopio Hiltulanlahti,297,2023,Kuopio,Kuopio,Kuopio,Kuopio,Mikkeli
+27.251752,63.566831,23826,826,vt5 Iisalmi Paloisjärvi,140,2023,Iisalmi,Idensalmi,Iisalmi,Kajaani,Kuopio
+27.882583,62.949672,23827,827,vt9 Kuopio Jännevirta,297,2023,Kuopio,Kuopio,Kuopio,Joensuu,Kuopio
+27.678447,62.917967,23828,828,vt5 Kuopio Rahusenlampi,297,2023,Kuopio,Kuopio,Kuopio,Iisalmi,Mikkeli
+27.619645,62.86975,23832,832,vt5 Kuopio Levänen,297,2023,Kuopio,Kuopio,Kuopio,Iisalmi,Mikkeli
+27.825265,63.134857,23833,833,kt75 Siilinjärvi Pajukoski,297,2023,Kuopio,Kuopio,Kuopio,Nurmes,Siilinjärvi
+27.679283,62.952349,23834,834,vt5 Kuopio Tikkalansaari,297,2023,Kuopio,Kuopio,Kuopio,Iisalmi,Mikkeli
+27.696782,62.963797,23835,835,vt5 Kuopio Sorsasalo,297,2023,Kuopio,Kuopio,Kuopio,Iisalmi,Mikkeli
+27.706255,62.982096,23836,836,vt5 Siilinjärvi Vuorela,749,2023,Siilinjärvi,Siilinjärvi,Siilinjärvi,Iisalmi,Kuopio
+25.701282,62.370742,23901,901,vt4 Jyväskylä Tikkakoski,179,2023,Jyväskylä,Jyväskylä,Jyväskylä,,
+25.725978,62.656247,23902,902,vt4 Äänekoski Karvalahti,992,2023,Äänekoski,Äänekoski,Äänekoski,Oulu,Jyväskylä
+26.159011,62.248253,23903,903,vt9 Laukaa Lievestuore,410,2023,Laukaa,Laukas,Laukaa,Kuopio,Jyväskylä
+25.059282,62.796193,23904,904,vt13 Saarijärvi Alajärvi,729,2023,Saarijärvi,Saarijärvi,Saarijärvi,Jyväskylä,Kokkola
+24.563221,62.246944,23905,905,vt23 Keuruu Tiusala,249,2023,Keuruu,Keuru,Keuruu,Jyväskylä,Virrat
+25.146808,61.488543,23921,921,vt24 Kuhmoinen,291,2023,Kuhmoinen,Kuhmois,Kuhmoinen,Jämsä,Lahti
+25.62855,62.095101,23922,922,vt9 Muurame Niittyaho,500,2023,Muurame,Muurame,Muurame,Jyväskylä,Tampere
+25.786025,62.242054,23923,923,vt4 Jyväskylä Halssila,179,2023,Jyväskylä,Jyväskylä,Jyväskylä,Oulu,Lahti
+25.66295,63.224403,23925,925,vt4 Viitasaari Löytänä,931,2023,Viitasaari,Viitasaari,Viitasaari,Oulu,Jyväskylä
+25.401237,61.977691,23927,927,vt9 Jyväskylä Saakoski,179,2023,Jyväskylä,Jyväskylä,Jyväskylä,Jyväskylä,Tampere
+26.09787,61.826185,23928,928,vt4 Joutsa Harvastensuo,172,2023,Joutsa,Joutsa,Joutsa,Jyväskylä,Lahti
+25.89628,62.234518,23929,929,vt4 Jyväskylä Hupeli,179,2023,Jyväskylä,Jyväskylä,Jyväskylä,Jyväskylä,Lahti
+25.162483,61.84994,23930,930,vt9 Jämsä,182,2023,Jämsä,Jämsä,Jämsä,Jyväskylä,Tampere
+25.39467,62.271666,23931,931,vt18 Petäjävesi Vehkasuo,592,2023,Petäjävesi,Petäjävesi,Petäjävesi,Jyväskylä,Seinäjoki
+25.81487,63.041557,23932,932,vt4 Viitasaari Hännilänsalmi,931,2023,Viitasaari,Viitasaari,Viitasaari,Oulu,Jyväskylä
+25.728211,62.278469,23933,933,vt4 Jyväskylä Mannila,179,2023,Jyväskylä,Jyväskylä,Jyväskylä,Oulu,Lahti
+25.82149,62.300927,23934,934,st637 Jyväskylä Palokangas,179,2023,Jyväskylä,Jyväskylä,Jyväskylä,Laukaa,Jyväskylä
+25.978907,62.106346,23935,935,vt4 Toivakka Majalampi,850,2023,Toivakka,Toivakka,Toivakka,Jyväskylä,Lahti
+25.682379,62.44338,23936,936,vt4 Laukaa Vehniä,410,2023,Laukaa,Laukas,Laukaa,Oulu,Jyväskylä
+25.815228,63.144195,23937,937,kt77 Viitasaari Tuliniemi,931,2023,Viitasaari,Viitasaari,Viitasaari,Siilinjärvi,Viitasaari
+25.759138,62.24248,23938,938,vt9 Jyväskylä Lutakko,179,2023,Jyväskylä,Jyväskylä,Jyväskylä,Kuopio,Tampere
+25.275103,60.61914,23998,998,vt4 Mäntsälä E,505,2023,Mäntsälä,Mäntsälä,Mäntsälä,Lahti,Helsinki
+22.280752,62.787786,24001,1001,vt3 Ilmajoki Majakangas,145,2023,Ilmajoki,Ilmola,Ilmajoki,Vaasa,Tampere
+21.809896,63.020728,24002,1002,vt3 Hälsingby,499,2023,Mustasaari,Korsholm,Korsholm,Vaasa,Tampere
+21.785075,63.147016,24003,1003,vt8 Koivulahti,499,2023,Mustasaari,Korsholm,Korsholm,Oulu,Vaasa
+22.346244,62.97981,24004,1004,vt18 Isokyrö,152,2023,Isokyrö,Storkyro,Isokyrö,Seinäjoki,Laihia
+22.753175,62.587638,24005,1005,vt19 Luopajärvi,301,2023,Kurikka,Kurikka,Kurikka,Seinäjoki,Jalasjärvi
+22.619883,62.740972,24006,1006,kt67 Ilmajoki,145,2023,Ilmajoki,Ilmola,Ilmajoki,Seinäjoki,Kurikka
+23.039081,62.939917,24007,1007,vt19 Lapua,408,2023,Lapua,Lappo,Lapua,Uusikaarlepyy,Lapua
+22.797149,62.393682,24021,1021,vt3 Koskue,301,2023,Kurikka,Kurikka,Kurikka,Vaasa,Tampere
+21.426471,62.442163,24022,1022,vt8 Närpiö,545,2023,Närpiö,Närpes,Närpes,Vaasa,Turku
+23.239785,63.86026,24023,1023,vt8 Kokkola,272,2023,Kokkola,Karleby,Kokkola,Oulu,Vaasa
+23.626927,62.446835,24024,1024,kt66 Alavus Sampsalampi,010,2023,Alavus,Alavo,Alavus,Alavus,Virrat
+22.707169,63.548586,24026,1026,vt8 Kovjoki,893,2023,Uusikaarlepyy,Nykarleby,Nykarleby,Oulu,Vaasa
+23.678787,63.019731,24027,1027,vt16 Alajärvi,005,2023,Alajärvi,Alajärvi,Alajärvi,Kyyjärvi,Lapua
+23.514634,63.335551,24028,1028,kt68 Evijärvi,052,2023,Evijärvi,Evijärvi,Evijärvi,Pietarsaari,Virrat
+21.707043,63.062707,24030,1030,vt3 Vaasa Mt,905,2023,Vaasa,Vasa,Vaasa,Vaasa,Tampere
+22.800476,63.289083,24031,1031,vt19 Alahärmä Voltti,233,2023,Kauhava,Kauhava,Kauhava,Uusikaarlepyy,Lapua
+22.781877,62.851504,24032,1032,vt18 Seinäjoki Munakka,743,2023,Seinäjoki,Seinäjoki,Seinäjoki,Jyväskylä,Laihia
+23.691022,62.594559,24033,1033,vt18 Alavus Tuuri,010,2023,Alavus,Alavo,Alavus,Jyväskylä,Seinäjoki
+22.844776,62.797651,24034,1034,kt67 Seinäjoki,743,2023,Seinäjoki,Seinäjoki,Seinäjoki,Lapua,Ilmajoki
+23.067366,63.124067,24035,1035,kt63 Kauhava,233,2023,Kauhava,Kauhava,Kauhava,Kaustinen,Kauhava
+22.819768,63.639362,24036,1036,kt68 Pietarsaari,599,2023,Pedersören kunta,Pedersöre,Pedersöre,Pietarsaari,Virrat
+23.010367,62.772412,24037,1037,vt18 Nurmo Uittoo,743,2023,Seinäjoki,Seinäjoki,Seinäjoki,Jyväskylä,Seinäjoki
+23.752316,63.559336,24038,1038,kt63 Kaustinen,236,2023,Kaustinen,Kaustby,Kaustinen,Toholampi,Kaustinen
+24.044465,62.540259,24039,1039,kt68 Ähtäri,989,2023,Ähtäri,Etseri,Ähtäri,Ähtäri,Virrat
+23.859098,63.899235,24040,1040,vt28 Kannus,217,2023,Kannus,Kannus,Kannus,Iisalmi,Kokkola
+23.464234,63.600912,24041,1041,vt13 Kaustinen Viiperi,236,2023,Kaustinen,Kaustby,Kaustinen,Jyväskylä,Kokkola
+22.280583,62.480593,24042,1042,kt67 Kauhajoki P,232,2023,Kauhajoki,Kauhajoki,Kauhajoki,Kurikka,Kauhajoki
+22.375474,62.667424,24043,1043,yt17367 Kurikka Panttil,145,2023,Ilmajoki,Ilmola,Ilmajoki,Kurikka,Kurikka
+23.51699,62.805063,24044,1044,kt66 Kuortane,300,2023,Kuortane,Kuortane,Kuortane,Lapua,Alavus
+21.762415,62.951484,24045,1045,vt8 Mustasaari Riimal,499,2023,Mustasaari,Korsholm,Korsholm,Vaasa,Turku
+21.683517,62.471338,24046,1046,kt67 Teuva,846,2023,Teuva,Östermark,Teuva,Kauhajoki,Kaskinen
+22.431398,62.640243,24047,1047,vt3 Kurikka Tuiskula,301,2023,Kurikka,Kurikka,Kurikka,Vaasa,Tampere
+23.213805,63.798287,24048,1048,vt13 Kokkola Ribacken,272,2023,Kokkola,Karleby,Kokkola,Jyväskylä,Kokkola
+23.055276,63.01968,24049,1049,vt19 Lapua Voitilanjärvi,408,2023,Lapua,Lappo,Lapua,Uusikaarlepyy,Lapua
+21.530825,62.067786,24050,1050,vt8 Kristiinankaupunki,287,2023,Kristiinankaupunki,Kristinestad,Kristinestad,Vaasa,Turku
+22.045875,62.95587,24051,1051,vt3 Laihia Perälä,399,2023,Laihia,Laihela,Laihia,Vaasa,Tampere
+23.641947,64.04918,24052,1052,vt8 Himanka,208,2023,Kalajoki,Kalajoki,Kalajoki,Oulu ,Vaasa
+22.080626,62.991996,24053,1053,vt18 Laihia Vedenoja,905,2023,Vaasa,Vasa,Vaasa,Seinäjoki,Laihia
+22.215368,62.447897,24054,1054,kt44 Kauhajoki,232,2023,Kauhajoki,Kauhajoki,Kauhajoki,Kurikka,Kankaanpää
+23.937685,62.808306,24055,1055,kt68 Lehtimäki,005,2023,Alajärvi,Alajärvi,Alajärvi,Pietarsaari,Virrat
+23.467483,62.592388,24056,1056,vt18 Alavus Kuivaskylä,010,2023,Alavus,Alavo,Alavus,Jyväskylä,Seinäjoki
+21.671131,63.087002,24057,1057,vt8 Vaasa Yhdystie,905,2023,Vaasa,Vasa,Vaasa,Oulu,Turku
+22.547341,62.960082,24058,1058,vt16 Ylistaro,743,2023,Seinäjoki,Seinäjoki,Seinäjoki,Kyyjärvi,Ylistaro
+22.925756,62.826881,24059,1059,vt19 Nurmo,743,2023,Seinäjoki,Seinäjoki,Seinäjoki,Lapua,Seinäjoki
+23.575968,62.635241,24060,1060,kt66 Alavus Pohjoinen,010,2023,Alavus,Alavo,Alavus,Lapua,Orivesi
+22.851669,62.810611,24061,1061,vt18 Seinäjöki Pajuneva,743,2023,Seinäjoki,Seinäjoki,Seinäjoki,Jyväskylä,Laihia
+23.763369,62.613384,24062,1062,vt18 Töysä Jokikylä,010,2023,Alavus,Alavo,Alavus,Jyväskylä,Seinäjoki
+22.282447,63.256345,24063,1063,vt8 Kaitsor Vöyri-Maksamaa,946,2023,Vöyri,Vörå,Vöyri,Oulu,Vaasa
+24.522279,63.167325,24064,1064,vt13 Perho Möttönen,584,2023,Perho,Perho,Perho,Jyväskylä,Kokkola
+24.122218,62.555526,24065,1065,vt18 Ähtäri Inha,989,2023,Ähtäri,Etseri,Ähtäri,Jyväskylä,Seinäjoki
+21.719721,63.130044,24066,1066,vt8 Mustasaari Lintuvuori,499,2023,Mustasaari,Korsholm,Korsholm,Oulu,Vaasa
+21.654017,63.107493,24067,1067,vt8 Vaasa Böle,905,2023,Vaasa,Vasa,Vaasa,Oulu,Turku
+22.837219,62.709277,24068,1068,vt19 Ilmajoki Rengonkylä,743,2023,Seinäjoki,Seinäjoki,Seinäjoki,Seinäjoki,Jalasjärvi
+22.934864,62.795397,24069,1069,vt19 Seinäjoki Kertunlaakso,743,2023,Seinäjoki,Seinäjoki,Seinäjoki,Lapua,Jalasjärvi
+21.617358,63.113409,24070,1070,st724 Vaasa Onkilahti,905,2023,Vaasa,Vasa,Vaasa,Ruotsi,Vaasa
+25.784847,63.623715,24101,1101,vt4 Pyhäjärvi,626,2023,Pyhäjärvi,Pyhäjärvi,Pyhäjärvi,Oulu,Jyväskylä
+24.711697,63.87307,24103,1103,vt28 Sievi,746,2023,Sievi,Sievi,Sievi,Iisalmi,Kokkola
+24.352838,64.123127,24104,1104,vt27 Ylivieska Alavieska,009,2023,Alavieska,Alavieska,Alavieska,Iisalmi,Kalajoki
+25.605169,63.744651,24105,1105,vt27 Haapajärvi,069,2023,Haapajärvi,Haapajärvi,Haapajärvi,Iisalmi,Kalajoki
+25.807715,63.948495,24121,1121,vt4 Kärsämäki,317,2023,Kärsämäki,Kärsämäki,Kärsämäki,Oulu,Jyväskylä
+23.91719,63.428212,24122,1122,vt13 Veteli,924,2023,Veteli,Vetil,Veteli,Jyväskylä,Kokkola
+24.82984,64.244521,24123,1123,kt86 Oulainen,563,2023,Oulainen,Oulainen,Oulainen,Oulainen,Ylivieska
+23.93825,64.29854,24124,1124,vt8 Rahvo,208,2023,Kalajoki,Kalajoki,Kalajoki,Oulu ,Vaasa
+25.509072,64.979487,24201,1201,vt4 Oulu Mäntylä,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.374974,65.302676,24202,1202,vt4 Ii,139,2023,Ii,Ijo,Ii,Kemi,Oulu
+29.146153,66.060366,24203,1203,vt5 Kuusamo Nissinvaara,305,2023,Kuusamo,Kuusamo,Kuusamo,Kemijärvi,Kajaani
+24.561522,64.686291,24204,1204,vt8 Raahe,678,2023,Raahe,Brahestad,Raahe,Oulu,Vaasa
+25.386099,64.708879,24205,1205,kt86 Liminka Heinijärvi,425,2023,Liminka,Limingo,Liminka,Oulu,Ylivieska
+25.532678,64.946703,24206,1206,vt4 Oulu Ouluntulli,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.425123,65.174538,24207,1207,vt4 Oulu Haukipudas,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.846923,64.382939,24221,1221,vt4 Rantsila,791,2023,Siikalatva,Siikalatva,Siikalatva,Oulu,Jyväskylä
+25.48791,64.839634,24222,1222,st847 Tupos,425,2023,Liminka,Limingo,Liminka,Oulu,Liminka
+25.63996,65.065491,24223,1223,vt20 Kiiminki,564,2023,Oulu,Uleåborg,Oulu,Kuusamo,Oulu
+27.608001,65.441362,24224,1224,vt20 Pintamo,615,2023,Pudasjärvi,Pudasjärvi,Pudasjärvi,Kuusamo,Oulu
+26.688639,65.66987,24225,1225,kt78 Pudasjärvi,615,2023,Pudasjärvi,Pudasjärvi,Pudasjärvi,Ranua,Pudasjärvi
+25.535325,64.914518,24226,1226,vt4 Kempele,244,2023,Kempele,Kempele,Kempele,Oulu,Jyväskylä
+25.894297,64.856358,24227,1227,vt22 Muhos Riihikylä,494,2023,Muhos,Muhos,Muhos,Kajaani,Oulu
+25.372514,65.120244,24228,1228,st847 Haukipudas,564,2023,Oulu,Uleåborg,Oulu,Kemi,Oulu
+26.729714,65.265773,24230,1230,vt20 Rankkila,615,2023,Pudasjärvi,Pudasjärvi,Pudasjärvi,Kuusamo,Oulu
+25.429964,65.120506,24231,1231,vt4 Oulu Kello,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+27.425284,65.413902,24232,1232,vt20 Kettumäki,615,2023,Pudasjärvi,Pudasjärvi,Pudasjärvi,Kuusamo,Oulu
+25.152491,64.455218,24233,1233,kt88 Alpua,678,2023,Raahe,Brahestad,Raahe,Raahe,Pulkkila
+29.161443,65.946859,24234,1234,vt5 Toranki,305,2023,Kuusamo,Kuusamo,Kuusamo,Kemijärvi,Kajaani
+25.350434,64.783198,24235,1235,vt8 Lapinkangas,425,2023,Liminka,Limingo,Liminka,Oulu,Vaasa
+25.509354,64.804166,24236,1236,vt4 Ala-Temmes,425,2023,Liminka,Limingo,Liminka,Oulu,Jyväskylä
+25.508377,65.019337,24237,1237,vt4 Oulu Intiö,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.462881,65.046788,24238,1238,vt4 Oulu Isko,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.49017,64.949734,24239,1239,st815 Lentokentäntie,564,2023,Oulu,Uleåborg,Oulu,Oulunsalo,Oulu
+25.505382,64.842413,24243,1243,vt4 Luhasto,425,2023,Liminka,Limingo,Liminka,Oulu,Jyväskylä
+25.494083,65.032306,24244,1244,vt4 Oulu Laanila,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.442274,65.071121,24246,1246,vt4 Oulu Kuivasjärvi,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.492182,64.970414,24247,1247,st847 Oulunlahti,564,2023,Oulu,Uleåborg,Oulu,Oulu,Kempele
+25.423416,64.937519,24248,1248,st815 Oulunsalo,564,2023,Oulu,Uleåborg,Oulu,Oulunsalo,Oulu
+25.398064,64.933641,24249,1249,st815 Lunki,564,2023,Oulu,Uleåborg,Oulu,Oulunsalo,Oulu
+25.506412,65.008548,24250,1250,vt4 Oulu Kontinkangas,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+25.506002,64.995387,24251,1251,vt4 Oulu Lintula,564,2023,Oulu,Uleåborg,Oulu,Kemi,Jyväskylä
+30.092822,65.800076,24252,1252,st866 Kuusamo T,305,2023,Kuusamo,Kuusamo,Kuusamo,Venäjä,Kuusamo
+25.054259,65.041186,24253,1253,st816 Hailuoto,072,2023,Hailuoto,Karlö,Hailuoto,Hailuoto,Kempele
+25.607712,65.054793,24254,1254,vt20 Rusko2,564,2023,Oulu,Uleåborg,Oulu,Kuusamo,Oulu
+24.369767,64.524612,24255,1255,vt8 Hurnasperä,625,2023,Pyhäjoki,Pyhäjoki,Pyhäjoki,Oulu,Vaasa
+25.529079,64.994916,24256,1256,vt22 Oulu Kaukovainio,564,2023,Oulu,Uleåborg,Oulu,Kajaani,Oulu
+25.571824,64.978763,24257,1257,vt22 Oulu Iinatti,564,2023,Oulu,Uleåborg,Oulu,Kajaani,Oulu
+28.037973,64.31526,24301,1301,vt5 Kajaani Mineraali,205,2023,Kajaani,Kajana,Kajaani,Kuusamo,Iisalmi
+28.177557,64.487399,24302,1302,vt5 Ristijärvi,697,2023,Ristijärvi,Ristijärvi,Ristijärvi,Kuusamo,Kajaani
+29.635331,63.997561,24303,1303,kt75 Kankivaara,290,2023,Kuhmo,Kuhmo,Kuhmo,Kuhmo,Nurmes
+27.405197,63.995736,24321,1321,vt5 Hatulanmäki,205,2023,Kajaani,Kajana,Kajaani,Kajaani,Iisalmi
+27.524666,64.162712,24322,1322,vt5 Nuottijärvi,205,2023,Kajaani,Kajana,Kajaani,Kajaani,Iisalmi
+27.997045,64.142281,24323,1323,vt6 Sotkamo Korholanmäki,765,2023,Sotkamo,Sotkamo,Sotkamo,Kajaani,Joensuu
+26.646651,64.605566,24324,1324,vt22 Törmäkylä,785,2023,Vaala,Vaala,Vaala,Kajaani,Oulu
+29.908877,64.496246,24325,1325,kt89 Vartius,290,2023,Kuhmo,Kuhmo,Kuhmo,Venäjä,Kajaani
+27.266699,64.111085,24326,1326,vt28 Vuottolahti,205,2023,Kajaani,Kajana,Kajaani,Iisalmi,Kokkola
+27.713043,65.047852,24327,1327,kt78 Aska,620,2023,Puolanka,Puolanka,Puolanka,Pudasjärvi,Kajaani
+29.030641,65.362985,24328,1328,vt5 Tapiola,777,2023,Suomussalmi,Suomussalmi,Suomussalmi,Kuusamo,Kajaani
+27.956216,64.394333,24329,1329,vt22 Mieslahti,578,2023,Paltamo,Paltamo,Paltamo,Kajaani,Oulu
+24.760508,66.080761,24401,1401,vt4 Tervola,845,2023,Tervola,Tervola,Tervola,Rovaniemi,Kemi
+27.523849,68.515564,24402,1402,vt4 Ivalo,148,2023,Inari,Enare,Inari,Inari,Rovaniemi
+27.451654,66.86155,24403,1403,vt5 Kemijärvi Kenttälä,320,2023,Kemijärvi,Kemijärvi,Kemijärvi,Sodankylä,Kemijärvi
+24.462407,65.806811,24404,1404,st921 Kaakamo,851,2023,Tornio,Torneå,Tornio,Tornio,Kemi
+26.629466,66.678773,24405,1405,kt82 Misi,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Kemijärvi,Rovaniemi
+23.895951,67.227022,24421,1421,vt21 Kolari,273,2023,Kolari,Kolari,Kolari,Kilpisjärvi,Tornio
+25.254241,66.993328,24422,1422,kt79 Jääskö,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Kittilä,Rovaniemi
+27.75097,66.188151,24423,1423,kt81 Peräposio,614,2023,Posio,Posio,Posio,Posio,Rovaniemi
+26.069566,66.597877,24424,1424,vt4 Olkkajärvi,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Sodankylä,Rovaniemi
+26.252369,66.15926,24425,1425,kt78 Saukkokangas,683,2023,Ranua,Ranua,Ranua,Rovaniemi,Ranua
+28.113813,66.550979,24426,1426,vt5 Suomu,320,2023,Kemijärvi,Kemijärvi,Kemijärvi,Kemijärvi,Kuusamo
+24.848527,66.639587,24427,1427,kt83 Raanujärvi,976,2023,Ylitornio,Övertorneå,Ylitornio,Rovaniemi,Pello
+28.472525,68.476006,24429,1429,kt91 Rajajooseppi,148,2023,Inari,Enare,Inari,Venäjä,Inari
+29.033167,66.943722,24430,1430,kt82 Salla Kelloselkä,732,2023,Salla,Salla,Salla,Venäjä,Salla
+23.688378,66.378874,24432,1432,kt98 Aavasaksa,976,2023,Ylitornio,Övertorneå,Ylitornio,Ruotsi,Suomi
+23.986233,66.801136,24433,1433,st937 Pello,854,2023,Pello,Pello,Pello,Ruotsi,Suomi
+23.665253,67.939449,24435,1435,st954 Muonio,498,2023,Muonio,Muonio,Muonio,Ruotsi,Suomi
+22.476785,68.44367,24436,1436,st959 Karesuvanto,047,2023,Enontekiö,Enontekis,Enontekiö,Ruotsi,Suomi
+24.529134,65.790748,24437,1437,vt4 mp3 Jokisuu,241,2023,Keminmaa,Keminmaa,Keminmaa,Rovaniemi,Oulu
+24.521032,65.794495,24438,1438,vt4 mp2 Jokisuu,241,2023,Keminmaa,Keminmaa,Keminmaa,Rovaniemi,Oulu
+24.394622,65.826223,24439,1439,vt29 Tornio Luukkaankangas,851,2023,Tornio,Torneå,Tornio,Kilpisjärvi,Kemi
+24.204948,65.840493,24441,1441,vt29 Tornio Torppi,851,2023,Tornio,Torneå,Tornio,Tornio,Kemi
+29.11538,69.66844,24442,1442,kt92 Näätämö,148,2023,Inari,Enare,Inari,Norja,Suomi
+27.030076,69.90983,24444,1444,vt4 Utsjoki,890,2023,Utsjoki,Utsjoki,Utsjoki,Norja,Rovaniemi
+25.845486,69.398291,24445,1445,kt92 Karigasniemi,890,2023,Utsjoki,Utsjoki,Utsjoki,Norja,Suomi
+23.321537,68.662024,24446,1446,kt93 Kivilompolo,047,2023,Enontekiö,Enontekis,Enontekiö,Norja,Suomi
+20.763701,69.070682,24447,1447,vt21 Kilpisjärvi T,047,2023,Enontekiö,Enontekis,Enontekiö,Norja,Tornio
+26.641632,67.186298,24448,1448,vt4 Torvinen,758,2023,Sodankylä,Sodankylä,Sodankylä,Sodankylä,Rovaniemi
+26.757701,67.734913,24449,1449,vt4 Yläpostojoki,758,2023,Sodankylä,Sodankylä,Sodankylä,Inari,Rovaniemi
+25.725824,66.503881,24450,1450,vt4 Rovaniemi Revontuli,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Sodankylä,Kemi
+25.578162,66.45307,24451,1451,vt4 Ala-Korkalo,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Rovaniemi,Kemi
+24.685796,65.69221,24452,1452,vt4 Marostenmäki,240,2023,Kemi,Kemi,Kemi,Kemi,Oulu
+24.626502,65.711237,24453,1453,vt4 Siikalahti,240,2023,Kemi,Kemi,Kemi,Kemi,Oulu
+24.593543,65.727615,24454,1454,vt4 Peurasaari,240,2023,Kemi,Kemi,Kemi,Rovaniemi,Oulu
+24.587776,65.739392,24455,1455,vt4 Karjalahti,240,2023,Kemi,Kemi,Kemi,Rovaniemi,Oulu
+24.573752,65.752546,24456,1456,vt4 Kivikko,240,2023,Kemi,Kemi,Kemi,Rovaniemi,Oulu
+24.571985,65.762976,24457,1457,vt4 Ristikangas,240,2023,Kemi,Kemi,Kemi,Rovaniemi,Oulu
+24.166525,65.871573,24458,1458,vt21 Tornio,851,2023,Tornio,Torneå,Tornio,Kilpisjärvi,Tornio
+23.695734,66.365037,24459,1459,vt21 Ylitornio,976,2023,Ylitornio,Övertorneå,Ylitornio,Kilpisjärvi,Tornio
+25.664329,66.534674,24460,1460,kt79 Ylikylä,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Maalahti,Rovaniemi
+25.874691,66.518337,24461,1461,kt81 Vaarala,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Posio,Rovaniemi
+24.862719,67.697206,24462,1462,kt79 Yli-Kittilä,261,2023,Kittilä,Kittilä,Kittilä,Muonio,Rovaniemi
+27.475598,66.715658,24463,1463,vt5 Kemijärvi Sipovaara,320,2023,Kemijärvi,Kemijärvi,Kemijärvi,Sodankylä,Kuusamo
+25.698494,66.490835,24464,1464,vt4 Oijustie,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Sodankylä,Kemi
+25.714153,66.496536,24465,1465,vt4 Vapaudentie,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Sodankylä,Kemi
+25.767627,66.531851,24466,1466,vt4 Syväsenvaara,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Sodankylä,Kemi
+25.744643,66.480624,24467,1467,kt78 Pöykkölä,698,2023,Rovaniemi,Rovaniemi,Rovaniemi,Rovaniemi,Ranua
+23.632721,67.911098,24468,1468,vt21 Muonio Pahtonen,498,2023,Muonio,Muonio,Muonio,Kilpisjärvi,Tornio
+23.37876,60.372404,24601,1601,vt1 Lakiamäki,734,2023,Salo,Salo,Salo,Turku,Helsinki
+23.473695,60.380726,24602,1602,vt1 Kruusila,734,2023,Salo,Salo,Salo,Turku,Helsinki
+23.631862,60.378167,24603,1603,vt1 Syvälampi,734,2023,Salo,Salo,Salo,Turku,Helsinki
+23.725723,60.37636,24604,1604,vt1 Lahnajärvi,734,2023,Salo,Salo,Salo,Turku,Helsinki
+23.872018,60.366762,24605,1605,vt1 Hauklampi,444,2023,Lohja,Lojo,Lohja,Turku,Helsinki
+23.94903,60.325108,24606,1606,vt1 Pitkämäki,444,2023,Lohja,Lojo,Lohja,Turku,Helsinki
+24.079464,60.289063,24607,1607,vt1 Karnainen,444,2023,Lohja,Lojo,Lohja,Turku,Helsinki
