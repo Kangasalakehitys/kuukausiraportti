@@ -7,7 +7,15 @@ library(pxweb)
 library(httr)
 library(rjstat)
 
-source("C:/Users/kanga/Documents/Observable/testi/src/variables/variables.R")
+work_dir <- getwd()
+
+var_folder <- "/src/variables/"
+var_data_folder <- paste(work_dir, var_folder, sep = "")
+var_file_name <- "variables.R"
+var_directory <- paste(var_data_folder, var_file_name, sep = "")
+
+#custom_vars
+source(var_directory)
 
 vuosi <- custom_vars(3)
 valittu_kk <- paste(custom_vars(2), "*", sep = "")
@@ -25,7 +33,12 @@ title_y <- "<b>Lkm</b>"
 title_format <- "d"
 lahde_otsikko <- "Lähde:"
 
-kunta_maakunta_csv <- "C:/Users/kanga/Documents/Observable/testi/src/data/maps/kunta_maakunta.csv"
+maps_folder <- "/src/data/maps/"
+maps_data_folder <- paste(work_dir, maps_folder, sep = "")
+maps_file_name <- "kunta_maakunta.csv"
+maps_directory <- paste(maps_data_folder, maps_file_name, sep = "")
+
+kunta_maakunta_csv <- maps_directory
 
 kuntaid_maakuntaid <- read.csv(
                                kunta_maakunta_csv,
@@ -426,7 +439,6 @@ px_vaesto_kuukausi_vamuu_pxt_119e <- fromJSONstat(jsonRespText, naming = "label"
 
 data_1 <- px_vaesto_kuukausi_vamuu_pxt_119e
 
-work_dir <- getwd()
 folder <- "/src/data/rdata/"
 data_folder <- paste(work_dir, folder, sep = "")
 file_name_1 <- "vaesto_kuukausi_vamuu_pxt_119e.Rdata"

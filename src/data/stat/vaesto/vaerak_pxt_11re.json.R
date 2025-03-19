@@ -7,6 +7,16 @@ library(stringr)
 library(jsonlite)
 library(pxweb)
 
+work_dir <- getwd()
+
+var_folder <- "/src/variables/"
+var_data_folder <- paste(work_dir, var_folder, sep = "")
+var_file_name <- "variables.R"
+var_directory <- paste(var_data_folder, var_file_name, sep = "")
+
+#custom_vars
+source(var_directory)
+
 stat_url = "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/vaerak/statfin_vaerak_pxt_11re.px"
 
 # PXWEB-data
@@ -24,7 +34,6 @@ px_statfin_vaerak_pxt_11re_all <-
 
 data_1 <- px_statfin_vaerak_pxt_11re_all
 
-work_dir <- getwd()
 folder <- "/src/data/rdata/"
 data_folder <- paste(work_dir, folder, sep = "")
 file_name_1 <- "statfin_vaerak_pxt_11re_all.Rdata"

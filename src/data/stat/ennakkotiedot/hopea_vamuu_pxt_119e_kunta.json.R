@@ -9,7 +9,15 @@ library(httr)
 library(rjstat)
 library(reshape2)
 
-source("C:/Users/kanga/Documents/Observable/testi/src/variables/variables.R")
+work_dir <- getwd()
+
+var_folder <- "/src/variables/"
+var_data_folder <- paste(work_dir, var_folder, sep = "")
+var_file_name <- "variables.R"
+var_directory <- paste(var_data_folder, var_file_name, sep = "")
+
+#custom_vars
+source(var_directory)
 
 vuosi <- custom_vars(3)
 valittu_kk <- paste(custom_vars(2), "*", sep = "")
@@ -97,7 +105,6 @@ px_vaesto_kuukausi_vamuu_pxt_119e_kunta <- fromJSONstat(jsonRespText, naming = "
 
 data_1 <- px_vaesto_kuukausi_vamuu_pxt_119e_kunta
 
-work_dir <- getwd()
 folder <- "/src/data/rdata/"
 data_folder <- paste(work_dir, folder, sep = "")
 file_name_1 <- "vaesto_kuukausi_vamuu_pxt_119e_kunta.Rdata"
@@ -106,8 +113,6 @@ directory <- paste(data_folder, file_name_1, sep = "")
 save(data_1, file = directory)
 rm(stat_url, data_1)
 load(directory)
-
-
 
 # #-------------------DATA 2 ------------------
 stat_url = "https://pxdata.stat.fi:443/PxWeb/api/v1/fi/StatFin/synt/statfin_synt_pxt_12dy.px"

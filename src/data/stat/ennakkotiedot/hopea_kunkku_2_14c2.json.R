@@ -9,7 +9,15 @@ library(httr)
 library(rjstat)
 library(reshape2)
 
-source("C:/Users/kanga/Documents/Observable/testi/src/variables/variables.R")
+work_dir <- getwd()
+
+var_folder <- "/src/variables/"
+var_data_folder <- paste(work_dir, var_folder, sep = "")
+var_file_name <- "variables.R"
+var_directory <- paste(var_data_folder, var_file_name, sep = "")
+
+#custom_vars
+source(var_directory)
 
 vuosi <- custom_vars(3)
 valittu_kk <- paste(custom_vars(2), "*", sep = "")
@@ -91,7 +99,6 @@ px_kunkku_2_14c2_3lk <- fromJSONstat(jsonRespText, naming = "label", use_factors
 
 data_1 <- px_kunkku_2_14c2_3lk
 
-work_dir <- getwd()
 folder <- "/src/data/rdata/"
 data_folder <- paste(work_dir, folder, sep = "")
 file_name_1 <- "kunkku_2_14c2_3lk.Rdata"

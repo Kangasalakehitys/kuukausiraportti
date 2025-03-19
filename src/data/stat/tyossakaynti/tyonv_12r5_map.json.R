@@ -5,7 +5,15 @@ library(stringr)
 library(jsonlite)
 library(pxweb)
 
-source("C:/Users/kanga/Documents/Observable/testi/src/variables/variables.R")
+work_dir <- getwd()
+
+var_folder <- "/src/variables/"
+var_data_folder <- paste(work_dir, var_folder, sep = "")
+var_file_name <- "variables.R"
+var_directory <- paste(var_data_folder, var_file_name, sep = "")
+
+#custom_vars
+source(var_directory)
 
 vuosi <- custom_vars(3)
 valittu_kk <- paste(custom_vars(2))
@@ -23,7 +31,12 @@ title_y <- "<b>Lkm</b>"
 title_format <- "d"
 lahde_otsikko <- "Lähde:"
 
-kunta_maakunta_csv <- "C:/Users/kanga/Documents/Observable/testi/src/data/maps/kunta_maakunta.csv"
+maps_folder <- "/src/data/maps/"
+maps_data_folder <- paste(work_dir, maps_folder, sep = "")
+maps_file_name <- "kunta_maakunta.csv"
+maps_directory <- paste(maps_data_folder, maps_file_name, sep = "")
+
+kunta_maakunta_csv <- maps_directory
 
 kuntaid_maakuntaid <- read.csv(
                                kunta_maakunta_csv,
@@ -377,7 +390,6 @@ px_statfin_tyonv_pxt_12r5_map <-
 
 data_1 <- px_statfin_tyonv_pxt_12r5_map
 
-work_dir <- getwd()
 folder <- "/src/data/rdata/"
 data_folder <- paste(work_dir, folder, sep = "")
 file_name_1 <- "statfin_tyonv_pxt_12r5_map.Rdata"
@@ -430,11 +442,12 @@ domain_avg <- round(mean(df_final_0$muutos), 1)
 df_final <- df_final_0
 
 k1_nimi_lower <- tolower(k1_nimi)
-
 filename_data_0 <- "tyollisyys_pro_map.csv"
 filename_data <- paste(k1_nimi_lower, filename_data_0, sep = "_")
-folder_data <- "C:/Users/kanga/Documents/Observable/testi/src/data/"
 
+csv_folder <- "/src/data/"
+csv_data_folder <- paste(work_dir, csv_folder, sep = "")
+folder_data <- csv_data_folder
 folder_file_data <- paste(folder_data, filename_data, sep = "")
 
 write.csv(df_final, folder_file_data, row.names = FALSE)

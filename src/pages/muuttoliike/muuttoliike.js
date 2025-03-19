@@ -701,15 +701,3 @@ export const muuttoliike = (await FileAttachment("../../data/stat/muuttoliike/ho
                   )
                 })
 
-
-
-
-//Data
-export const muuttoliike2 = (await FileAttachment("../../data/stat/muuttoliike/muuttoliike.csv")
-              .csv({typed: true}))
-                .map(d => ({
-                    ...d, 
-                    source: d.source,
-                    target: d.target,
-                    value: d.value
-                }))               

@@ -14,11 +14,7 @@ import {facedBar_vert,stackBar_vert, basicBar_vert} from "../../components/faced
 //Data import
 import {part_1_asas_116f,asas_116f_tbl,all_asas_116f,asas_116f,names_asas_116f_2} from "./valmistuneet.js"
 import {names_ashi_13mx,ashi_13mx,ashi_13mx_tbl} from "./vanhat_neliohinta.js"
-import {rakke_116j,rakke_116j_tbl} from "./kesamokit.js"
-
-const files = [
-  {id: 1, file: FileAttachment("../../data/stat/asuminen/statfin_asas_pxt_13ui.json")},
-]
+import {rakke_116j} from "./kesamokit.js"
 
 //Module imports
 import * as d3 from "d3";
@@ -47,6 +43,10 @@ COLOR_15
 ```
 
 ```js
+
+const files = [
+  {id: 1, file: FileAttachment("../../data/stat/asuminen/statfin_asas_pxt_13ui.json")},
+]
 
 //Timeformat
 const formatYearQuart = utcFormat("%Y");
