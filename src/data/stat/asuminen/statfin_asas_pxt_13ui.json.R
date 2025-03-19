@@ -83,14 +83,14 @@ px_statfin_asas_pxt_13ui <-
 
 data_1 <- px_statfin_asas_pxt_13ui
 
-folder <- "/src/data/rdata/"
-data_folder <- paste(work_dir, folder, sep = "")
-file_name_1 <- "statfin_asas_pxt_13ui.Rdata"
-directory <- paste(data_folder, file_name_1, sep = "")
+# folder <- "/src/data/rdata/"
+# data_folder <- paste(work_dir, folder, sep = "")
+# file_name_1 <- "statfin_asas_pxt_13ui.Rdata"
+# directory <- paste(data_folder, file_name_1, sep = "")
 
-save(data_1, file = directory)
-rm(stat_url, data_1)
-load(directory)
+# save(data_1, file = directory)
+# rm(stat_url, data_1)
+# load(directory)
 
 # Convert to data.frame väestö
 data <- as_tibble(as.data.frame(data_1, column.name.type = "text", variable.value.type = "text"))
