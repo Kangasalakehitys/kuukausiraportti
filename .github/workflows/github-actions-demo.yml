@@ -22,6 +22,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: setup R
+        uses: r-lib/actions/setup-r@v2
+    
+      - name: install R packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::tidytext 
+            any::readr
+            any::dplyr 
+            any::stringr
+            any::jsonlite 
+            any::pxweb
+            any::tidyr
+            any::httr 
+            any::rjstat
+            any::reshape2
+            
       - name: Build
         run: npm run build
 
