@@ -1,12 +1,14 @@
 name: Publish and run Observable-script
+
 on:
   workflow_dispatch:
   push:
     branches: ["main"]
 permissions:
   contents: write
+  
 jobs:
-  generate-data:
+  build:
     runs-on: ${{ matrix.config.os }}
     container: ghcr.io/${{ Github.repository }}:main #put in the correct branch name
     name: ${{ matrix.config.os }}
@@ -41,7 +43,7 @@ jobs:
           path: ./dist
 
   deploy:
-    needs: generate-data
+    needs: build
     permissions:
       pages: write
       id-token: write
